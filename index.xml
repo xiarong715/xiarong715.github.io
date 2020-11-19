@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>风笑天</title>
+    <link>http://example.org/</link>
+    <description>Recent content on 风笑天</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Nov 2020 21:49:37 +0800</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo 搭建个人博客</title>
+      <link>http://example.org/posts/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Wed, 18 Nov 2020 21:49:37 +0800</pubDate>
+      
+      <guid>http://example.org/posts/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>1.Download
+2.Create a New Site
+3.Add a Theme
+4.Add Some Content
+5.Start the Hugo server
+6.Customize the Theme
+7.Build static pages</description>
+    </item>
+    
+    <item>
+      <title>go 语言环境搭建</title>
+      <link>http://example.org/posts/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 18 Nov 2020 21:43:24 +0800</pubDate>
+      
+      <guid>http://example.org/posts/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
