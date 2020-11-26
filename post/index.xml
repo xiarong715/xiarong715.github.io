@@ -6,7 +6,26 @@
     <description>Recent content in Posts on 风笑天</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Nov 2020 21:49:37 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Nov 2020 21:43:24 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>go 语言环境搭建</title>
+      <link>https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Thu, 26 Nov 2020 21:43:24 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description>1.下载
+打开网址，选择稳定版本下载
+https://golang.org/dl/ (有墙打不开)
+https://golang.google.cn/dl
+https://studygolang.com/dl/
+// 二进制文件包下载 wget https://golang.google.cn/dl/go1.15.4.linux-amd64.tar.gz wget https://studygolang.com/dl/golang/go1.15.4.linux-amd64.tar.gz // 源码包下载 wget https://golang.google.cn/dl/go1.15.4.src.tar.gz 2.二进制文件安装
+tar -xvzf go1.15.4.linux-amd64.tar.gz -C /usr/local 3.源码编译安装
+解压 tar -xvzf go1.15.4.src.tar.gz -C /usr/local 编译 cd /usr/local/go/src ./all.bash 4.环境配置
+export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.cn	# go package proxy export GOROOT=/usr/local/go	# go root directory export GOPATH=$HOME/go	# go path directory 5.测试
+显示版本信息，说明go环境搭建完成。
+&amp;amp; go version go version go1.15.4 linux/amd64 </description>
+    </item>
+    
     <item>
       <title>hugo 搭建个人博客</title>
       <link>https://xiarong715.github.io/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
@@ -20,15 +39,6 @@
 5.Start the Hugo server
 6.Customize the Theme
 7.Build static pages</description>
-    </item>
-    
-    <item>
-      <title>go 语言环境搭建</title>
-      <link>https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
-      <pubDate>Wed, 18 Nov 2020 21:43:24 +0800</pubDate>
-      
-      <guid>https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
-      <description>go 语言环境搭建</description>
     </item>
     
   </channel>
