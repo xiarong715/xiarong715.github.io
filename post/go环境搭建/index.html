@@ -97,13 +97,18 @@ wget https://golang.google.cn/dl/go1.15.4.src.tar.gz
 	cd /usr/local/go/src
 	./all.bash
 </code></pre></div><p>4.环境配置</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export GO111MODULE<span style="color:#f92672">=</span>on				<span style="color:#75715e"># enable go moudle</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vi /etc/profile 编辑文件添加下面内容：
+
+export GO111MODULE<span style="color:#f92672">=</span>on				<span style="color:#75715e"># enable go moudle</span>
 export GOPROXY<span style="color:#f92672">=</span>https://goproxy.cn	<span style="color:#75715e"># go package proxy</span>
 export GOROOT<span style="color:#f92672">=</span>/usr/local/go			<span style="color:#75715e"># go root directory</span>
 export GOPATH<span style="color:#f92672">=</span>$HOME/go				<span style="color:#75715e"># go path directory</span>
+
+生效配置文件：
+source /etc/profile
 </code></pre></div><p>5.测试</p>
 <p>显示版本信息，说明go环境搭建完成。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&amp; go version
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go version
 go version go1.15.4 linux/amd64
 </code></pre></div>
         </div>
