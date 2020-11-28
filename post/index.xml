@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 风笑天</title>
+    <title>Posts on 风笑天的博客</title>
     <link>https://xiarong715.github.io/post/</link>
-    <description>Recent content in Posts on 风笑天</description>
+    <description>Recent content in Posts on 风笑天的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 26 Nov 2020 21:43:24 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/post/index.xml" rel="self" type="application/rss+xml" />
@@ -18,12 +18,10 @@
 https://golang.org/dl/ (有墙打不开)
 https://golang.google.cn/dl
 https://studygolang.com/dl
-// 二进制文件包下载 wget https://golang.google.cn/dl/go1.15.4.linux-amd64.tar.gz wget https://studygolang.com/dl/golang/go1.15.4.linux-amd64.tar.gz // 源码包下载 wget https://golang.google.cn/dl/go1.15.4.src.tar.gz 2.二进制文件安装
-tar -xvzf go1.15.4.linux-amd64.tar.gz -C /usr/local 3.源码编译安装
-解压 tar -xvzf go1.15.4.src.tar.gz -C /usr/local 编译 cd /usr/local/go/src ./all.bash 4.环境配置
-vi /etc/profile 编辑文件添加下面内容： export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.cn	# go package proxy export GOROOT=/usr/local/go	# go root directory export GOPATH=$HOME/go	# go path directory 生效配置文件： source /etc/profile 5.测试
-显示版本信息，说明go环境搭建完成。
-go version go version go1.</description>
+1 2 3 4 5 6  // 二进制文件包下载 wget https://golang.google.cn/dl/go1.15.4.linux-amd64.tar.gz wget https://studygolang.com/dl/golang/go1.15.4.linux-amd64.tar.gz // 源码包下载 wget https://golang.google.cn/dl/go1.15.4.src.tar.gz   2.二进制文件安装
+1  tar -xvzf go1.15.4.linux-amd64.tar.gz -C /usr/local   3.源码编译安装
+1 2 3 4 5  解压 tar -xvzf go1.15.4.src.tar.gz -C /usr/local 编译 cd /usr/local/go/src ./all.bash   4.环境配置
+1 2 3 4 5 6 7 8 9  vi /etc/profile 编辑文件添加下面内容： export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.</description>
     </item>
     
     <item>

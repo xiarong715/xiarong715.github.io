@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>风笑天的博客</title>
-    <link>https://xiarong715.github.io/</link>
-    <description>Recent content on 风笑天的博客</description>
+    <title>golang on 风笑天的博客</title>
+    <link>https://xiarong715.github.io/tags/golang/</link>
+    <description>Recent content in golang on 风笑天的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Nov 2020 21:43:24 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Nov 2020 21:43:24 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>go 语言环境搭建</title>
       <link>https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
@@ -39,15 +39,6 @@ https://studygolang.com/dl
 7.Build static pages
 官方参考文档：
 https://gohugo.io/getting-started/quick-start/</description>
-    </item>
-    
-    <item>
-      <title>搜索</title>
-      <link>https://xiarong715.github.io/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiarong715.github.io/search/</guid>
-      <description></description>
     </item>
     
   </channel>

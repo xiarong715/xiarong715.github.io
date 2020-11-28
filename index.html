@@ -8,17 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 
-    <title>风笑天 | </title>
-    <meta property="og:title" content="风笑天 | ">
+    <title>风笑天的博客 | 专注于Go语言(golang)、大数据、软件架构</title>
+    <meta property="og:title" content="风笑天的博客 | 专注于Go语言(golang)、大数据、软件架构">
     <meta property="og:type" content="website">
-    <meta name="Keywords" content="">
-    <meta name="description" content="">
+    <meta name="Keywords" content="golang,go语言,go语言笔记,风笑天,大数据、软件架构">
+    <meta name="description" content="专注于IT互联网，包括但不限于Go语言(golang)、大数据、软件架构">
     <meta property="og:url" content="https://xiarong715.github.io/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="https://xiarong715.github.io/index.xml" title="风笑天" />
+    <link rel="alternate" type="application/rss+xml+xml" href="https://xiarong715.github.io/index.xml" title="风笑天的博客" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -38,11 +38,11 @@
                 
                     <h1>
                         <a id="logo" href="https://xiarong715.github.io/">
-                            风笑天
+                            风笑天的博客
                         </a>
                     </h1>
                 
-                
+                <p class="description">专注于Go语言(golang)、大数据、软件架构</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
@@ -72,18 +72,23 @@
             2020年11月26日
         </date>
         
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/golang'>Golang</a></span>
+            
+        </div>
+        
         <div class="post-content">
             1.下载
 打开网址，选择稳定版本下载
 https://golang.org/dl/ (有墙打不开)
 https://golang.google.cn/dl
 https://studygolang.com/dl
-// 二进制文件包下载 wget https://golang.google.cn/dl/go1.15.4.linux-amd64.tar.gz wget https://studygolang.com/dl/golang/go1.15.4.linux-amd64.tar.gz // 源码包下载 wget https://golang.google.cn/dl/go1.15.4.src.tar.gz 2.二进制文件安装
-tar -xvzf go1.15.4.linux-amd64.tar.gz -C /usr/local 3.源码编译安装
-解压 tar -xvzf go1.15.4.src.tar.gz -C /usr/local 编译 cd /usr/local/go/src ./all.bash 4.环境配置
-vi /etc/profile 编辑文件添加下面内容： export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.cn	# go package proxy export GOROOT=/usr/local/go	# go root directory export GOPATH=$HOME/go	# go path directory 生效配置文件： source /etc/profile 5.测试
-显示版本信息，说明go环境搭建完成。
-go version go version go1.……
+1 2 3 4 5 6  // 二进制文件包下载 wget https://golang.google.cn/dl/go1.15.4.linux-amd64.tar.gz wget https://studygolang.com/dl/golang/go1.15.4.linux-amd64.tar.gz // 源码包下载 wget https://golang.google.cn/dl/go1.15.4.src.tar.gz   2.二进制文件安装
+1  tar -xvzf go1.15.4.linux-amd64.tar.gz -C /usr/local   3.源码编译安装
+1 2 3 4 5  解压 tar -xvzf go1.15.4.src.tar.gz -C /usr/local 编译 cd /usr/local/go/src ./all.bash   4.环境配置
+1 2 3 4 5 6 7 8 9  vi /etc/profile 编辑文件添加下面内容： export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.……
         </div>
         <p class="readmore"><a href="https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">阅读全文</a></p>
     </article>
@@ -97,6 +102,13 @@ go version go version go1.……
         <date class="post-meta meta-date">
             2020年11月18日
         </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%8D%9A%E5%AE%A2'>博客</a></span>
+            
+        </div>
         
         <div class="post-content">
             1.Download
@@ -122,7 +134,7 @@ https://gohugo.io/getting-started/quick-start/……
 
                     <footer id="footer">
     <div>
-        &copy; 2020 <a href="https://xiarong715.github.io/">风笑天 By </a>
+        &copy; 2020 <a href="https://xiarong715.github.io/">风笑天的博客 By 风笑天</a>
         
     </div>
     <br />
@@ -153,7 +165,7 @@ https://gohugo.io/getting-started/quick-start/……
 
                 <div id="secondary">
     <section class="widget">
-        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='https://xiarong715.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="https://xiarong715.github.io/">
@@ -182,12 +194,18 @@ https://gohugo.io/getting-started/quick-start/……
         <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
+    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/">博客 (1)</a></li>
+    
 </ul>
     </section>
 
     <section class="widget">
         <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
+    
+    <a href="https://xiarong715.github.io/tags/golang/">golang</a>
     
 </div>
     </section>

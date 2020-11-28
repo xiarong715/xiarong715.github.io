@@ -3,12 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://xiarong715.github.io/categories/</loc>
+    <lastmod>2020-11-26T21:43:24+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2020-11-26T21:43:24+08:00</lastmod>
   </url>
   
   <url>
+    <loc>https://xiarong715.github.io/categories/golang/</loc>
+    <lastmod>2020-11-26T21:43:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiarong715.github.io/tags/golang/</loc>
+    <lastmod>2020-11-26T21:43:24+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://xiarong715.github.io/post/</loc>
+    <lastmod>2020-11-26T21:43:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiarong715.github.io/tags/</loc>
     <lastmod>2020-11-26T21:43:24+08:00</lastmod>
   </url>
   
@@ -23,11 +43,12 @@
   </url>
   
   <url>
-    <loc>https://xiarong715.github.io/categories/</loc>
+    <loc>https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2020-11-18T21:49:37+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://xiarong715.github.io/tags/</loc>
+    <loc>https://xiarong715.github.io/search/</loc>
   </url>
   
 </urlset>
