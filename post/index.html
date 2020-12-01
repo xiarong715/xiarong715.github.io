@@ -115,15 +115,12 @@ https://studygolang.com/dl
         </div>
         
         <div class="post-content">
-            1.Download
-2.Create a New Site
-3.Add a Theme
-4.Add Some Content
-5.Start the Hugo server
-6.Customize the Theme
-7.Build static pages
-官方参考文档：
-https://gohugo.io/getting-started/quick-start/……
+            1.Download and Install
+​	需要安装git和go；
+1 2 3 4 5  mkdir $HOME/src cd $HOME/src git clone https://github.com/gohugoio/hugo.git cd hugo go install --tags extended   2.Create a New Site
+1  hugo new site boke   3.Add a Theme
+1 2 3  cd boke git clone https://github.com/flysnow-org/maupassant-hugo.git themes/maupassant echo &#39;theme = &#34;maupassant&#34;&#39; &gt;&gt; config.toml   4.Add Some Content
+1  hugo new posts/hugo搭建个人博客.md   打开hugo搭建个人博客.md文件，修改draft的值为false，否则不会被发布；……
         </div>
         <p class="readmore"><a href="https://xiarong715.github.io/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">阅读全文</a></p>
     </article>
@@ -211,6 +208,8 @@ https://gohugo.io/getting-started/quick-start/……
 <div class="tagcloud">
     
     <a href="https://xiarong715.github.io/tags/golang/">golang</a>
+    
+    <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
     
 </div>
     </section>
