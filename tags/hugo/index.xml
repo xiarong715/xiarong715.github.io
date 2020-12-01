@@ -14,11 +14,15 @@
       
       <guid>https://xiarong715.github.io/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
       <description>1.Download and Install
-​	需要安装git和go；
+需要安装git和go；
+git环境搭建参考：
+https://xiarong715.github.io/post/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
+go环境搭建参考：
+https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
 1 2 3 4 5  mkdir $HOME/src cd $HOME/src git clone https://github.com/gohugoio/hugo.git cd hugo go install --tags extended   2.Create a New Site
 1  hugo new site boke   3.Add a Theme
 1 2 3  cd boke git clone https://github.com/flysnow-org/maupassant-hugo.git themes/maupassant echo &amp;#39;theme = &amp;#34;maupassant&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.toml   4.Add Some Content
-1  hugo new posts/hugo搭建个人博客.md   打开hugo搭建个人博客.md文件，修改draft的值为false，否则不会被发布；</description>
+1  hugo new content/posts/hugo搭建个人博客.md   打开hugo搭建个人博客.</description>
     </item>
     
   </channel>

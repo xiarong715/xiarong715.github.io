@@ -7,20 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 
-    <title>hugo 搭建个人博客 | 风笑天的博客</title>
-    <meta property="og:title" content="hugo 搭建个人博客 - 风笑天的博客">
+    <title>git环境搭建 | 风笑天的博客</title>
+    <meta property="og:title" content="git环境搭建 - 风笑天的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2020-11-18T21:49:37&#43;08:00'>
+    <meta property="article:published_time" content='2020-12-01T20:32:32&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2020-11-18T21:49:37&#43;08:00'>
+    <meta property="article:modified_time" content='2020-12-01T20:32:32&#43;08:00'>
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,风笑天,大数据、软件架构">
-    <meta name="description" content="hugo 搭建个人博客">
+    <meta name="description" content="git环境搭建">
         
     <meta name="author" content="风笑天">
-    <meta property="og:url" content="https://xiarong715.github.io/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+    <meta property="og:url" content="https://xiarong715.github.io/post/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -68,128 +68,100 @@
     
     <article class="post">
         <header>
-            <h1 class="post-title">hugo 搭建个人博客</h1>
+            <h1 class="post-title">git环境搭建</h1>
         </header>
         <date class="post-meta meta-date">
-            2020年11月18日
+            2020年12月1日
         </date>
         
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/%E5%8D%9A%E5%AE%A2'>博客</a></span>
+            <span class="meta-category"><a href='/categories/git'>Git</a></span>
             
         </div>
         
         
         
         <div class="post-content">
-            <p>1.Download and Install</p>
-<p>需要安装git和go；</p>
-<p>git环境搭建参考：</p>
-<p><a href="https://xiarong715.github.io/post/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">https://xiarong715.github.io/post/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</a></p>
-<p>go环境搭建参考：</p>
-<p><a href="https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</a></p>
+            <ol>
+<li>
+<p><a href="https://www.kernel.org/pub/software/scm/git/">download a tarball</a></p>
+<p>下载最新版本git</p>
+<p>git-2.9.5.tar.xz</p>
+</li>
+<li>
+<p>解压</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">tar -xvf git-2.9.5.tar.xz
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>configure</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir <span style="color:#008080">$HOME</span>/src
-<span style="color:#0086b3">cd</span> <span style="color:#008080">$HOME</span>/src
-git clone https://github.com/gohugoio/hugo.git
-<span style="color:#0086b3">cd</span> hugo
-go install --tags extended
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#0086b3">cd</span> git-2.9.5
+./configure
 </code></pre></td></tr></table>
 </div>
-</div><p>2.Create a New Site</p>
+</div></li>
+<li>
+<p>make and make install</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new site boke
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">make <span style="color:#000;font-weight:bold">&amp;&amp;</span> make install
 </code></pre></td></tr></table>
 </div>
-</div><p>3.Add a Theme</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#0086b3">cd</span> boke
-git clone https://github.com/flysnow-org/maupassant-hugo.git themes/maupassant
-<span style="color:#0086b3">echo</span> <span style="color:#d14">&#39;theme = &#34;maupassant&#34;&#39;</span> &gt;&gt; config.toml
-</code></pre></td></tr></table>
-</div>
-</div><p>4.Add Some Content</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new content/posts/hugo搭建个人博客.md
-</code></pre></td></tr></table>
-</div>
-</div><p>打开hugo搭建个人博客.md文件，修改draft的值为false，否则不会被发布；</p>
-<p>5.Start the Hugo server</p>
-<p>本地运行hugo服务，编译出静态网页，并启动web服务；</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo server -D
-</code></pre></td></tr></table>
-</div>
-</div><p>6.Customize the Theme</p>
-<p>如果对主题不满意，可以修改主题；</p>
-<p>7.Build static pages</p>
-<p>编译静态网页，静态网页会放在public目录下；</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo -D
-</code></pre></td></tr></table>
-</div>
-</div><p>8.deploy to github.io</p>
+</div></li>
+<li>
+<p>测试</p>
+<p>打印出版本号代表安装成功；</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#0086b3">cd</span> public
-git init
-git add *
-git commit -a -m <span style="color:#d14">&#34;add&#34;</span>
-
-git remote add origin https://github.com/xiarong715/xiarong715.github.io.git
-git pull origin master
-git branch --set-upstream-to<span style="color:#000;font-weight:bold">=</span>origin/master master
-git push
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git version
+git version 2.9.5
 </code></pre></td></tr></table>
 </div>
-</div><p>9.visit the site</p>
-<p><a href="https://xiarong715.github.io">https://xiarong715.github.io</a></p>
-<p>官方参考文档：</p>
-<p><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></p>
-
+</div></li>
+</ol>
+<p>problems</p>
+<p>​	①fatal error: zlib.h: No such file or directory</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum search zlib
+yum install zlib-devel -y
+</code></pre></td></tr></table>
+</div>
+</div><p>​	②Can&rsquo;t locate ExtUtils/MakeMaker.pm in @INC (@INC contains: /usr/local/lib64/perl5 /usr/local/share/perl5</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install -y perl-CPAN
+</code></pre></td></tr></table>
+</div>
+</div>
         </div>
 
         
@@ -201,6 +173,10 @@ git push
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">go 语言环境搭建</a></li>
+        
+        <li><a href="/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hugo 搭建个人博客</a></li>
+        
         <li><a href="/search/">搜索</a></li>
         
     </ul>
@@ -211,9 +187,7 @@ git push
             
             <ul class="clearfix">
                 
-                <li><a href='/tags/golang'>golang</a></li>
-                
-                <li><a href='/tags/hugo'>hugo</a></li>
+                <li><a href='/tags/git'>git</a></li>
                 
             </ul>
             

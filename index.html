@@ -65,6 +65,39 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://xiarong715.github.io/post/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="git环境搭建">git环境搭建</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/git'>Git</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            download a tarball
+下载最新版本git
+git-2.9.5.tar.xz
+  解压
+1  tar -xvf git-2.9.5.tar.xz     configure
+1 2  cd git-2.9.5 ./configure     make and make install
+1  make &amp;&amp; make install     测试
+打印出版本号代表安装成功；
+1 2  git version git version 2.9.5     problems
+​	①fatal error: zlib.h: No such file or directory
+1 2  yum search zlib yum install zlib-devel -y   ​	②Can&rsquo;t locate ExtUtils/MakeMaker.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/post/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="go 语言环境搭建">go 语言环境搭建</a>
             </h1>
         </header>
@@ -112,11 +145,15 @@ https://studygolang.com/dl
         
         <div class="post-content">
             1.Download and Install
-​	需要安装git和go；
+需要安装git和go；
+git环境搭建参考：
+https://xiarong715.github.io/post/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
+go环境搭建参考：
+https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
 1 2 3 4 5  mkdir $HOME/src cd $HOME/src git clone https://github.com/gohugoio/hugo.git cd hugo go install --tags extended   2.Create a New Site
 1  hugo new site boke   3.Add a Theme
 1 2 3  cd boke git clone https://github.com/flysnow-org/maupassant-hugo.git themes/maupassant echo &#39;theme = &#34;maupassant&#34;&#39; &gt;&gt; config.toml   4.Add Some Content
-1  hugo new posts/hugo搭建个人博客.md   打开hugo搭建个人博客.md文件，修改draft的值为false，否则不会被发布；……
+1  hugo new content/posts/hugo搭建个人博客.md   打开hugo搭建个人博客.……
         </div>
         <p class="readmore"><a href="https://xiarong715.github.io/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">阅读全文</a></p>
     </article>
@@ -175,6 +212,10 @@ https://studygolang.com/dl
 <ul class="widget-list">
     
     <li>
+        <a href="https://xiarong715.github.io/post/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="git环境搭建">git环境搭建</a>
+    </li>
+    
+    <li>
         <a href="https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="go 语言环境搭建">go 语言环境搭建</a>
     </li>
     
@@ -191,6 +232,8 @@ https://studygolang.com/dl
         <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
+    <li><a href="https://xiarong715.github.io/categories/git/">Git (1)</a></li>
+    
     <li><a href="https://xiarong715.github.io/categories/golang/">Golang (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/">博客 (1)</a></li>
@@ -201,6 +244,8 @@ https://studygolang.com/dl
     <section class="widget">
         <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
+    
+    <a href="https://xiarong715.github.io/tags/git/">git</a>
     
     <a href="https://xiarong715.github.io/tags/golang/">golang</a>
     
