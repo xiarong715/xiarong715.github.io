@@ -67,6 +67,38 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://xiarong715.github.io/post/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/" title="Go Plugin的用法">Go Plugin的用法</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/golang'>Golang</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1.编写plugin部分
+创建文件testplugin.go
+1 2 3 4 5 6 7 8 9 10 11 12  package main import &#34;fmt&#34; func init() { fmt.Println(&#34;load plugin&#34;) } // Hello hello func Hello() { fmt.Println(&#34;Hello Plugin&#34;) }   note: plugin的包名必须指定为main
+2.编译plugin部分
+1  go build --buildmode=plugin testplugin.go   编译后会生testplugin.so
+3.编写主程序部分
+创建文件main.go
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  package main import &#34;plugin&#34; func main() { p, err := plugin.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/post/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://xiarong715.github.io/post/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="git环境搭建">git环境搭建</a>
             </h1>
         </header>
@@ -219,6 +251,10 @@ https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
 <ul class="widget-list">
     
     <li>
+        <a href="https://xiarong715.github.io/post/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/" title="Go Plugin的用法">Go Plugin的用法</a>
+    </li>
+    
+    <li>
         <a href="https://xiarong715.github.io/post/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="git环境搭建">git环境搭建</a>
     </li>
     
@@ -241,7 +277,7 @@ https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
     
     <li><a href="https://xiarong715.github.io/categories/git/">Git (1)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (1)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (2)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/">博客 (1)</a></li>
     
@@ -253,6 +289,8 @@ https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
 <div class="tagcloud">
     
     <a href="https://xiarong715.github.io/tags/git/">git</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-plugin/">go plugin</a>
     
     <a href="https://xiarong715.github.io/tags/golang/">golang</a>
     
