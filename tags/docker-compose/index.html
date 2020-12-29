@@ -7,21 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 
-    <title>go plugin | 风笑天的博客</title>
-    <meta property="og:title" content="go plugin - 风笑天的博客">
+    <title>docker-compose | 风笑天的博客</title>
+    <meta property="og:title" content="docker-compose - 风笑天的博客">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,风笑天,大数据、软件架构">
-    <meta name="description" content="go plugin">
+    <meta name="description" content="docker-compose">
         
     <meta name="author" content="风笑天">
-    <meta property="og:url" content="https://xiarong715.github.io/tags/go-plugin/">
+    <meta property="og:url" content="https://xiarong715.github.io/tags/docker-compose/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="https://xiarong715.github.io/tags/go-plugin/index.xml" title="风笑天的博客" />
+    <link rel="alternate" type="application/rss+xml+xml" href="https://xiarong715.github.io/tags/docker-compose/index.xml" title="风笑天的博客" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -65,7 +65,7 @@
     
     <h3 class="archive-title">
         包含标签
-        <span class="keyword">go plugin</span>
+        <span class="keyword">docker-compose</span>
         的文章
     </h3>
     
@@ -74,30 +74,31 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://xiarong715.github.io/post/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/">go plugin的用法</a>
+                <a href="https://xiarong715.github.io/post/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/">Docker Compose的使用</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2020年12月20日
+            2020年12月29日
         </date>
         
         <div class="post-meta meta-category">
             |
             
-            <a href='/categories/golang'>Golang</a>
+            <a href='/categories/docker'>Docker</a>
+            
+            <a href='/categories/docker-compose'>Docker-compose</a>
             
         </div>
         
         <div class="post-content">
-            1.编写plugin部分
-创建文件testplugin.go
-1 2 3 4 5 6 7 8 9 10 11 12  package main import &#34;fmt&#34; func init() { fmt.Println(&#34;load plugin&#34;) } // Hello hello func Hello() { fmt.Println(&#34;Hello Plugin&#34;) }   note: plugin的包名必须指定为main
-2.编译plugin部分
-1  go build --buildmode=plugin testplugin.go   编译后会生testplugin.so
-3.编写主程序部分
-创建文件main.go
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  package main import &#34;plugin&#34; func main() { p, err := plugin.……
-            <p class="readmore"><a href="https://xiarong715.github.io/post/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/">阅读全文</a></p>
+            1.docker-compose的作用
+2.下载安装
+docker-compose会依赖一些库
+1  yum install -y py-pip python-dev libffi-dev openssl-dev gcc libc-dev make   下载docker-compose
+1  curl -L &#34;https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose   添加执行权限
+1  chmod +x /usr/local/bin/docker-compose   测试
+1 2 3 4 5 6 7  docker-compose version ## 显示以下信息，表明docker-compose安装完成 docker-compose version 1.26.1, build f216ddbf docker-py version: 4.2.2 CPython version: 3.7.7 OpenSSL version: OpenSSL 1.1.0l 10 Sep 2019   3.……
+            <p class="readmore"><a href="https://xiarong715.github.io/post/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/">阅读全文</a></p>
         </div>
     </article>
     
