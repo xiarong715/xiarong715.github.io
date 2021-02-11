@@ -7,21 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 
-    <title>git | 风笑天的博客</title>
-    <meta property="og:title" content="git - 风笑天的博客">
+    <title>centos7 | 风笑天的博客</title>
+    <meta property="og:title" content="centos7 - 风笑天的博客">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,风笑天,大数据、软件架构">
-    <meta name="description" content="git">
+    <meta name="description" content="centos7">
         
     <meta name="author" content="风笑天">
-    <meta property="og:url" content="https://xiarong715.github.io/tags/git/">
+    <meta property="og:url" content="https://xiarong715.github.io/categories/centos7/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="https://xiarong715.github.io/tags/git/index.xml" title="风笑天的博客" />
+    <link rel="alternate" type="application/rss+xml+xml" href="https://xiarong715.github.io/categories/centos7/index.xml" title="风笑天的博客" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -64,9 +64,9 @@
 <div class="res-cons">
     
     <h3 class="archive-title">
-        包含标签
-        <span class="keyword">git</span>
-        的文章
+        分类
+        <span class="keyword">centos7</span>
+        中的文章
     </h3>
     
 
@@ -74,32 +74,34 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/go/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">git环境搭建</a>
+                <a href="https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/">Centos7安装</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2020年12月1日
+            2021年2月11日
         </date>
         
         <div class="post-meta meta-category">
             |
             
-            <a href='/categories/git'>Git</a>
+            <a href='/categories/linux'>Linux</a>
+            
+            <a href='/categories/centos7'>centos7</a>
             
         </div>
         
         <div class="post-content">
-            1.download a tarball
-下载最新版本git
-1  wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz   2.解压
-1  tar -xvf git-2.9.5.tar.xz   3.configure
-1 2  cd git-2.9.5 ./configure   4.make and make install
-1  make &amp;&amp; make install   5.测试
-打印出版本号代表安装成功；
-1 2  git version git version 2.9.5    problems
-​	①fatal error: zlib.h: No such file or directory
-1 2  yum search zlib yum install zlib-devel -y   ​	②Can&rsquo;t locate ExtUtils/MakeMaker.……
-            <p class="readmore"><a href="https://xiarong715.github.io/posts/go/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">阅读全文</a></p>
+            一、下载
+1 2  http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso   二、安装
+  分区（新手方案）
+swap分区 ：内存的2倍
+根分区 / ：剩余的空间
+  设置静态IP及DNS
+设置静态IP
+1 2 3 4 5 6 7 8  vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： BOOTPROTO=static # 静态IP ONBOOT=yes	# 开机启动 IPADDR=192.168.80.130 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.80.2 # 网关   添加DNS
+vi /etc/resolv.conf修改为：nameserver 192.168.10.247nameserver 114.114.114.114或vi /etc/sysconfig/network-scripts/ifcfg-ens33DNS1=192.168.10.247DNS2=114.114.114.114  三、更换为阿里源
+1 2 3 4 5 6  备份: mv /etc/yum.……
+            <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/">阅读全文</a></p>
         </div>
     </article>
     

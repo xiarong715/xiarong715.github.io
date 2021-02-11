@@ -67,6 +67,42 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/" title="Centos7安装">Centos7安装</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年2月11日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/linux'>Linux</a></span>
+            
+            <span class="meta-category"><a href='/categories/centos7'>centos7</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            一、下载
+1 2  http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso   二、安装
+  分区（新手方案）
+swap分区 ：内存的2倍
+根分区 / ：剩余的空间
+  设置静态IP及DNS
+设置静态IP
+1 2 3 4 5 6 7 8  vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： BOOTPROTO=static # 静态IP ONBOOT=yes	# 开机启动 IPADDR=192.168.80.130 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.80.2 # 网关   添加DNS
+vi /etc/resolv.conf修改为：nameserver 192.168.10.247nameserver 114.114.114.114或vi /etc/sysconfig/network-scripts/ifcfg-ens33DNS1=192.168.10.247DNS2=114.114.114.114  三、更换为阿里源
+1 2 3 4 5 6  备份: mv /etc/yum.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://xiarong715.github.io/posts/docker/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Docker Compose的使用">Docker Compose的使用</a>
             </h1>
         </header>
@@ -310,6 +346,10 @@ https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
 <ul class="widget-list">
     
     <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/" title="Centos7安装">Centos7安装</a>
+    </li>
+    
+    <li>
         <a href="https://xiarong715.github.io/posts/docker/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Docker Compose的使用">Docker Compose的使用</a>
     </li>
     
@@ -342,6 +382,8 @@ https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
         <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
+    <li><a href="https://xiarong715.github.io/categories/centos7/">centos7 (1)</a></li>
+    
     <li><a href="https://xiarong715.github.io/categories/docker/">Docker (2)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
@@ -349,6 +391,8 @@ https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
     <li><a href="https://xiarong715.github.io/categories/git/">Git (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/golang/">Golang (2)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/">博客 (1)</a></li>
     
@@ -358,6 +402,8 @@ https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
     <section class="widget">
         <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
+    
+    <a href="https://xiarong715.github.io/tags/centos7/">centos7</a>
     
     <a href="https://xiarong715.github.io/tags/docker/">docker</a>
     
@@ -370,6 +416,8 @@ https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
     <a href="https://xiarong715.github.io/tags/golang/">golang</a>
     
     <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
+    
+    <a href="https://xiarong715.github.io/tags/linux/">linux</a>
     
 </div>
     </section>
