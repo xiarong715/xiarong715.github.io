@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 29 Dec 2020 21:54:23 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker Compose的使用</title>
-      <link>https://xiarong715.github.io/post/docker/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <link>https://xiarong715.github.io/posts/docker/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Tue, 29 Dec 2020 21:54:23 +0800</pubDate>
       
-      <guid>https://xiarong715.github.io/post/docker/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://xiarong715.github.io/posts/docker/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>1.docker-compose的作用
 2.下载安装
 docker-compose会依赖一些库
@@ -24,20 +24,20 @@ docker-compose会依赖一些库
     
     <item>
       <title>Docker学习</title>
-      <link>https://xiarong715.github.io/post/docker/docker%E5%AD%A6%E4%B9%A0/</link>
+      <link>https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Wed, 23 Dec 2020 20:54:22 +0800</pubDate>
       
-      <guid>https://xiarong715.github.io/post/docker/docker%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/</guid>
       <description>1.docker的编写
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  FROMregistry.lan:5000/ipanel/centos7-devMAINTAINERiPanel Cloud TeamLABEL Vendor=&amp;#34;iPanel&amp;#34; \  License=MIT \  Version=2.0ADD CI /root/CIADD mkyaffs2image /usr/sbin/mkyaffs2imageADD rc.local /etc/rc.d/rc.localRUN chmod -v +x /root/CI -R RUN chmod -v +x /usr/sbin/mkyaffs2image RUN rpm --rebuilddb \ 	&amp;amp;&amp;amp; rpm --import \ 	http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 \ 	&amp;amp;&amp;amp; rpm --import \ 	https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 \ 	&amp;amp;&amp;amp; yum -y install \ 	--setopt=tsflags=nodocs \ 	--disableplugin=fastestmirror \ 	ncurses-devel zlib-devel bzip2 git openssl file gettext glibc.</description>
     </item>
     
     <item>
       <title>go plugin的用法</title>
-      <link>https://xiarong715.github.io/post/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <link>https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Sun, 20 Dec 2020 18:12:33 +0800</pubDate>
       
-      <guid>https://xiarong715.github.io/post/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <guid>https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
       <description>1.编写plugin部分
 创建文件testplugin.go
 1 2 3 4 5 6 7 8 9 10 11 12  package main import &amp;#34;fmt&amp;#34; func init() { fmt.Println(&amp;#34;load plugin&amp;#34;) } // Hello hello func Hello() { fmt.Println(&amp;#34;Hello Plugin&amp;#34;) }   note: plugin的包名必须指定为main
@@ -50,10 +50,10 @@ docker-compose会依赖一些库
     
     <item>
       <title>git环境搭建</title>
-      <link>https://xiarong715.github.io/post/go/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <link>https://xiarong715.github.io/posts/go/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Tue, 01 Dec 2020 20:32:32 +0800</pubDate>
       
-      <guid>https://xiarong715.github.io/post/go/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <guid>https://xiarong715.github.io/posts/go/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
       <description>1.download a tarball
 下载最新版本git
 1  wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz   2.解压
@@ -68,10 +68,10 @@ docker-compose会依赖一些库
     
     <item>
       <title>go 语言环境搭建</title>
-      <link>https://xiarong715.github.io/post/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <link>https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Thu, 26 Nov 2020 21:43:24 +0800</pubDate>
       
-      <guid>https://xiarong715.github.io/post/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <guid>https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
       <description>1.下载
 打开网址，选择稳定版本下载
 https://golang.org/dl/ (有墙打不开)
@@ -86,10 +86,10 @@ https://studygolang.com/dl
     
     <item>
       <title>hugo 搭建个人博客</title>
-      <link>https://xiarong715.github.io/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Wed, 18 Nov 2020 21:49:37 +0800</pubDate>
       
-      <guid>https://xiarong715.github.io/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
       <description>1.Download and Install
 需要安装git和go；
 git环境搭建参考：

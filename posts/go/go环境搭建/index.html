@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>go 语言环境搭建 | 风笑天的博客</title>
+    <meta property="og:title" content="go 语言环境搭建 - 风笑天的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-11-26T21:43:24&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-11-26T21:43:24&#43;08:00'>
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,风笑天,大数据、软件架构">
+    <meta name="description" content="go 语言环境搭建">
+        
+    <meta name="author" content="风笑天">
+    <meta property="og:url" content="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xiarong715.github.io/">
+                        风笑天的博客
+                    </a>
+                
+                <p class="description">专注于Go语言(golang)、大数据、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://xiarong715.github.io/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">go 语言环境搭建</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年11月26日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/golang'>Golang</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <p>1.下载</p>
+<p>打开网址，选择稳定版本下载</p>
+<p><a href="https://golang.org/dl/">https://golang.org/dl/</a>       (有墙打不开)</p>
+<p><a href="https://golang.google.cn/dl">https://golang.google.cn/dl</a></p>
+<p><a href="https://studygolang.com/dl">https://studygolang.com/dl</a></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">// 二进制文件包下载
+wget https://golang.google.cn/dl/go1.15.4.linux-amd64.tar.gz
+wget https://studygolang.com/dl/golang/go1.15.4.linux-amd64.tar.gz
+
+// 源码包下载
+wget https://golang.google.cn/dl/go1.15.4.src.tar.gz
+</code></pre></td></tr></table>
+</div>
+</div><p>2.二进制文件安装</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">tar -xvzf go1.15.4.linux-amd64.tar.gz -C /usr/local
+</code></pre></td></tr></table>
+</div>
+</div><p>3.源码编译安装</p>
+<p>源码需要有go环境，可以用yum安装一个，因为系统的版本更新滞后，所以有必要下载较新的版本安装</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install -y go
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">解压
+	tar -xvzf go1.15.4.src.tar.gz -C /usr/local
+编译
+	<span style="color:#0086b3">cd</span> /usr/local/go/src
+	./all.bash
+</code></pre></td></tr></table>
+</div>
+</div><p>4.环境配置</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vi /etc/profile 编辑文件添加下面内容：
+
+<span style="color:#0086b3">export</span> <span style="color:#008080">GO111MODULE</span><span style="color:#000;font-weight:bold">=</span>on				<span style="color:#998;font-style:italic"># enable go moudle</span>
+<span style="color:#0086b3">export</span> <span style="color:#008080">GOPROXY</span><span style="color:#000;font-weight:bold">=</span>https://goproxy.cn	<span style="color:#998;font-style:italic"># go package proxy</span>
+<span style="color:#0086b3">export</span> <span style="color:#008080">GOROOT</span><span style="color:#000;font-weight:bold">=</span>/usr/local/go			<span style="color:#998;font-style:italic"># go root directory</span>
+<span style="color:#0086b3">export</span> <span style="color:#008080">GOPATH</span><span style="color:#000;font-weight:bold">=</span><span style="color:#008080">$HOME</span>/go				<span style="color:#998;font-style:italic"># go path directory</span>
+<span style="color:#0086b3">export</span> <span style="color:#008080">PATH</span><span style="color:#000;font-weight:bold">=</span><span style="color:#008080">$PATH</span>:<span style="color:#008080">$GOROOT</span>/bin
+
+生效配置文件：
+<span style="color:#0086b3">source</span> /etc/profile
+</code></pre></td></tr></table>
+</div>
+</div><p>5.测试</p>
+<p>显示版本信息，说明go环境搭建完成。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go version
+go version go1.15.4 linux/amd64
+</code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hugo 搭建个人博客</a></li>
+        
+        <li><a href="/search/">搜索</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/golang'>golang</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://xiarong715.github.io/">风笑天的博客 By 风笑天</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xiarong715.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xiarong715.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/docker/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Docker Compose的使用">Docker Compose的使用</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/" title="Docker学习">Docker学习</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/" title="go plugin的用法">go plugin的用法</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="git环境搭建">git环境搭建</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="go 语言环境搭建">go 语言环境搭建</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="hugo 搭建个人博客">hugo 搭建个人博客</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xiarong715.github.io/categories/docker/">Docker (2)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/git/">Git (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (2)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/">博客 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xiarong715.github.io/tags/docker/">docker</a>
+    
+    <a href="https://xiarong715.github.io/tags/docker-compose/">docker-compose</a>
+    
+    <a href="https://xiarong715.github.io/tags/git/">git</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-plugin/">go plugin</a>
+    
+    <a href="https://xiarong715.github.io/tags/golang/">golang</a>
+    
+    <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xiarong715.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

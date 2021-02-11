@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>Docker学习 | 风笑天的博客</title>
+    <meta property="og:title" content="Docker学习 - 风笑天的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-12-23T20:54:22&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-12-23T20:54:22&#43;08:00'>
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,风笑天,大数据、软件架构">
+    <meta name="description" content="Docker学习">
+        
+    <meta name="author" content="风笑天">
+    <meta property="og:url" content="https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xiarong715.github.io/">
+                        风笑天的博客
+                    </a>
+                
+                <p class="description">专注于Go语言(golang)、大数据、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://xiarong715.github.io/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Docker学习</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月23日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/docker'>Docker</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <p>1.docker的编写</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#000;font-weight:bold">FROM</span><span style="color:#d14"> registry.lan:5000/ipanel/centos7-dev</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">MAINTAINER</span><span style="color:#d14"> iPanel Cloud Team</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">LABEL</span> <span style="color:#008080">Vendor</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;iPanel&#34;</span> <span style="color:#d14">\
+</span><span style="color:#d14"></span>      <span style="color:#008080">License</span><span style="color:#000;font-weight:bold">=</span>MIT <span style="color:#d14">\
+</span><span style="color:#d14"></span>      <span style="color:#008080">Version</span><span style="color:#000;font-weight:bold">=</span>2.0<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">ADD</span> CI /root/CI<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">ADD</span> mkyaffs2image /usr/sbin/mkyaffs2image<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">ADD</span> rc.local /etc/rc.d/rc.local<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">RUN</span> chmod -v +x /root/CI -R <span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">RUN</span> chmod -v +x /usr/sbin/mkyaffs2image <span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#000;font-weight:bold">RUN</span> rpm --rebuilddb <span style="color:#d14">\
+</span><span style="color:#d14"></span>	<span style="color:#000;font-weight:bold">&amp;&amp;</span> rpm --import <span style="color:#d14">\
+</span><span style="color:#d14"></span>		http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 <span style="color:#d14">\
+</span><span style="color:#d14"></span>	<span style="color:#000;font-weight:bold">&amp;&amp;</span> rpm --import <span style="color:#d14">\
+</span><span style="color:#d14"></span>		https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 <span style="color:#d14">\
+</span><span style="color:#d14"></span>	<span style="color:#000;font-weight:bold">&amp;&amp;</span> yum -y install <span style="color:#d14">\
+</span><span style="color:#d14"></span>			--setopt<span style="color:#000;font-weight:bold">=</span><span style="color:#008080">tsflags</span><span style="color:#000;font-weight:bold">=</span>nodocs <span style="color:#d14">\
+</span><span style="color:#d14"></span>			--disableplugin<span style="color:#000;font-weight:bold">=</span>fastestmirror <span style="color:#d14">\
+</span><span style="color:#d14"></span>		ncurses-devel zlib-devel bzip2 git openssl file gettext glibc.i686 libstdc++.i686 dos2unix squashfs-tools<span style="color:#a61717;background-color:#e3d2d2">\
+</span></code></pre></td></tr></table>
+</div>
+</div><p>docker file 命令讲解：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#000;font-weight:bold">FROM</span><span style="color:#d14"> centos:7								# 引入基础镜像</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	LABEL <span style="color:#008080">Maintainer</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;iPanel Cloud Team&#34;</span>	<span style="color:#d14">\	</span><span style="color:#998;font-style:italic"># MAINTAINER 指令设置生成镜像的 Author 字段（已废弃，现使用LABEL Maintainer=&#34;iPanel Cloud Team&#34;）</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>		  <span style="color:#008080">Vendor</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;iPanel&#34;</span> <span style="color:#d14">\	</span>					<span style="color:#998;font-style:italic"># 设置你需要的任何元数据</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>		  <span style="color:#008080">License</span><span style="color:#000;font-weight:bold">=</span>MIT <span style="color:#d14">\
+</span><span style="color:#d14"></span>		  <span style="color:#008080">Version</span><span style="color:#000;font-weight:bold">=</span>2.0<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>		  <span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	EXPOSE 8088						<span style="color:#998;font-style:italic"># 声明端口，告诉运维人员容器开启了哪些端口，则可以在docker container 启动时 docker run -p 808888:8088</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	ADD run.sh /run.sh 				<span style="color:#998;font-style:italic"># 添加文件到系统中</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	RUN mkdir /fs					<span style="color:#998;font-style:italic"># 在系统运行命令</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	RUN chmod <span style="color:#099">777</span> /fs<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	ENV								<span style="color:#998;font-style:italic"># 你可以使用ENV来为容器中安装的程序更新 PATH 环境变量，如ENV PATH /usr/local/nginx/bin:$PATH来确保CMD [&#34;nginx&#34;]能正确运行。</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	VOLUME <span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	COPY <span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	ENTRYPOINT <span style="color:#000;font-weight:bold">[</span><span style="color:#d14">&#34;/usr/sbin/init&#34;</span><span style="color:#000;font-weight:bold">]</span>	<span style="color:#998;font-style:italic">#</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	CMD <span style="color:#000;font-weight:bold">[</span><span style="color:#d14">&#34;systemctl restart autofs&#34;</span><span style="color:#000;font-weight:bold">]</span>	<span style="color:#998;font-style:italic"># CMD指令用于执行目标镜像中包含的软件和任何参数，如部署某个服务</span><span style="color:#a61717;background-color:#e3d2d2">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>2.编译镜像</p>
+<p>编译镜像的命令为docker build，命令的使用方法为：docker build [OPTIONS] PATH。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build -t test/first_image:v1.0 .
+</code></pre></td></tr></table>
+</div>
+</div><p>-t , &ndash;tag list : 使用name:tag的方式对镜像命名；</p>
+<p>.   : 使用当前路径中的Dockerfile编镜像。</p>
+<p>3.运行镜像</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker container run -it test/first_image:v1.0 /bin/bash
+or
+docker run -it test/first_image:v1.0 /bin/bash
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -itd --name first_image test/first_image:v1.0 /bin/bash  <span style="color:#000;font-weight:bold">(</span>后台运行<span style="color:#000;font-weight:bold">)</span>
+docker <span style="color:#0086b3">exec</span> -it first_image /bin/bash     <span style="color:#000;font-weight:bold">(</span>容器必须存在<span style="color:#000;font-weight:bold">)</span>（进入其shell）
+
+在first_image容器中执行/eccenc
+docker <span style="color:#0086b3">exec</span> first_image /eccenc
+</code></pre></td></tr></table>
+</div>
+</div><p>会进入到容器的shell；</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -ti --privileged<span style="color:#000;font-weight:bold">=</span><span style="color:#0086b3">true</span> -d -p 2255:22 --name rtlbuildee_ubuntu --restart<span style="color:#000;font-weight:bold">=</span>always 51e7336035ad4b2aba84207b1554af54 /sbin/init
+</code></pre></td></tr></table>
+</div>
+</div><p>通过宿主机ssh root@ip:2255登录容器。</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/">go plugin的用法</a></li>
+        
+        <li><a href="/posts/go/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">git环境搭建</a></li>
+        
+        <li><a href="/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">go 语言环境搭建</a></li>
+        
+        <li><a href="/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hugo 搭建个人博客</a></li>
+        
+        <li><a href="/search/">搜索</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/docker'>docker</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://xiarong715.github.io/">风笑天的博客 By 风笑天</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xiarong715.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xiarong715.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/docker/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Docker Compose的使用">Docker Compose的使用</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/" title="Docker学习">Docker学习</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/" title="go plugin的用法">go plugin的用法</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="git环境搭建">git环境搭建</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="go 语言环境搭建">go 语言环境搭建</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="hugo 搭建个人博客">hugo 搭建个人博客</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xiarong715.github.io/categories/docker/">Docker (2)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/git/">Git (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (2)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/">博客 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xiarong715.github.io/tags/docker/">docker</a>
+    
+    <a href="https://xiarong715.github.io/tags/docker-compose/">docker-compose</a>
+    
+    <a href="https://xiarong715.github.io/tags/git/">git</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-plugin/">go plugin</a>
+    
+    <a href="https://xiarong715.github.io/tags/golang/">golang</a>
+    
+    <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xiarong715.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

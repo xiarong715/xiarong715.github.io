@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 18 Nov 2020 21:49:37 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo 搭建个人博客</title>
-      <link>https://xiarong715.github.io/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Wed, 18 Nov 2020 21:49:37 +0800</pubDate>
       
-      <guid>https://xiarong715.github.io/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
       <description>1.Download and Install
 需要安装git和go；
 git环境搭建参考：

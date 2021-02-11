@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>Docker Compose的使用 | 风笑天的博客</title>
+    <meta property="og:title" content="Docker Compose的使用 - 风笑天的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-12-29T21:54:23&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-12-29T21:54:23&#43;08:00'>
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,风笑天,大数据、软件架构">
+    <meta name="description" content="Docker Compose的使用">
+        
+    <meta name="author" content="风笑天">
+    <meta property="og:url" content="https://xiarong715.github.io/posts/docker/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xiarong715.github.io/">
+                        风笑天的博客
+                    </a>
+                
+                <p class="description">专注于Go语言(golang)、大数据、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://xiarong715.github.io/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Docker Compose的使用</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月29日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/docker'>Docker</a></span>
+            
+            <span class="meta-category"><a href='/categories/docker-compose'>Docker-compose</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <p>1.docker-compose的作用</p>
+<p>2.下载安装</p>
+<p>docker-compose会依赖一些库</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install -y py-pip python-dev libffi-dev openssl-dev gcc libc-dev make
+</code></pre></td></tr></table>
+</div>
+</div><p>下载docker-compose</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -L <span style="color:#d14">&#34;https://github.com/docker/compose/releases/download/1.27.4/docker-compose-</span><span style="color:#000;font-weight:bold">$(</span>uname -s<span style="color:#000;font-weight:bold">)</span><span style="color:#d14">-</span><span style="color:#000;font-weight:bold">$(</span>uname -m<span style="color:#000;font-weight:bold">)</span><span style="color:#d14">&#34;</span> -o /usr/local/bin/docker-compose
+</code></pre></td></tr></table>
+</div>
+</div><p>添加执行权限</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">chmod +x /usr/local/bin/docker-compose
+</code></pre></td></tr></table>
+</div>
+</div><p>测试</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker-compose version
+
+<span style="color:#998;font-style:italic">## 显示以下信息，表明docker-compose安装完成</span>
+docker-compose version 1.26.1, build f216ddbf
+docker-py version: 4.2.2
+CPython version: 3.7.7
+OpenSSL version: OpenSSL 1.1.0l  <span style="color:#099">10</span> Sep <span style="color:#099">2019</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>3.docker-compose.yml的编写</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#000080">version</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;2.2&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">services</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">spkv01</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">image</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;centos7_spk:v1.0&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">container_name</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;spk-01&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">hostname</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;spk-01&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">privileged</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;true&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">ports</span>:<span style="color:#bbb"> 
+</span><span style="color:#bbb">      </span>- <span style="color:#d14">&#39;2225:22&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span>- <span style="color:#d14">&#39;5200:8080&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#998;font-style:italic"># network_mode: &#39;bridge&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">networks</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">my_net</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">ipv4_address</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;172.18.0.128&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">spkv02</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">image</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;centos7_spk:v1.0&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">container_name</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;spk-02&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">hostname</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;spk-02&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">privileged</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;true&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">ports</span>:<span style="color:#bbb"> 
+</span><span style="color:#bbb">      </span>- <span style="color:#d14">&#39;2226:22&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span>- <span style="color:#d14">&#39;5300:8080&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#998;font-style:italic"># network_mode: &#39;bridge&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">networks</span>:<span style="color:#bbb"> 
+</span><span style="color:#bbb">      </span><span style="color:#000080">my_net</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">ipv4_address</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;172.18.0.129&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">networks</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">my_net</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">driver</span>:<span style="color:#bbb"> </span>bridge<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">ipam</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">config</span>:<span style="color:#bbb"> 
+</span><span style="color:#bbb">        </span>- <span style="color:#000080">subnet</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;172.18.0.0/16&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">          </span><span style="color:#000080">gateway</span>:<span style="color:#bbb"> </span><span style="color:#d14">&#39;172.18.0.1&#39;</span><span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>4.基本命令</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 停止容器并删除容器</span>
+docker-compose down
+<span style="color:#998;font-style:italic"># 创建容器并后台运行</span>
+docker-compose up -d
+<span style="color:#998;font-style:italic"># 查看容器的log</span>
+docker-compose logs
+<span style="color:#998;font-style:italic"># 启动容器</span>
+docker-compose start
+<span style="color:#998;font-style:italic"># 停止容器</span>
+docker-compose stop
+</code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/docker/docker%E5%AD%A6%E4%B9%A0/">Docker学习</a></li>
+        
+        <li><a href="/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/">go plugin的用法</a></li>
+        
+        <li><a href="/posts/go/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">git环境搭建</a></li>
+        
+        <li><a href="/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">go 语言环境搭建</a></li>
+        
+        <li><a href="/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hugo 搭建个人博客</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/docker'>docker</a></li>
+                
+                <li><a href='/tags/docker-compose'>docker-compose</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://xiarong715.github.io/">风笑天的博客 By 风笑天</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xiarong715.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xiarong715.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/docker/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Docker Compose的使用">Docker Compose的使用</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/" title="Docker学习">Docker学习</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/" title="go plugin的用法">go plugin的用法</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="git环境搭建">git环境搭建</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="go 语言环境搭建">go 语言环境搭建</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="hugo 搭建个人博客">hugo 搭建个人博客</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xiarong715.github.io/categories/docker/">Docker (2)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/git/">Git (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (2)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/">博客 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xiarong715.github.io/tags/docker/">docker</a>
+    
+    <a href="https://xiarong715.github.io/tags/docker-compose/">docker-compose</a>
+    
+    <a href="https://xiarong715.github.io/tags/git/">git</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-plugin/">go plugin</a>
+    
+    <a href="https://xiarong715.github.io/tags/golang/">golang</a>
+    
+    <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xiarong715.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
