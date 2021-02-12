@@ -17,7 +17,8 @@
 1  jobs   切换后台任务到前台  fg将后台中的任务调至前台继续运行
 1  fg   前台任务切换到后台  ctrl + z可以将一个正在前台执行的任务放到后台，并且暂停运行
 1  ctrl + z   后台暂停的任务继续在后台运行  bg将后台暂停的任务切换为运行状态
-1  bg   </description>
+1  bg   在后台运行任务  hugo &amp;amp;将hugo任务在后台运行
+1  hugo &amp;amp;   </description>
     </item>
     
     <item>
