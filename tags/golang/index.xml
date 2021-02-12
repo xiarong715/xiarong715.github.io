@@ -50,7 +50,7 @@ https://studygolang.com/dl
       <description>1.Download and Install
 需要安装git和go；
 git环境搭建参考：
-https://xiarong715.github.io/post/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
+git环境搭建
 go环境搭建参考：
 https://xiarong715.github.io/post/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/
 1 2 3 4 5  mkdir $HOME/src cd $HOME/src git clone https://github.com/gohugoio/hugo.git cd hugo go install --tags extended   2.Create a New Site
