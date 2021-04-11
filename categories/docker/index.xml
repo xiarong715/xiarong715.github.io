@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 29 Dec 2020 21:54:23 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Docker Compose的使用</title>
-      <link>https://xiarong715.github.io/posts/docker/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <title>Docker Compose 使用</title>
+      <link>https://xiarong715.github.io/posts/docker/docker-compose%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Tue, 29 Dec 2020 21:54:23 +0800</pubDate>
       
-      <guid>https://xiarong715.github.io/posts/docker/docker-compose%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://xiarong715.github.io/posts/docker/docker-compose%E4%BD%BF%E7%94%A8/</guid>
       <description>1.docker-compose的作用
 2.下载安装
 docker-compose会依赖一些库
@@ -23,7 +23,7 @@ docker-compose会依赖一些库
     </item>
     
     <item>
-      <title>Docker学习</title>
+      <title>Docker 学习</title>
       <link>https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Wed, 23 Dec 2020 20:54:22 +0800</pubDate>
       
