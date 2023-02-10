@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>go 导入自定义包</title>
+      <title>Go 导入自定义包</title>
       <link>https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/</link>
       <pubDate>Sun, 11 Apr 2021 11:33:28 +0800</pubDate>
       
@@ -30,7 +30,7 @@ goStudy/package/calc/operation.go
     </item>
     
     <item>
-      <title>go plugin 用法</title>
+      <title>Go plugin 用法</title>
       <link>https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Sun, 20 Dec 2020 18:12:33 +0800</pubDate>
       
