@@ -6,7 +6,16 @@
     <description>Recent content on 风笑天的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Apr 2021 11:33:28 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Nov 2021 12:57:53 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go 继承</title>
+      <link>https://xiarong715.github.io/posts/go/go%E7%BB%A7%E6%89%BF/</link>
+      <pubDate>Sat, 27 Nov 2021 12:57:53 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/go/go%E7%BB%A7%E6%89%BF/</guid>
+      <description>go 使用组合的方式实现继承</description>
+    </item>
+    
     <item>
       <title>go 导入自定义包</title>
       <link>https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/</link>
@@ -65,14 +74,14 @@ goStudy/package/calc/operation.go
       <description>一、下载
 1 2  http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso   二、安装
   分区（新手方案）
+启动分区/boot ：512M或1024M
 swap分区 ：内存的2倍
 根分区 / ：剩余的空间
   设置静态IP及DNS
 设置静态IP
 1 2 3 4 5 6 7 8  vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： BOOTPROTO=static # 静态IP ONBOOT=yes	# 开机启动 IPADDR=192.168.80.130 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.80.2 # 网关   添加DNS
 vi /etc/resolv.conf修改为：nameserver 8.8.8.8nameserver 114.114.114.114或vi /etc/sysconfig/network-scripts/ifcfg-ens33修改为：DNS1=8.8.8.8DNS2=114.114.114.114  三、更换为阿里源
-备份:
-1  mv /etc/yum.</description>
+备份:</description>
     </item>
     
     <item>
@@ -135,7 +144,7 @@ docker-compose会依赖一些库
     </item>
     
     <item>
-      <title>go 语言环境搭建</title>
+      <title>Go 语言环境搭建</title>
       <link>https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Thu, 26 Nov 2020 21:43:24 +0800</pubDate>
       
@@ -168,6 +177,18 @@ go环境搭建
 1  hugo new site boke   3.Add a Theme
 1 2 3  cd boke git clone https://github.com/flysnow-org/maupassant-hugo.git themes/maupassant echo &amp;#39;theme = &amp;#34;maupassant&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.toml   4.Add Some Content
 1 2  hugo new content/posts/hugo搭建个人博客.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/</guid>
+      <description>一、下载
+二、编译
+三、安装
+四、安装pip</description>
     </item>
     
     <item>

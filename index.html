@@ -65,6 +65,29 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/go/go%E7%BB%A7%E6%89%BF/" title="Go 继承">Go 继承</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年11月27日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/golang'>Golang</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            go 使用组合的方式实现继承……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/go/go%E7%BB%A7%E6%89%BF/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/" title="go 导入自定义包">go 导入自定义包</a>
             </h1>
         </header>
@@ -176,14 +199,14 @@ goStudy/package/calc/operation.go
             一、下载
 1 2  http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso   二、安装
   分区（新手方案）
+启动分区/boot ：512M或1024M
 swap分区 ：内存的2倍
 根分区 / ：剩余的空间
   设置静态IP及DNS
 设置静态IP
 1 2 3 4 5 6 7 8  vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： BOOTPROTO=static # 静态IP ONBOOT=yes	# 开机启动 IPADDR=192.168.80.130 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.80.2 # 网关   添加DNS
 vi /etc/resolv.conf修改为：nameserver 8.8.8.8nameserver 114.114.114.114或vi /etc/sysconfig/network-scripts/ifcfg-ens33修改为：DNS1=8.8.8.8DNS2=114.114.114.114  三、更换为阿里源
-备份:
-1  mv /etc/yum.……
+备份:……
         </div>
         <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/">阅读全文</a></p>
     </article>
@@ -308,7 +331,7 @@ docker-compose会依赖一些库
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="go 语言环境搭建">go 语言环境搭建</a>
+                <a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Go 语言环境搭建">Go 语言环境搭建</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -337,41 +360,29 @@ https://studygolang.com/dl
         <p class="readmore"><a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">阅读全文</a></p>
     </article>
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="hugo 搭建个人博客">hugo 搭建个人博客</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年11月18日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/%E5%8D%9A%E5%AE%A2'>博客</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            1.Download and Install
-需要安装git和go；
-git环境搭建参考：
-git环境搭建
-go环境搭建参考：
-go环境搭建
-1 2 3 4 5  mkdir $HOME/src cd $HOME/src git clone https://github.com/gohugoio/hugo.git cd hugo go install --tags extended   2.Create a New Site
-1  hugo new site boke   3.Add a Theme
-1 2 3  cd boke git clone https://github.com/flysnow-org/maupassant-hugo.git themes/maupassant echo &#39;theme = &#34;maupassant&#34;&#39; &gt;&gt; config.toml   4.Add Some Content
-1 2  hugo new content/posts/hugo搭建个人博客.……
-        </div>
-        <p class="readmore"><a href="https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">阅读全文</a></p>
-    </article>
-    
     
 
 
+
+<ol class="page-navigator">
+    
+
+    
+    <li  class="current">
+        <a href="https://xiarong715.github.io/">1</a>
+    </li>
+    
+    <li >
+        <a href="https://xiarong715.github.io/page/2/">2</a>
+    </li>
+    
+
+    
+    <li class="next">
+        <a href="https://xiarong715.github.io/page/2/">下一页</a>
+    </li>
+    
+</ol>
 
 
 
@@ -379,7 +390,7 @@ go环境搭建
 
                     <footer id="footer">
     <div>
-        &copy; 2021 <a href="https://xiarong715.github.io/">风笑天的博客 By 风笑天</a>
+        &copy; 2023 <a href="https://xiarong715.github.io/">风笑天的博客 By 风笑天</a>
         
     </div>
     <br />
@@ -423,6 +434,10 @@ go环境搭建
 <ul class="widget-list">
     
     <li>
+        <a href="https://xiarong715.github.io/posts/go/go%E7%BB%A7%E6%89%BF/" title="Go 继承">Go 继承</a>
+    </li>
+    
+    <li>
         <a href="https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/" title="go 导入自定义包">go 导入自定义包</a>
     </li>
     
@@ -455,11 +470,7 @@ go环境搭建
     </li>
     
     <li>
-        <a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="go 语言环境搭建">go 语言环境搭建</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="hugo 搭建个人博客">hugo 搭建个人博客</a>
+        <a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Go 语言环境搭建">Go 语言环境搭建</a>
     </li>
     
 </ul>
@@ -479,7 +490,7 @@ go环境搭建
     
     <li><a href="https://xiarong715.github.io/categories/git/">Git (1)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (3)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (4)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/linux/">Linux (3)</a></li>
     
