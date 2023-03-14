@@ -6,7 +6,21 @@
     <description>Recent content in docker on 风笑天的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Dec 2020 21:54:23 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Mar 2023 17:35:08 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker 安装与使用</title>
+      <link>https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 14 Mar 2023 17:35:08 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+      <description>参考1 编写Dockerfile，命令作用
+参考2 镜像构建过程，命令作用
+  docker安装
+1 2 3  yum update curl -fsSL https://get.docker.com/ | sh # install lastest docker yum install docker # it&amp;#39;s not lastest docker     docker配置与启动
+设置云镜像地址
+1  vi /etc/docker/daemon.json   1 2 3  { &amp;#34;registry-mirrors&amp;#34;:[&amp;#34;https://nbamvavl.mirrors.aliyuns.com&amp;#34;] }   1 2 3  systemctl daemon-reload systemctl restart docker systemctl enable docker // start docker when system start     docker的使用</description>
+    </item>
+    
     <item>
       <title>Docker Compose 使用</title>
       <link>https://xiarong715.github.io/posts/docker/docker-compose%E4%BD%BF%E7%94%A8/</link>

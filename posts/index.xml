@@ -6,7 +6,45 @@
     <description>Recent content in Posts on 风笑天的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Nov 2021 12:57:53 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Mar 2023 17:35:08 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker 安装与使用</title>
+      <link>https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 14 Mar 2023 17:35:08 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+      <description>参考1 编写Dockerfile，命令作用
+参考2 镜像构建过程，命令作用
+  docker安装
+1 2 3  yum update curl -fsSL https://get.docker.com/ | sh # install lastest docker yum install docker # it&amp;#39;s not lastest docker     docker配置与启动
+设置云镜像地址
+1  vi /etc/docker/daemon.json   1 2 3  { &amp;#34;registry-mirrors&amp;#34;:[&amp;#34;https://nbamvavl.mirrors.aliyuns.com&amp;#34;] }   1 2 3  systemctl daemon-reload systemctl restart docker systemctl enable docker // start docker when system start     docker的使用</description>
+    </item>
+    
+    <item>
+      <title>健康秘诀 护肝养肾</title>
+      <link>https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/</link>
+      <pubDate>Thu, 16 Feb 2023 11:36:28 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/</guid>
+      <description>  健康的秘诀是什么？
+护肝养肾
+  护肝养肾的作用？
+保持健康。肝肾是过滤毒素，排毒素的主要场所，一旦受损，毒素不能好的排出体外，身份将充满毒素。
+  如何护肝养肾 ？
+作息
+​	早起早睡。
+饮食
+​	每天饮水2000ml-3000ml。吃新鲜绿叶蔬菜、水果，高质量蛋白，多吃一些燕麦，玉米，花生，胡萝卜，山楂，无花果。枸杞、桑葚、黑芝麻、山药、黑木耳、核桃、栗子。
+运动
+​	每天适当体育锻炼，增强体质。
+情绪
+​	心情愉悦，不生气。提升思维层次，保持情绪稳定。
+禁忌
+​	忌烟忌酒。忌油腻油炸食物。
+  </description>
+    </item>
+    
     <item>
       <title>Go 继承</title>
       <link>https://xiarong715.github.io/posts/go/go%E7%BB%A7%E6%89%BF/</link>

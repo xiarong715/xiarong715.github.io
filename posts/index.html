@@ -43,7 +43,7 @@
                         风笑天的博客
                     </a>
                 
-                <p class="description">专注于Go语言(golang)、大数据、软件架构</p>
+                <p class="description">专注于Go语言(golang)、大数据、软件架构。健康。</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
@@ -62,6 +62,76 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Docker 安装与使用">Docker 安装与使用</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年3月14日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/docker'>Docker</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            参考1 编写Dockerfile，命令作用
+参考2 镜像构建过程，命令作用
+  docker安装
+1 2 3  yum update curl -fsSL https://get.docker.com/ | sh # install lastest docker yum install docker # it&#39;s not lastest docker     docker配置与启动
+设置云镜像地址
+1  vi /etc/docker/daemon.json   1 2 3  { &#34;registry-mirrors&#34;:[&#34;https://nbamvavl.mirrors.aliyuns.com&#34;] }   1 2 3  systemctl daemon-reload systemctl restart docker systemctl enable docker // start docker when system start     docker的使用……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/" title="健康秘诀 护肝养肾">健康秘诀 护肝养肾</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年2月16日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%81%A5%E5%BA%B7'>健康</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+              健康的秘诀是什么？
+护肝养肾
+  护肝养肾的作用？
+保持健康。肝肾是过滤毒素，排毒素的主要场所，一旦受损，毒素不能好的排出体外，身份将充满毒素。
+  如何护肝养肾 ？
+作息
+​	早起早睡。
+饮食
+​	每天饮水2000ml-3000ml。吃新鲜绿叶蔬菜、水果，高质量蛋白，多吃一些燕麦，玉米，花生，胡萝卜，山楂，无花果。枸杞、桑葚、黑芝麻、山药、黑木耳、核桃、栗子。
+运动
+​	每天适当体育锻炼，增强体质。
+情绪
+​	心情愉悦，不生气。提升思维层次，保持情绪稳定。
+禁忌
+​	忌烟忌酒。忌油腻油炸食物。
+  ……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/">阅读全文</a></p>
+    </article>
+    
     
     
     <article class="post">
@@ -314,75 +384,6 @@ docker-compose会依赖一些库
     
     
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Git 环境搭建">Git 环境搭建</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年12月1日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/git'>Git</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            1.download a tarball
-下载最新版本git
-1  wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz   2.解压
-1  tar -xvf git-2.9.5.tar.xz   3.configure
-1 2  cd git-2.9.5 ./configure   4.make and make install
-1  make &amp;&amp; make install   5.测试
-打印出版本号代表安装成功；
-1 2  git version git version 2.9.5    problems
-​	①fatal error: zlib.h: No such file or directory
-1 2  yum search zlib yum install zlib-devel -y   ​	②Can&rsquo;t locate ExtUtils/MakeMaker.……
-        </div>
-        <p class="readmore"><a href="https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Go 语言环境搭建">Go 语言环境搭建</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年11月26日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/golang'>Golang</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            1.下载
-打开网址，选择稳定版本下载
-https://go.dev/dl/
-https://golang.org/dl/ (有墙打不开)
-https://golang.google.cn/dl
-https://studygolang.com/dl
-1 2 3 4 5 6  // 二进制文件包下载 wget https://golang.google.cn/dl/go1.15.4.linux-amd64.tar.gz wget https://studygolang.com/dl/golang/go1.15.4.linux-amd64.tar.gz // 源码包下载 wget https://golang.google.cn/dl/go1.15.4.src.tar.gz   2.二进制文件安装
-1  tar -xvzf go1.15.4.linux-amd64.tar.gz -C /usr/local   3.源码编译安装
-源码需要有go环境，可以用yum安装一个，因为系统的版本更新滞后，所以有必要下载较新的版本安装
-1  yum install -y go   1 2 3 4 5  解压 tar -xvzf go1.15.4.src.tar.gz -C /usr/local 编译 cd /usr/local/go/src ./all.bash   4.环境配置
-1 2 3 4 5 6 7 8 9 10  vi /etc/profile 编辑文件添加下面内容： export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.……
-        </div>
-        <p class="readmore"><a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">阅读全文</a></p>
-    </article>
-    
-    
-    
 
 
 
@@ -456,6 +457,14 @@ https://studygolang.com/dl
 <ul class="widget-list">
     
     <li>
+        <a href="https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Docker 安装与使用">Docker 安装与使用</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/" title="健康秘诀 护肝养肾">健康秘诀 护肝养肾</a>
+    </li>
+    
+    <li>
         <a href="https://xiarong715.github.io/posts/go/go%E7%BB%A7%E6%89%BF/" title="Go 继承">Go 继承</a>
     </li>
     
@@ -487,14 +496,6 @@ https://studygolang.com/dl
         <a href="https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/" title="Go plugin 用法">Go plugin 用法</a>
     </li>
     
-    <li>
-        <a href="https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Git 环境搭建">Git 环境搭建</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Go 语言环境搭建">Go 语言环境搭建</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -506,7 +507,7 @@ https://studygolang.com/dl
     
     <li><a href="https://xiarong715.github.io/categories/centos7/">Centos7 (1)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/docker/">Docker (2)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/docker/">Docker (3)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
     
@@ -515,6 +516,8 @@ https://studygolang.com/dl
     <li><a href="https://xiarong715.github.io/categories/golang/">Golang (4)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/linux/">Linux (3)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/%E5%81%A5%E5%BA%B7/">健康 (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/">博客 (1)</a></li>
     
@@ -544,6 +547,16 @@ https://studygolang.com/dl
     <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
     
     <a href="https://xiarong715.github.io/tags/linux/">linux</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%81%A5%E5%BA%B7/">健康</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%85%BB%E7%94%9F/">养生</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%85%BB%E8%82%BE/">养肾</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E6%8A%A4%E8%82%9D/">护肝</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E9%95%BF%E5%AF%BF/">长寿</a>
     
 </div>
     </section>
