@@ -18,7 +18,7 @@
   docker安装
 1 2 3  yum update curl -fsSL https://get.docker.com/ | sh # install lastest docker yum install docker # it&amp;#39;s not lastest docker     docker配置与启动
 设置云镜像地址
-1  vi /etc/docker/daemon.json   1 2 3  { &amp;#34;registry-mirrors&amp;#34;:[&amp;#34;https://nbamvavl.mirrors.aliyuns.com&amp;#34;] }   1 2 3  systemctl daemon-reload systemctl restart docker systemctl enable docker // start docker when system start     docker的使用</description>
+1  vi /etc/docker/daemon.json   1 2 3  { &amp;#34;registry-mirrors&amp;#34;:[&amp;#34;https://nbamvavl.mirrors.aliyuns.com&amp;#34;] }   1 2 3  systemctl daemon-reload # enable daemon.json systemctl restart docker # restart docker systemctl enable docker # start docker when system start     docker的使用</description>
     </item>
     
     <item>
