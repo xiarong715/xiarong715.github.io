@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客 on 风笑天的博客</title>
+    <link>https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/</link>
+    <description>Recent content in 博客 on 风笑天的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Nov 2020 21:49:37 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo 搭建个人博客</title>
+      <link>https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Wed, 18 Nov 2020 21:49:37 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>1.Download and Install
+需要安装git和go；
+git环境搭建参考：
+git环境搭建
+go环境搭建参考：
+go环境搭建
+1 2 3 4 5  mkdir $HOME/src cd $HOME/src git clone https://github.com/gohugoio/hugo.git cd hugo go install --tags extended   2.Create a New Site
+1  hugo new site boke   3.Add a Theme
+1 2 3  cd boke git clone https://github.com/flysnow-org/maupassant-hugo.git themes/maupassant echo &amp;#39;theme = &amp;#34;maupassant&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.toml   4.Add Some Content
+1 2  hugo new content/posts/hugo搭建个人博客.</description>
+    </item>
+    
+  </channel>
+</rss>
