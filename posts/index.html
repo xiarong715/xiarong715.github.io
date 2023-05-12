@@ -144,6 +144,44 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/linux/%E5%A4%A7%E5%B0%8F%E7%AB%AF/" title="大小端">大小端</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年1月8日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/linux'>Linux</a></span>
+            
+            <span class="meta-category"><a href='/categories/windows'>Windows</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+              字节序
+​	内存的最小单位是字节，有些数据类型占用的空间大小超过了一个字节，那么就存在一个数据在内存中如何存放的问题。数据的存放可以是，数据的低字节存放在内存的低地址区，也可以是，数据的低字节存放在内存的高地址区；
+​	如下图所示，图1中展示的是，数字的低字节存入内存的高地址区，数字的高字节区存入内存的低地址区；图2中展示的是，数字的低字节存入内存的高地址区，数字的高字节存入内存的低地址区；
+​
+这两种存储方式，没有好坏之分，存储方式与CPU的实现有关；
+  什么是大小端
+当数据的低字节存入内存的高地址区，数据的高字节存入内存的低地址区时，称为大端模式；反之，则称为小端模式；大端模式，比较适合人的阅读习惯，从数字的高位开始读；
+  存在的意义
+根据不同的硬件实现，大小端模式都广泛使用在不同的CPU中；
+  如何判断大小端
+不管CPU是使用大端模式还是小端模式，CPU总能正确的读取内存的值，也就是説如果不需要大小端转换时，不需要知道CPU的大小端。当处理音频数据时，有时需要转换大小端；音频音质较高时，音频的一个采样占用
+  ……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/%E5%A4%A7%E5%B0%8F%E7%AB%AF/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/" title="Go 导入自定义包">Go 导入自定义包</a>
             </h1>
         </header>
@@ -366,40 +404,6 @@ docker-compose会依赖一些库
     
     
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Git 环境搭建">Git 环境搭建</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年12月1日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/git'>Git</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            1.download a tarball
-下载最新版本git
-1  wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz   2.解压
-1  tar -xvf git-2.9.5.tar.xz   3.configure
-1 2  cd git-2.9.5 ./configure   4.make and make install
-1  make &amp;&amp; make install   5.测试
-打印出版本号代表安装成功；
-1 2  git version git version 2.9.5    problems
-①fatal error: zlib.h: No such file or directory
-1 2  yum search zlib yum install zlib-devel -y   ②Can't locate ExtUtils/MakeMaker.……
-        </div>
-        <p class="readmore"><a href="https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">阅读全文</a></p>
-    </article>
-    
-    
-    
 
 
 
@@ -481,6 +485,10 @@ docker-compose会依赖一些库
     </li>
     
     <li>
+        <a href="https://xiarong715.github.io/posts/linux/%E5%A4%A7%E5%B0%8F%E7%AB%AF/" title="大小端">大小端</a>
+    </li>
+    
+    <li>
         <a href="https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/" title="Go 导入自定义包">Go 导入自定义包</a>
     </li>
     
@@ -508,10 +516,6 @@ docker-compose会依赖一些库
         <a href="https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/" title="Go plugin 用法">Go plugin 用法</a>
     </li>
     
-    <li>
-        <a href="https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Git 环境搭建">Git 环境搭建</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -531,7 +535,9 @@ docker-compose会依赖一些库
     
     <li><a href="https://xiarong715.github.io/categories/golang/">Golang (3)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (3)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (4)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/windows/">Windows (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/%E5%81%A5%E5%BA%B7/">健康 (1)</a></li>
     
@@ -563,6 +569,8 @@ docker-compose会依赖一些库
     <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
     
     <a href="https://xiarong715.github.io/tags/linux/">linux</a>
+    
+    <a href="https://xiarong715.github.io/tags/windows/">windows</a>
     
     <a href="https://xiarong715.github.io/tags/%E5%81%A5%E5%BA%B7/">健康</a>
     
