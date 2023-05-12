@@ -1,66 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>linux on 风笑天的博客</title>
-    <link>https://xiarong715.github.io/tags/linux/</link>
-    <description>Recent content in linux on 风笑天的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 12 Feb 2021 18:40:12 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Linux 标准输入输出</title>
-      <link>https://xiarong715.github.io/posts/linux/linux%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</link>
-      <pubDate>Fri, 12 Feb 2021 18:40:12 +0800</pubDate>
-      
-      <guid>https://xiarong715.github.io/posts/linux/linux%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</guid>
-      <description>  标准输出输出设备
-0代表标准输入
-1代表标准输出
-2代表标错误输出
-  空设备文件
-/dev/null代表Linux的空设备文件
-  重定向到”黑洞“
-1&amp;gt;/dev/null 代表标准输出重定向到”黑洞“；
-2&amp;gt;/dev/null代表错误输出重定向到”黑洞“；
-  重定向输入输出
-&amp;amp;1表示标准输出设备；
-2&amp;gt;&amp;amp;1代表错误输出重定向到标准输出；
-2&amp;gt;1则会把错误输出到文件1，&amp;amp;1才表明是标准输出；
-  </description>
-    </item>
-    
-    <item>
-      <title>Linux 任务前后台切换</title>
-      <link>https://xiarong715.github.io/posts/linux/linux%E4%BB%BB%E5%8A%A1%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/</link>
-      <pubDate>Fri, 12 Feb 2021 18:19:40 +0800</pubDate>
-      
-      <guid>https://xiarong715.github.io/posts/linux/linux%E4%BB%BB%E5%8A%A1%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/</guid>
-      <description> 查看后台运行的任务  jobs查看当前有多少任务在后台运行
-1  jobs   切换后台任务到前台  fg将后台中的任务调至前台继续运行
-1  fg   前台任务切换到后台  ctrl + z可以将一个正在前台执行的任务放到后台，并且暂停运行
-1  ctrl + z   后台暂停的任务继续在后台运行  bg将后台暂停的任务切换为运行状态
-1  bg   在后台运行任务  hugo &amp;amp;将hugo任务在后台运行
-1  hugo &amp;amp;   </description>
-    </item>
-    
-    <item>
-      <title>Centos7 安装</title>
-      <link>https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/</link>
-      <pubDate>Thu, 11 Feb 2021 17:08:50 +0800</pubDate>
-      
-      <guid>https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/</guid>
-      <description>一、下载
-1 2  http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso   二、安装
-  分区（新手方案）
-启动分区/boot ：512M或1024M
-swap分区 ：内存的2倍
-根分区 / ：剩余的空间
-  设置静态IP及DNS
-设置静态IP
-1 2 3 4 5 6 7 8  vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： BOOTPROTO=static # 静态IP ONBOOT=yes	# 开机启动 IPADDR=192.168.80.130 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.80.2 # 网关   添加DNS
-vi /etc/resolv.conf修改为：nameserver 8.8.8.8nameserver 114.114.114.114或vi /etc/sysconfig/network-scripts/ifcfg-ens33修改为：DNS1=8.8.8.8DNS2=114.114.114.114  三、更换为阿里源
-备份:</description>
-    </item>
-    
-  </channel>
-</rss>
