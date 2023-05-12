@@ -62,24 +62,6 @@
     </item>
     
     <item>
-      <title>linux</title>
-      <link>https://xiarong715.github.io/tags/linux/</link>
-      <pubDate>Sat, 08 Jan 2022 17:22:30 +0800</pubDate>
-      
-      <guid>https://xiarong715.github.io/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://xiarong715.github.io/tags/windows/</link>
-      <pubDate>Sat, 08 Jan 2022 17:22:30 +0800</pubDate>
-      
-      <guid>https://xiarong715.github.io/tags/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>golang</title>
       <link>https://xiarong715.github.io/tags/golang/</link>
       <pubDate>Sat, 27 Nov 2021 12:57:53 +0800</pubDate>
@@ -103,6 +85,15 @@
       <pubDate>Sun, 11 Apr 2021 11:33:28 +0800</pubDate>
       
       <guid>https://xiarong715.github.io/tags/go-package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://xiarong715.github.io/tags/linux/</link>
+      <pubDate>Fri, 12 Feb 2021 18:40:12 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/tags/linux/</guid>
       <description></description>
     </item>
     

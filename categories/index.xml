@@ -26,29 +26,20 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>https://xiarong715.github.io/categories/linux/</link>
-      <pubDate>Sat, 08 Jan 2022 17:22:30 +0800</pubDate>
-      
-      <guid>https://xiarong715.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>https://xiarong715.github.io/categories/windows/</link>
-      <pubDate>Sat, 08 Jan 2022 17:22:30 +0800</pubDate>
-      
-      <guid>https://xiarong715.github.io/categories/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Golang</title>
       <link>https://xiarong715.github.io/categories/golang/</link>
       <pubDate>Sat, 27 Nov 2021 12:57:53 +0800</pubDate>
       
       <guid>https://xiarong715.github.io/categories/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://xiarong715.github.io/categories/linux/</link>
+      <pubDate>Fri, 12 Feb 2021 18:40:12 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
