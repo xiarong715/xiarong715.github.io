@@ -42,7 +42,11 @@
                         </a>
                     </h1>
                 
+<<<<<<< HEAD
                 <p class="description">专注于Go语言(golang)、大数据、软件架构。注重健康。</p>
+=======
+                <p class="description">专注于Go语言(golang)、大数据、软件架构。健康。</p>
+>>>>>>> 1e39725fde0d9751282d0f757044f9e2f460dae0
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
@@ -145,7 +149,11 @@
 情绪
 ​	心情愉悦，不生气。提升思维层次，保持情绪稳定。
 禁忌
+<<<<<<< HEAD
 ​	忌烟忌酒。忌油腻油炸食物。
+=======
+​	忌烟忌酒。忌油腻油炸食物。忌熬夜。
+>>>>>>> 1e39725fde0d9751282d0f757044f9e2f460dae0
   ……
         </div>
         <p class="readmore"><a href="https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/" target="_blank">阅读全文</a></p>
@@ -294,7 +302,16 @@ swap分区 ：内存的2倍
   设置静态IP及DNS
 设置静态IP
 1 2 3 4 5 6 7 8  vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： BOOTPROTO=static # 静态IP ONBOOT=yes	# 开机启动 IPADDR=192.168.80.130 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.80.2 # 网关   添加DNS
-vi /etc/resolv.conf修改为：nameserver 8.8.8.8nameserver 114.114.114.114或vi /etc/sysconfig/network-scripts/ifcfg-ens33修改为：DNS1=8.8.8.8DNS2=114.114.114.114  三、更换为阿里源
+vi /etc/resolv.conf
+修改为：
+nameserver 8.8.8.8
+nameserver 114.114.114.114
+或
+vi /etc/sysconfig/network-scripts/ifcfg-ens33
+修改为：
+DNS1=8.8.8.8
+DNS2=114.114.114.114
+  三、更换为阿里源
 备份:……
         </div>
         <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/" target="_blank">阅读全文</a></p>

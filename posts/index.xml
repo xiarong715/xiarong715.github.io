@@ -55,7 +55,11 @@
 情绪
 ​	心情愉悦，不生气。提升思维层次，保持情绪稳定。
 禁忌
+<<<<<<< HEAD
 ​	忌烟忌酒。忌油腻油炸食物。
+=======
+​	忌烟忌酒。忌油腻油炸食物。忌熬夜。
+>>>>>>> 1e39725fde0d9751282d0f757044f9e2f460dae0
   </description>
     </item>
     
@@ -191,8 +195,13 @@ docker-compose会依赖一些库
 1  make &amp;amp;&amp;amp; make install   5.测试
 打印出版本号代表安装成功；
 1 2  git version git version 2.9.5    problems
+<<<<<<< HEAD
 ①fatal error: zlib.h: No such file or directory
 1 2  yum search zlib yum install zlib-devel -y   ②Can&#39;t locate ExtUtils/MakeMaker.</description>
+=======
+​	①fatal error: zlib.h: No such file or directory
+1 2  yum search zlib yum install zlib-devel -y   ​	②Can&amp;rsquo;t locate ExtUtils/MakeMaker.</description>
+>>>>>>> 1e39725fde0d9751282d0f757044f9e2f460dae0
     </item>
     
     <item>
