@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>风笑天的博客</title>
+    <link>https://xiarong715.github.io/</link>
+    <description>Recent content on 风笑天的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Mar 2023 16:06:07 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自动部署</title>
+      <link>https://xiarong715.github.io/posts/tools/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Thu, 16 Mar 2023 16:06:07 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/tools/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</guid>
+      <description>参考</description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://xiarong715.github.io/about/</link>
+      <pubDate>Thu, 16 Mar 2023 14:14:20 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/about/</guid>
+      <description>一个爱学习，努力向上，最终成为计算机硕士。一个爱生活，爱健康，爱运动，早睡早起的终生学习者。一名营养医学爱好者。一名个人成长教练，一名高效能赋能教练。一个敢于接受挑战的创业青年。
+个人微信，欢迎交朋友。赠送个人发展模式图。
+视频号，欢迎围观。
+</description>
+    </item>
+    
+    <item>
+      <title>Docker 安装与使用</title>
+      <link>https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 14 Mar 2023 17:35:08 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+      <description>参考1 编写Dockerfile，命令作用
+参考2 镜像构建过程，命令作用
+  docker安装
+1 2 3  yum update curl -fsSL https://get.docker.com/ | sh # install lastest docker yum install docker # it&amp;#39;s not lastest docker     docker配置与启动
+设置云镜像地址
+1  vi /etc/docker/daemon.json   1 2 3  { &amp;#34;registry-mirrors&amp;#34;:[&amp;#34;https://nbamvavl.mirrors.aliyuns.com&amp;#34;] }   1 2 3  systemctl daemon-reload # enable daemon.json systemctl restart docker # restart docker systemctl enable docker # start docker when system start     docker的使用</description>
+    </item>
+    
+    <item>
+      <title>健康秘诀 护肝养肾</title>
+      <link>https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/</link>
+      <pubDate>Thu, 16 Feb 2023 11:36:28 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/</guid>
+      <description>  健康的秘诀是什么？
+护肝养肾
+  护肝养肾的作用？
+保持健康。肝肾是过滤毒素，排毒素的主要场所，一旦受损，毒素不能好的排出体外，身份将充满毒素。
+  如何护肝养肾 ？
+作息
+​	早起早睡。
+饮食
+​	每天饮水2000ml-3000ml。吃新鲜绿叶蔬菜、水果，高质量蛋白，多吃一些燕麦，玉米，花生，胡萝卜，山楂，无花果。枸杞、桑葚、黑芝麻、山药、黑木耳、核桃、栗子。
+​	按时按量吃饭。
+可以做为主食的粗粮
+​	谷物类有糙米、小米、红米、黑米、薏米、玉米、麦麸、高粱、大麦、燕麦、荞麦等。
+​	杂豆类有黄豆、绿豆、红豆、芸豆、赤豆、黑豆、蚕豆、豌豆等。
+​	块茎类有红薯、紫薯、山药、芋头、土豆等。
+运动
+​	每天适当体育锻炼，增强体质。
+情绪
+​	心情愉悦，不生气。提升思维层次，保持情绪稳定。
+禁忌
+​	忌烟忌酒。忌油腻油炸食物。
+  </description>
+    </item>
+    
+    <item>
+      <title>Go 继承</title>
+      <link>https://xiarong715.github.io/posts/go/go%E7%BB%A7%E6%89%BF/</link>
+      <pubDate>Sat, 27 Nov 2021 12:57:53 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/go/go%E7%BB%A7%E6%89%BF/</guid>
+      <description>go 使用组合的方式实现继承</description>
+    </item>
+    
+    <item>
+      <title>Go 导入自定义包</title>
+      <link>https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/</link>
+      <pubDate>Sun, 11 Apr 2021 11:33:28 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/</guid>
+      <description>1.自定义包
+为了模块化编程，需要把属于同一功能的源文件放在同一目录下，并在文件开头加上package calc，calc即为包名，包名与目录名可以不相同；
+如：
+goStudy/package/calc/operation.go
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  package calc func Add(a, b int) int { return a + b } func Sub(a, b int) int { return a - b } func Multi(a, b int) int { return a * b } func Division(a, b int) int { return a / b }   goStudy/package/snow/use.</description>
+    </item>
+    
+    <item>
+      <title>Linux 标准输入输出</title>
+      <link>https://xiarong715.github.io/posts/linux/linux%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</link>
+      <pubDate>Fri, 12 Feb 2021 18:40:12 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/linux/linux%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</guid>
+      <description>  标准输出输出设备
+0代表标准输入
+1代表标准输出
+2代表标错误输出
+  空设备文件
+/dev/null代表Linux的空设备文件
+  重定向到”黑洞“
+1&amp;gt;/dev/null 代表标准输出重定向到”黑洞“；
+2&amp;gt;/dev/null代表错误输出重定向到”黑洞“；
+  重定向输入输出
+&amp;amp;1表示标准输出设备；
+2&amp;gt;&amp;amp;1代表错误输出重定向到标准输出；
+2&amp;gt;1则会把错误输出到文件1，&amp;amp;1才表明是标准输出；
+  </description>
+    </item>
+    
+    <item>
+      <title>Linux 任务前后台切换</title>
+      <link>https://xiarong715.github.io/posts/linux/linux%E4%BB%BB%E5%8A%A1%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/</link>
+      <pubDate>Fri, 12 Feb 2021 18:19:40 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/linux/linux%E4%BB%BB%E5%8A%A1%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/</guid>
+      <description> 查看后台运行的任务  jobs查看当前有多少任务在后台运行
+1  jobs   切换后台任务到前台  fg将后台中的任务调至前台继续运行
+1  fg   前台任务切换到后台  ctrl + z可以将一个正在前台执行的任务放到后台，并且暂停运行
+1  ctrl + z   后台暂停的任务继续在后台运行  bg将后台暂停的任务切换为运行状态
+1  bg   在后台运行任务  hugo &amp;amp;将hugo任务在后台运行
+1  hugo &amp;amp;   </description>
+    </item>
+    
+    <item>
+      <title>Centos7 安装</title>
+      <link>https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Thu, 11 Feb 2021 17:08:50 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/</guid>
+      <description>一、下载
+1 2  http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso   二、安装
+  分区（新手方案）
+启动分区/boot ：512M或1024M
+swap分区 ：内存的2倍
+根分区 / ：剩余的空间
+  设置静态IP及DNS
+设置静态IP
+1 2 3 4 5 6 7 8  vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： BOOTPROTO=static # 静态IP ONBOOT=yes	# 开机启动 IPADDR=192.168.80.130 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.80.2 # 网关   添加DNS
+vi /etc/resolv.conf修改为：nameserver 8.8.8.8nameserver 114.114.114.114或vi /etc/sysconfig/network-scripts/ifcfg-ens33修改为：DNS1=8.8.8.8DNS2=114.114.114.114  三、更换为阿里源
+备份:</description>
+    </item>
+    
+    <item>
+      <title>Docker Compose 使用</title>
+      <link>https://xiarong715.github.io/posts/docker/docker-compose%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 29 Dec 2020 21:54:23 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/docker/docker-compose%E4%BD%BF%E7%94%A8/</guid>
+      <description>1.docker-compose的作用
+2.下载安装
+docker-compose会依赖一些库
+1  yum install -y py-pip python-dev libffi-dev openssl-dev gcc libc-dev make   下载docker-compose
+1  curl -L &amp;#34;https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)&amp;#34; -o /usr/local/bin/docker-compose   添加执行权限
+1  chmod +x /usr/local/bin/docker-compose   测试
+1 2 3 4 5 6 7  docker-compose version ## 显示以下信息，表明docker-compose安装完成 docker-compose version 1.26.1, build f216ddbf docker-py version: 4.2.2 CPython version: 3.7.7 OpenSSL version: OpenSSL 1.1.0l 10 Sep 2019   3.</description>
+    </item>
+    
+    <item>
+      <title>Docker 学习</title>
+      <link>https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Wed, 23 Dec 2020 20:54:22 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/</guid>
+      <description>1.docker的编写
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  FROMregistry.lan:5000/ipanel/centos7-devMAINTAINERiPanel Cloud TeamLABEL Vendor=&amp;#34;iPanel&amp;#34; \  License=MIT \  Version=2.0ADD CI /root/CIADD mkyaffs2image /usr/sbin/mkyaffs2imageADD rc.local /etc/rc.d/rc.localRUN chmod -v +x /root/CI -R RUN chmod -v +x /usr/sbin/mkyaffs2image RUN rpm --rebuilddb \ 	&amp;amp;&amp;amp; rpm --import \ 	http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 \ 	&amp;amp;&amp;amp; rpm --import \ 	https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 \ 	&amp;amp;&amp;amp; yum -y install \ 	--setopt=tsflags=nodocs \ 	--disableplugin=fastestmirror \ 	ncurses-devel zlib-devel bzip2 git openssl file gettext glibc.</description>
+    </item>
+    
+    <item>
+      <title>Go plugin 用法</title>
+      <link>https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Sun, 20 Dec 2020 18:12:33 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>1.编写plugin部分
+创建文件testplugin.go
+1 2 3 4 5 6 7 8 9 10 11 12  package main import &amp;#34;fmt&amp;#34; func init() { fmt.Println(&amp;#34;load plugin&amp;#34;) } // Hello hello func Hello() { fmt.Println(&amp;#34;Hello Plugin&amp;#34;) }   note: plugin的包名必须指定为main
+2.编译plugin部分
+1  go build --buildmode=plugin testplugin.go   编译后会生testplugin.so
+3.编写主程序部分
+创建文件main.go
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  package main import &amp;#34;plugin&amp;#34; func main() { p, err := plugin.</description>
+    </item>
+    
+    <item>
+      <title>Git 环境搭建</title>
+      <link>https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Tue, 01 Dec 2020 20:32:32 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description>1.download a tarball
+下载最新版本git
+1  wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz   2.解压
+1  tar -xvf git-2.9.5.tar.xz   3.configure
+1 2  cd git-2.9.5 ./configure   4.make and make install
+1  make &amp;amp;&amp;amp; make install   5.测试
+打印出版本号代表安装成功；
+1 2  git version git version 2.9.5    problems
+①fatal error: zlib.h: No such file or directory
+1 2  yum search zlib yum install zlib-devel -y   ②Can&#39;t locate ExtUtils/MakeMaker.</description>
+    </item>
+    
+    <item>
+      <title>Go 语言环境搭建</title>
+      <link>https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Thu, 26 Nov 2020 21:43:24 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description>1.下载
+打开网址，选择稳定版本下载
+https://go.dev/dl/
+https://golang.org/dl/ (有墙打不开)
+https://golang.google.cn/dl
+https://studygolang.com/dl
+1 2 3 4 5 6  // 二进制文件包下载 wget https://golang.google.cn/dl/go1.15.4.linux-amd64.tar.gz wget https://studygolang.com/dl/golang/go1.15.4.linux-amd64.tar.gz // 源码包下载 wget https://golang.google.cn/dl/go1.15.4.src.tar.gz   2.二进制文件安装
+1  tar -xvzf go1.15.4.linux-amd64.tar.gz -C /usr/local   3.源码编译安装
+源码需要有go环境，可以用yum安装一个，因为系统的版本更新滞后，所以有必要下载较新的版本安装
+1  yum install -y go   1 2 3 4 5  解压 tar -xvzf go1.15.4.src.tar.gz -C /usr/local 编译 cd /usr/local/go/src ./all.bash   4.环境配置
+1 2 3 4 5 6 7 8 9 10  vi /etc/profile 编辑文件添加下面内容： export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.</description>
+    </item>
+    
+    <item>
+      <title>Hugo 搭建个人博客</title>
+      <link>https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Wed, 18 Nov 2020 21:49:37 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>1.Download and Install
+需要安装git和go；
+git环境搭建参考：
+git环境搭建
+go环境搭建参考：
+go环境搭建
+1 2 3 4 5  mkdir $HOME/src cd $HOME/src git clone https://github.com/gohugoio/hugo.git cd hugo go install --tags extended   2.Create a New Site
+1  hugo new site boke   3.Add a Theme
+1 2 3  cd boke git clone https://github.com/flysnow-org/maupassant-hugo.git themes/maupassant echo &amp;#39;theme = &amp;#34;maupassant&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.toml   4.Add Some Content
+1 2  hugo new content/posts/hugo搭建个人博客.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/</guid>
+      <description>一、下载
+二、编译
+三、安装
+四、安装pip</description>
+    </item>
+    
+    <item>
+      <title>搜索</title>
+      <link>https://xiarong715.github.io/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiarong715.github.io/search/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
