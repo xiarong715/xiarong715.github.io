@@ -69,6 +69,65 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/docker/docker-compose%E4%BD%BF%E7%94%A8/" title="Docker Compose 使用">Docker Compose 使用</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月29日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/docker'>Docker</a></span>
+            
+            <span class="meta-category"><a href='/categories/docker-compose'>Docker-compose</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1.docker-compose的作用
+2.下载安装
+docker-compose会依赖一些库
+1  yum install -y py-pip python-dev libffi-dev openssl-dev gcc libc-dev make   下载docker-compose
+1  curl -L &#34;https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose   添加执行权限
+1  chmod +x /usr/local/bin/docker-compose   测试
+1 2 3 4 5 6 7  docker-compose version ## 显示以下信息，表明docker-compose安装完成 docker-compose version 1.26.1, build f216ddbf docker-py version: 4.2.2 CPython version: 3.7.7 OpenSSL version: OpenSSL 1.1.0l 10 Sep 2019   3.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/docker/docker-compose%E4%BD%BF%E7%94%A8/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/" title="Docker 学习">Docker 学习</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月23日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/docker'>Docker</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1.docker的编写
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  FROMregistry.lan:5000/ipanel/centos7-devMAINTAINERiPanel Cloud TeamLABEL Vendor=&#34;iPanel&#34; \  License=MIT \  Version=2.0ADD CI /root/CIADD mkyaffs2image /usr/sbin/mkyaffs2imageADD rc.local /etc/rc.d/rc.localRUN chmod -v +x /root/CI -R RUN chmod -v +x /usr/sbin/mkyaffs2image RUN rpm --rebuilddb \ 	&amp;&amp; rpm --import \ 	http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 \ 	&amp;&amp; rpm --import \ 	https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 \ 	&amp;&amp; yum -y install \ 	--setopt=tsflags=nodocs \ 	--disableplugin=fastestmirror \ 	ncurses-devel zlib-devel bzip2 git openssl file gettext glibc.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/" title="Go plugin 用法">Go plugin 用法</a>
             </h1>
         </header>
@@ -201,27 +260,6 @@ go环境搭建
     
     
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/" title=""></a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            1年1月1日
-        </date>
-        
-        <div class="post-content">
-            一、下载
-二、编译
-三、安装
-四、安装pip……
-        </div>
-        <p class="readmore"><a href="https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/">阅读全文</a></p>
-    </article>
-    
-    
-    
 
 
 
@@ -295,6 +333,10 @@ go环境搭建
 <ul class="widget-list">
     
     <li>
+        <a href="https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/" title="Python3">Python3</a>
+    </li>
+    
+    <li>
         <a href="https://xiarong715.github.io/posts/tools/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/" title="自动部署">自动部署</a>
     </li>
     
@@ -304,6 +346,10 @@ go环境搭建
     
     <li>
         <a href="https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/" title="健康秘诀 护肝养肾">健康秘诀 护肝养肾</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/%E5%A4%A7%E5%B0%8F%E7%AB%AF/" title="大小端">大小端</a>
     </li>
     
     <li>
@@ -326,14 +372,6 @@ go环境搭建
         <a href="https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/" title="Centos7 安装">Centos7 安装</a>
     </li>
     
-    <li>
-        <a href="https://xiarong715.github.io/posts/docker/docker-compose%E4%BD%BF%E7%94%A8/" title="Docker Compose 使用">Docker Compose 使用</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/" title="Docker 学习">Docker 学习</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -353,7 +391,9 @@ go环境搭建
     
     <li><a href="https://xiarong715.github.io/categories/golang/">Golang (4)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (3)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (4)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/windows/">Windows (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/%E5%81%A5%E5%BA%B7/">健康 (1)</a></li>
     
@@ -385,6 +425,8 @@ go环境搭建
     <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
     
     <a href="https://xiarong715.github.io/tags/linux/">linux</a>
+    
+    <a href="https://xiarong715.github.io/tags/windows/">windows</a>
     
     <a href="https://xiarong715.github.io/tags/%E5%81%A5%E5%BA%B7/">健康</a>
     
