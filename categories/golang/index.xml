@@ -6,16 +6,7 @@
     <description>Recent content in Golang on 风笑天的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Nov 2021 12:57:53 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Go 继承</title>
-      <link>https://xiarong715.github.io/posts/go/go%E7%BB%A7%E6%89%BF/</link>
-      <pubDate>Sat, 27 Nov 2021 12:57:53 +0800</pubDate>
-      
-      <guid>https://xiarong715.github.io/posts/go/go%E7%BB%A7%E6%89%BF/</guid>
-      <description>go 使用组合的方式实现继承</description>
-    </item>
-    
+    <lastBuildDate>Sun, 11 Apr 2021 11:33:28 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go 导入自定义包</title>
       <link>https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/</link>

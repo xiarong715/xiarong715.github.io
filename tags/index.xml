@@ -62,15 +62,6 @@
     </item>
     
     <item>
-      <title>golang</title>
-      <link>https://xiarong715.github.io/tags/golang/</link>
-      <pubDate>Sat, 27 Nov 2021 12:57:53 +0800</pubDate>
-      
-      <guid>https://xiarong715.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>go module</title>
       <link>https://xiarong715.github.io/tags/go-module/</link>
       <pubDate>Sun, 11 Apr 2021 11:33:28 +0800</pubDate>
@@ -85,6 +76,15 @@
       <pubDate>Sun, 11 Apr 2021 11:33:28 +0800</pubDate>
       
       <guid>https://xiarong715.github.io/tags/go-package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://xiarong715.github.io/tags/golang/</link>
+      <pubDate>Sun, 11 Apr 2021 11:33:28 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
