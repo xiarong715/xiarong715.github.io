@@ -24,10 +24,8 @@
       <guid>https://xiarong715.github.io/about/</guid>
       <description>一个爱学习，努力向上，最终成为计算机硕士。一个爱生活，爱健康，爱运动，早睡早起的终生学习者。一名营养医学爱好者。一名个人成长教练，一名高效能赋能教练。一个敢于接受挑战的创业青年。
 个人微信，欢迎交朋友。赠送个人发展模式图。
-
-视频号，欢迎围观。
-
- 思维决定行为，行为决定结果。</description>
+视频号，欢迎围观。
+</description>
     </item>
     
     <item>
@@ -69,7 +67,7 @@
 情绪
 ​	心情愉悦，不生气。提升思维层次，保持情绪稳定。
 禁忌
-​	忌烟忌酒。忌油腻油炸食物。忌熬夜。
+​	忌烟忌酒。忌油腻油炸食物。
   </description>
     </item>
     
@@ -146,16 +144,7 @@ swap分区 ：内存的2倍
   设置静态IP及DNS
 设置静态IP
 1 2 3 4 5 6 7 8  vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： BOOTPROTO=static # 静态IP ONBOOT=yes	# 开机启动 IPADDR=192.168.80.130 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.80.2 # 网关   添加DNS
-vi /etc/resolv.conf
-修改为：
-nameserver 8.8.8.8
-nameserver 114.114.114.114
-或
-vi /etc/sysconfig/network-scripts/ifcfg-ens33
-修改为：
-DNS1=8.8.8.8
-DNS2=114.114.114.114
-  三、更换为阿里源
+vi /etc/resolv.conf修改为：nameserver 8.8.8.8nameserver 114.114.114.114或vi /etc/sysconfig/network-scripts/ifcfg-ens33修改为：DNS1=8.8.8.8DNS2=114.114.114.114  三、更换为阿里源
 备份:</description>
     </item>
     
@@ -214,13 +203,8 @@ docker-compose会依赖一些库
 1  make &amp;amp;&amp;amp; make install   5.测试
 打印出版本号代表安装成功；
 1 2  git version git version 2.9.5    problems
-<<<<<<< HEAD
 ①fatal error: zlib.h: No such file or directory
 1 2  yum search zlib yum install zlib-devel -y   ②Can&#39;t locate ExtUtils/MakeMaker.</description>
-=======
-​	①fatal error: zlib.h: No such file or directory
-1 2  yum search zlib yum install zlib-devel -y   ​	②Can&amp;rsquo;t locate ExtUtils/MakeMaker.</description>
->>>>>>> 1e39725fde0d9751282d0f757044f9e2f460dae0
     </item>
     
     <item>
