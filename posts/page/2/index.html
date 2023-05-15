@@ -69,6 +69,38 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/" title="Go plugin 用法">Go plugin 用法</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/golang'>Golang</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1.编写plugin部分
+创建文件testplugin.go
+1 2 3 4 5 6 7 8 9 10 11 12  package main import &#34;fmt&#34; func init() { fmt.Println(&#34;load plugin&#34;) } // Hello hello func Hello() { fmt.Println(&#34;Hello Plugin&#34;) }   note: plugin的包名必须指定为main
+2.编译plugin部分
+1  go build --buildmode=plugin testplugin.go   编译后会生testplugin.so
+3.编写主程序部分
+创建文件main.go
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  package main import &#34;plugin&#34; func main() { p, err := plugin.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Git 环境搭建">Git 环境搭建</a>
             </h1>
         </header>
@@ -242,6 +274,10 @@ go环境搭建
 <ul class="widget-list">
     
     <li>
+        <a href="https://xiarong715.github.io/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/" title="VSCode 连接 Centos7">VSCode 连接 Centos7</a>
+    </li>
+    
+    <li>
         <a href="https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Docker 安装与使用">Docker 安装与使用</a>
     </li>
     
@@ -277,10 +313,6 @@ go环境搭建
         <a href="https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/" title="Docker 学习">Docker 学习</a>
     </li>
     
-    <li>
-        <a href="https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/" title="Go plugin 用法">Go plugin 用法</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -290,7 +322,7 @@ go环境搭建
         <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li><a href="https://xiarong715.github.io/categories/centos7/">Centos7 (1)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/centos7/">Centos7 (2)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/docker/">Docker (3)</a></li>
     
@@ -301,6 +333,10 @@ go环境搭建
     <li><a href="https://xiarong715.github.io/categories/golang/">Golang (3)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/linux/">Linux (4)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/openssh/">Openssh (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/vscode/">VSCode (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/windows/">Windows (1)</a></li>
     

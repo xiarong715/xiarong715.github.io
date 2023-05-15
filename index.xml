@@ -6,7 +6,28 @@
     <description>Recent content on 风笑天的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Mar 2023 17:35:08 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 May 2023 15:19:27 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode 连接 Centos7</title>
+      <link>https://xiarong715.github.io/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/</link>
+      <pubDate>Mon, 15 May 2023 15:19:27 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/</guid>
+      <description>参考 找到官方下载地址
+  下载openssh for windows
+openssh官方下载地址
+github下载地址
+注：下载openssh for linux地址
+记得用Bing搜索资料。
+  配置服务器信息
+在vscode界面下，ctrl+p，弹出命令菜单，输入Connect to Host，选择最一个，会显示如下图片：
+点击Configure SSH Hosts...，显示如下图片：
+如果想更新配置文件的位置，可在想要的位置创建好配置文件，如：D:\config\vscode\ssh_config，点击Settings specify a custom configuration file，设置配置文件的绝对路径：D:\config\vscode\ssh_config。
+直接点击第一项：D:\config\vscode\ssh_config，打开配置文件，修改配置信息。
+  hello
+  </description>
+    </item>
+    
     <item>
       <title>关于我</title>
       <link>https://xiarong715.github.io/about/</link>
