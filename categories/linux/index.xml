@@ -16,8 +16,7 @@
       <description>  字节序
 ​	内存的最小单位是字节，有些数据类型占用的空间大小超过了一个字节，那么就存在一个数据在内存中如何存放的问题。数据的存放可以是，数据的低字节存放在内存的低地址区，也可以是，数据的低字节存放在内存的高地址区；
 ​	如下图所示，大端存储：数字的低字节存入内存的高地址区，数字的高字节区存入内存的低地址区；小端存储：数字的低字节存入内存的高地址区，数字的高字节存入内存的低地址区；
-
-​
+​
 这两种存储方式，没有好坏之分，存储方式与CPU的实现有关；
   什么是大小端
 当数据的低字节存入内存的高地址区，数据的高字节存入内存的低地址区时，称为大端模式；反之，则称为小端模式；大端模式，比较适合人的阅读习惯，从数字的高位开始读；
@@ -79,16 +78,7 @@ swap分区 ：内存的2倍
   设置静态IP及DNS
 设置静态IP
 1 2 3 4 5 6 7 8  vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： BOOTPROTO=static # 静态IP ONBOOT=yes	# 开机启动 IPADDR=192.168.80.130 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.80.2 # 网关   添加DNS
-vi /etc/resolv.conf
-修改为：
-nameserver 8.8.8.8
-nameserver 114.114.114.114
-或
-vi /etc/sysconfig/network-scripts/ifcfg-ens33
-修改为：
-DNS1=8.8.8.8
-DNS2=114.114.114.114
-  三、更换为阿里源
+vi /etc/resolv.conf修改为：nameserver 8.8.8.8nameserver 114.114.114.114或vi /etc/sysconfig/network-scripts/ifcfg-ens33修改为：DNS1=8.8.8.8DNS2=114.114.114.114  三、更换为阿里源
 备份:</description>
     </item>
     
