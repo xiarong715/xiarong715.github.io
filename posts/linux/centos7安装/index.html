@@ -89,6 +89,7 @@
         
         <div class="post-content">
             <p>一、下载</p>
+<p><a href="http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/">镜像下载地址</a></p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -100,16 +101,12 @@ http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-20
 </code></pre></td></tr></table>
 </div>
 </div><p>二、安装</p>
-<ol>
-<li>
-<p>分区（新手方案）</p>
-<p>启动分区/boot ：512M或1024M</p>
-<p>swap分区 ：内存的2倍</p>
-<p>根分区 /    ：剩余的空间</p>
-</li>
-<li>
-<p>设置静态IP及DNS</p>
-<p>设置静态IP</p>
+<p>1.分区（新手方案）</p>
+<p>​	启动分区<code>/boot</code> ：<code>512M</code>或<code>1024M</code></p>
+<p><code>	swap</code>分区 ：内存的2倍</p>
+<p>​	根分区 <code>/</code>    ：剩余的空间</p>
+<p>2.设置静态<code>IP</code>及<code>DNS</code></p>
+<p>设置静态<code>IP</code></p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -124,37 +121,15 @@ http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-20
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vi /etc/sysconfig/network-scripts/ifcfg-ens33
 修改为：
- <span style="color:#008080">BOOTPROTO</span><span style="color:#000;font-weight:bold">=</span>static      <span style="color:#998;font-style:italic"># 静态IP</span>
- <span style="color:#008080">ONBOOT</span><span style="color:#000;font-weight:bold">=</span>yes			  <span style="color:#998;font-style:italic"># 开机启动</span>
-   	
- <span style="color:#008080">IPADDR</span><span style="color:#000;font-weight:bold">=</span>192.168.80.130 <span style="color:#998;font-style:italic"># IP</span>
- <span style="color:#008080">NETMASK</span><span style="color:#000;font-weight:bold">=</span>255.255.255.0 <span style="color:#998;font-style:italic"># 子网掩码</span>
- <span style="color:#008080">GATEWAY</span><span style="color:#000;font-weight:bold">=</span>192.168.80.2  <span style="color:#998;font-style:italic"># 网关</span>
+	<span style="color:#008080">BOOTPROTO</span><span style="color:#000;font-weight:bold">=</span>static      <span style="color:#998;font-style:italic"># 静态IP</span>
+	<span style="color:#008080">ONBOOT</span><span style="color:#000;font-weight:bold">=</span>yes			  <span style="color:#998;font-style:italic"># 开机启动</span>
+	
+	<span style="color:#008080">IPADDR</span><span style="color:#000;font-weight:bold">=</span>192.168.80.130 <span style="color:#998;font-style:italic"># IP</span>
+	<span style="color:#008080">NETMASK</span><span style="color:#000;font-weight:bold">=</span>255.255.255.0 <span style="color:#998;font-style:italic"># 子网掩码</span>
+	<span style="color:#008080">GATEWAY</span><span style="color:#000;font-weight:bold">=</span>192.168.80.2  <span style="color:#998;font-style:italic"># 网关</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>添加DNS</p>
-<pre><code>vi /etc/resolv.conf
-修改为：
- nameserver 8.8.8.8
- nameserver 114.114.114.114
-或
- vi /etc/sysconfig/network-scripts/ifcfg-ens33
-修改为：
- DNS1=8.8.8.8
- DNS2=114.114.114.114
-</code></pre></li>
-</ol>
-<p>三、更换为阿里源</p>
-<p>备份:</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-</code></pre></td></tr></table>
-</div>
-</div><p>下载 repo 文件:</p>
+</div><p>添加<code>DNS</code></p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -168,12 +143,47 @@ http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-20
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">// aliyun
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">vi /etc/resolv.conf
+修改为：
+	nameserver 8.8.8.8
+	nameserver 114.114.114.114
+或
+	vi /etc/sysconfig/network-scripts/ifcfg-ens33
+修改为：
+	DNS1=8.8.8.8
+	DNS2=114.114.114.114
+</code></pre></td></tr></table>
+</div>
+</div><p>三、更换源</p>
+<p>备份:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+</code></pre></td></tr></table>
+</div>
+</div><p>下载 <code>repo</code> 文件:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">// aliyun 阿里源
 wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
 或
 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
 
-// huawei yun
+// huawei yun 华为源
 wget -O /etc/yum.repos.d/CentOS-Base.repo https://repo.huaweicloud.com/repository/conf/CentOS-7-reg.repo
 或
 curl -o /etc/yum.repos.d/CentOS-Base.repo https://repo.huaweicloud.com/repository/conf/CentOS-7-reg.repo
@@ -190,13 +200,43 @@ curl -o /etc/yum.repos.d/CentOS-Base.repo https://repo.huaweicloud.com/repositor
 yum makecache
 </code></pre></td></tr></table>
 </div>
-</div><p>四、安装C/C++编译器</p>
+</div><p>四、安装<code>C/C++</code>编译器</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install gcc gcc-c++
+</code></pre></td></tr></table>
+</div>
+</div><p>五、自动更新系统时间</p>
+<p>安装<code>ntp</code>并配置</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install ntp -y		<span style="color:#998;font-style:italic"># 安装 ntp</span>
+systemctl start ntpd	<span style="color:#998;font-style:italic"># 启动 ntp</span>
+systemctl <span style="color:#0086b3">enable</span> ntpd	<span style="color:#998;font-style:italic"># 自启动 ntp</span>
+service ntpd status
+</code></pre></td></tr></table>
+</div>
+</div><p>修改配置文件</p>
+<p><code>vi /etc/ntp.conf</code></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">server 0.pool.ntp.org
+server 1.pool.ntp.org
+server 2.pool.ntp.org
 </code></pre></td></tr></table>
 </div>
 </div>

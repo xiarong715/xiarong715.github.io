@@ -94,16 +94,16 @@
         
         <div class="post-content">
             一、下载
+镜像下载地址
 1 2  http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso   二、安装
-  分区（新手方案）
-启动分区/boot ：512M或1024M
-swap分区 ：内存的2倍
-根分区 / ：剩余的空间
-  设置静态IP及DNS
+1.分区（新手方案）
+​	启动分区/boot ：512M或1024M
+	swap分区 ：内存的2倍
+​	根分区 / ：剩余的空间
+2.设置静态IP及DNS
 设置静态IP
 1 2 3 4 5 6 7 8  vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： BOOTPROTO=static # 静态IP ONBOOT=yes	# 开机启动 IPADDR=192.168.80.130 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.80.2 # 网关   添加DNS
-vi /etc/resolv.conf修改为：nameserver 8.8.8.8nameserver 114.114.114.114或vi /etc/sysconfig/network-scripts/ifcfg-ens33修改为：DNS1=8.8.8.8DNS2=114.114.114.114  三、更换为阿里源
-备份:……
+1 2 3 4 5 6 7 8 9  vi /etc/resolv.conf 修改为： nameserver 8.8.8.8 nameserver 114.114.114.114 或 vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： DNS1=8.……
             <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/">阅读全文</a></p>
         </div>
     </article>
