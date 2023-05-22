@@ -6,7 +6,39 @@
     <description>Recent content on 风笑天的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 May 2023 15:19:27 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 May 2023 17:05:03 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Centos7问题与解决</title>
+      <link>https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Thu, 18 May 2023 17:05:03 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/</guid>
+      <description>解压tar.bz2
+问题：tar (child): lbzip2: Cannot exec: No such file or directory
+解决：
+1  yum -y install bzip2     windows和linux下回车符不一致
+问题：$&#39;\r&#39;: command not found
+原因：windows 与 unix下的文件格式不一致，在windows下换行符是\r\n，在unix下换行符是\n，windows文件在unix中解析失败；
+解决：
+方法1：set ff=unix
+1 2 3  vi hello.sh # Esc 进入命令行模式 # : 底命令行模式， 输入 set ff=unix   方法2：把windows格式文件，转换为unix格式；
+1 2  yum install doc2unix	# download doc2unix translate tool. doc2unix hello.sh	# translate windows format file to unix format file.</description>
+    </item>
+    
+    <item>
+      <title>Centos7断电出错修复</title>
+      <link>https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/</link>
+      <pubDate>Thu, 18 May 2023 16:56:07 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/</guid>
+      <description>参考
+1.centos7断电后出现错误：
+现象
+Centos7：“Entering emergency mode. Exit the shell to continue”错误解决方法
+输入以下命令
+1  xfs_repair -v -L /dev/dm-0   经过一段时间修复，reboot 重启就能正常启动</description>
+    </item>
+    
     <item>
       <title>VSCode 连接 Centos7</title>
       <link>https://xiarong715.github.io/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/</link>
@@ -145,19 +177,19 @@ goStudy/package/calc/operation.go
       
       <guid>https://xiarong715.github.io/posts/linux/linux%E4%BB%BB%E5%8A%A1%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/</guid>
       <description> 查看后台运行的任务  jobs查看当前有多少任务在后台运行
-1  jobs   切换后台任务到前台  fg将后台中的任务调至前台继续运行
+1  jobs   切换后台任务到前台  fg(foreground)将后台中的任务调至前台继续运行
 1  fg   前台任务切换到后台  ctrl + z可以将一个正在前台执行的任务放到后台，并且暂停运行
-1  ctrl + z   后台暂停的任务继续在后台运行  bg将后台暂停的任务切换为运行状态
+1  ctrl + z   后台暂停的任务继续在后台运行  bg(background)将后台暂停的任务切换为运行状态
 1  bg   在后台运行任务  hugo &amp;amp;将hugo任务在后台运行
 1  hugo &amp;amp;   </description>
     </item>
     
     <item>
       <title>Centos7 安装</title>
-      <link>https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/</link>
+      <link>https://xiarong715.github.io/posts/linux/centos/centos7%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Thu, 11 Feb 2021 17:08:50 +0800</pubDate>
       
-      <guid>https://xiarong715.github.io/posts/linux/centos7%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://xiarong715.github.io/posts/linux/centos/centos7%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/</guid>
       <description>一、下载
 镜像下载地址
 1 2  http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso   二、安装
