@@ -93,9 +93,11 @@
         </div>
         
         <div class="post-content">
-              字节序
-​	内存的最小单位是字节，有些数据类型占用的空间大小超过了一个字节，那么就存在一个数据在内存中如何存放的问题。数据的存放可以是，数据的低字节存放在内存的低地址区，也可以是，数据的低字节存放在内存的高地址区；
-​	如下图所示，大端存储：数字的低字节存入内存的高地址区，数字的高字节区存入内存的低地址区；小端存储：数字的低字节存入内存的高地址区，数字的高字节存入内存的低地址区；
+              什么是字节序
+字节：计算机中，数据存储是以字节为单位的，一个字节有8位，位是计算机最小的存储空间。
+强类型的编程语言，每个变量的定义都是确定类型的，不同的类型占用的字节数不一样。比如，在C语言中，char类型占用一个字节，short类型，一般占用两个字节，int类型，一般占用四个字节。那么这些多字节的数据如何在内存中存放呢，内存地址是从0一直递增的，可能的存放顺序是，数据的低字节位存放在内存的低地址，数据的高字节位存放内存在内存的高地址；或者反之，数据的低字节存放在内存的高地址，数据的高字节存放在内存的低地址；多字节的高低字节在内存中存放的顺序，称为字节序；
+内存的最小单位是字节，有些数据类型占用的空间大小超过了一个字节，那么就存在一个数据在内存中如何存放的问题。数据的存放可以是，数据的低字节存放在内存的低地址区，也可以是，数据的低字节存放在内存的高地址区；
+如下图所示，大端存储：数字的低字节存入内存的高地址区，数字的高字节区存入内存的低地址区；小端存储：数字的低字节存入内存的高地址区，数字的高字节存入内存的低地址区；
 ​
 这两种存储方式，没有好坏之分，存储方式与CPU的实现有关；
   什么是大小端
@@ -103,7 +105,7 @@
   存在的意义
 根据不同的硬件实现，大小端模式都广泛使用在不同的CPU中；
   如何判断大小端
-不管CPU是使用大端模式还是小端模式，CPU总能正确的读取内存的值，也就是説如果不需要大小端转换时，不需要知道CPU的大小端。当处理音频数据时，有时需要转换大小端；音频音质较高时，音频的一个采样占用
+不管CPU是使用大端模式还是小端模式，CPU总能正确的读取内存的值，也就是説如果不需要大小端转换时，不需要知道CPU的大小端。当处理音频数据时，有时需要转换大小端；音频音质较高时，音频的一个采样占用。
   ……
             <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/%E5%A4%A7%E5%B0%8F%E7%AB%AF/">阅读全文</a></p>
         </div>
@@ -164,15 +166,35 @@
 <ul class="widget-list">
     
     <li>
-        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Centos7问题与解决">Centos7问题与解决</a>
+        <a href="https://xiarong715.github.io/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/" title="Git .gitignore文件的规则">Git .gitignore文件的规则</a>
     </li>
     
     <li>
-        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/" title="Centos7断电出错修复">Centos7断电出错修复</a>
+        <a href="https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/" title="Git 常见问题收集">Git 常见问题收集</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/" title="Git 基础">Git 基础</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/" title="Git Branch（git分支）讲解">Git Branch（git分支）讲解</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Centos7 问题与解决">Centos7 问题与解决</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/" title="Centos7 断电出错修复">Centos7 断电出错修复</a>
     </li>
     
     <li>
         <a href="https://xiarong715.github.io/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/" title="VSCode 连接 Centos7">VSCode 连接 Centos7</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/" title="Python3 安装">Python3 安装</a>
     </li>
     
     <li>
@@ -181,26 +203,6 @@
     
     <li>
         <a href="https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/" title="健康秘诀 护肝养肾">健康秘诀 护肝养肾</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/%E5%A4%A7%E5%B0%8F%E7%AB%AF/" title="大小端">大小端</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/" title="Go 导入自定义包">Go 导入自定义包</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/linux%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" title="Linux 标准输入输出">Linux 标准输入输出</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/linux%E4%BB%BB%E5%8A%A1%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/" title="Linux 任务前后台切换">Linux 任务前后台切换</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/" title="Centos7 安装">Centos7 安装</a>
     </li>
     
 </ul>
@@ -218,13 +220,15 @@
     
     <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/git/">Git (1)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/git/">Git (4)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/golang/">Golang (3)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/linux/">Linux (4)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/openssh/">Openssh (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/python3/">Python3 (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/vscode/">VSCode (1)</a></li>
     
@@ -249,6 +253,10 @@
     
     <a href="https://xiarong715.github.io/tags/git/">git</a>
     
+    <a href="https://xiarong715.github.io/tags/git-branch/">git branch</a>
+    
+    <a href="https://xiarong715.github.io/tags/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">git常见问题</a>
+    
     <a href="https://xiarong715.github.io/tags/go-module/">go module</a>
     
     <a href="https://xiarong715.github.io/tags/go-package/">go package</a>
@@ -260,6 +268,8 @@
     <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
     
     <a href="https://xiarong715.github.io/tags/linux/">linux</a>
+    
+    <a href="https://xiarong715.github.io/tags/python3/">python3</a>
     
     <a href="https://xiarong715.github.io/tags/windows/">windows</a>
     

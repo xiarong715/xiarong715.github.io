@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git branch on 风笑天的博客</title>
+    <link>https://xiarong715.github.io/tags/git-branch/</link>
+    <description>Recent content in git branch on 风笑天的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 May 2023 17:37:16 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/tags/git-branch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git Branch（git分支）讲解</title>
+      <link>https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/</link>
+      <pubDate>Wed, 24 May 2023 17:37:16 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/</guid>
+      <description>一、前言 在开发中，建议经常创建分支、合并分支和删除分支。当发布一个软件的稳定版本后，发现有一个bug，这时创建一个分支解决bug，等测试完成，解决bug后，合并新分支到master分支，最后删除新分支。
+​	当开发一个新功能时，创建新分支，在新分支中添加新功能，测试没问题后，合并到master分支，最后删除新分支。git分支的好处是，在不影响稳定代码的情况下，修补bug，添加新功能；
+二、git分支的使用
+1.当修补bug或添加新功能时，创建分支testing
+1 2 3 4 5 6 7  git branch testing	# 创建新分支testing git checkout testing	# 切换到新分支testing # 或 # 创建新分支并切到新分支testing （一步操作顶两步操作，当分支存在时会出错；切换到存在的分支时，使用 git checkout testing） git checkout -b testing   2.测试完成后，合并分支
+1 2 3 4 5 6 7 8 9 10 11  # 首先切换到要合并的分支 git checkout master # 合并分支 git merge testing # 解决合并冲突，当两个分支中修改同一文件的同一地方，合并分支时就会冲突：如index.html # 首先，打开文件index.html会看到 &amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; ========== &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 的内容，这些内容就是冲突的位置，手动合并冲突的内容； # 然后 git add index.</description>
+    </item>
+    
+  </channel>
+</rss>

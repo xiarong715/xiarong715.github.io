@@ -69,7 +69,129 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Centos7问题与解决">Centos7问题与解决</a>
+                <a href="https://xiarong715.github.io/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/" title="Git .gitignore文件的规则">Git .gitignore文件的规则</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年5月25日
+        </date>
+        
+        <div class="post-content">
+            一、.gitignore的作用
+提交到github时，会忽略.gitignore中配置的文件或目录，这些文件或目录是临时产生的，对项目没影响。
+二. .gitignore的规则
+  #开头的为注释
+  忽略文件和目录
+# 注释target如文件结构：
+FastAPItargetpytargettool.md会忽略根目录和子目录下的 target 目录和 target文件。
+  仅忽略同名文件，不忽略同名目录
+target!target/只会忽略同名的文件，不会忽略同名的目录
+  仅忽略同名目录
+target/只忽略target目录
+  .gitignore参考……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/" title="Git 常见问题收集">Git 常见问题收集</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年5月25日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/git'>Git</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1.git首次安装，下载项目时出现
+git: &lsquo;remote-https&rsquo; is not a git command. See &lsquo;git &ndash;help&rsquo;.
+1 2  yum install libcurl-devel # recomplie git again   2.在windows上产生的文件，上传到github时
+warning: in the working copy of ‘xxx.html’, LF will be replaced by CRLF the next time Git touches it
+参考
+Dos/Windows平台默认的换行符：回车（CR）+ 换行（LF），即\r\n。
+Mac/Linux平台默认的换行符：换行（LF），即\n。
+企业服务器一般都是Linux系统，所以会有替换换行符的需求。
+方法一：
+适用于Windows系统，且一般为Windows默认设置。在Windows上编写代码，在提交到服务器时，对换行符进行CRLF-LF的转换，检出时又会进行LF-CRLF的转换
+1  $ git config --global core.autocrlf true   方法二：
+适用于Linux系统，所有换行符都会进行CRLF-LF转换，但不会转换回CRLF。
+1  $ git config --global core.autocrlf input   方法三：……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/" title="Git 基础">Git 基础</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年5月24日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/git'>Git</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1.基础使用
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  # 在工作目录初始化新仓库 git init git remote add origin https://github.com/xiarong715/hello.git # 添加远程仓库 origin git remote add myorigin https://github.com/xiarong715/goStudy.git	# 添加远程仓库 myorigin git remote set-url myorigin git@github.com:xiarong715/goStudy.git	# 修改远程仓库 myorigin的地址 git pull origin master	# 相当于 git pull origin master:master 上传到远程仓库 # 查看修改记录 git log # 回到指定版本，如：fd789e1 git reset --hard fd789e1 # 从仓库克隆 git clone https://github.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/" title="Git Branch（git分支）讲解">Git Branch（git分支）讲解</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年5月24日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/git'>Git</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            一、前言 在开发中，建议经常创建分支、合并分支和删除分支。当发布一个软件的稳定版本后，发现有一个bug，这时创建一个分支解决bug，等测试完成，解决bug后，合并新分支到master分支，最后删除新分支。
+​	当开发一个新功能时，创建新分支，在新分支中添加新功能，测试没问题后，合并到master分支，最后删除新分支。git分支的好处是，在不影响稳定代码的情况下，修补bug，添加新功能；
+二、git分支的使用
+1.当修补bug或添加新功能时，创建分支testing
+1 2 3 4 5 6 7  git branch testing	# 创建新分支testing git checkout testing	# 切换到新分支testing # 或 # 创建新分支并切到新分支testing （一步操作顶两步操作，当分支存在时会出错；切换到存在的分支时，使用 git checkout testing） git checkout -b testing   2.测试完成后，合并分支
+1 2 3 4 5 6 7 8 9 10 11  # 首先切换到要合并的分支 git checkout master # 合并分支 git merge testing # 解决合并冲突，当两个分支中修改同一文件的同一地方，合并分支时就会冲突：如index.html # 首先，打开文件index.html会看到 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ========== &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; 的内容，这些内容就是冲突的位置，手动合并冲突的内容； # 然后 git add index.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Centos7 问题与解决">Centos7 问题与解决</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -96,7 +218,7 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/" title="Centos7断电出错修复">Centos7断电出错修复</a>
+                <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/" title="Centos7 断电出错修复">Centos7 断电出错修复</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
@@ -153,6 +275,36 @@ github下载地址
   ……
         </div>
         <p class="readmore"><a href="https://xiarong715.github.io/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/" title="Python3 安装">Python3 安装</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年5月12日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/python3'>Python3</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            一、下载
+查看python 版本：http://npm.taobao.org/mirrors/python/
+1  wget https://registry.npmmirror.com/-/binary/python/3.9.13/Python-3.9.13.tar.xz   二、编译与安装
+1 2 3 4 5  $ tar -xvf Python-3.9.13.tar.xz $ cd Python-3.9.13 $ yum install openssl-devel # install openssl $ ./configure --with-ssl $ make &amp;&amp; make install   三、安装pip
+pip 是 Python 包管理工具。pip3.9 list可查看已安装的包，包括有pip、setuptools、numpy等其他包；
+1 2 3  $ pip3.9 list	# check package installed $ pip3.9 install --upgrade xxx	# upgrade a package $ pip3.9 install --upgrade pip	# upgrade pip   三种安装方法：……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/">阅读全文</a></p>
     </article>
     
     
@@ -232,178 +384,6 @@ github下载地址
     
     
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/linux/%E5%A4%A7%E5%B0%8F%E7%AB%AF/" title="大小端">大小端</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2022年1月8日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/linux'>Linux</a></span>
-            
-            <span class="meta-category"><a href='/categories/windows'>Windows</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-              字节序
-​	内存的最小单位是字节，有些数据类型占用的空间大小超过了一个字节，那么就存在一个数据在内存中如何存放的问题。数据的存放可以是，数据的低字节存放在内存的低地址区，也可以是，数据的低字节存放在内存的高地址区；
-​	如下图所示，大端存储：数字的低字节存入内存的高地址区，数字的高字节区存入内存的低地址区；小端存储：数字的低字节存入内存的高地址区，数字的高字节存入内存的低地址区；
-​
-这两种存储方式，没有好坏之分，存储方式与CPU的实现有关；
-  什么是大小端
-当数据的低字节存入内存的高地址区，数据的高字节存入内存的低地址区时，称为大端模式；反之，则称为小端模式；大端模式，比较适合人的阅读习惯，从数字的高位开始读；
-  存在的意义
-根据不同的硬件实现，大小端模式都广泛使用在不同的CPU中；
-  如何判断大小端
-不管CPU是使用大端模式还是小端模式，CPU总能正确的读取内存的值，也就是説如果不需要大小端转换时，不需要知道CPU的大小端。当处理音频数据时，有时需要转换大小端；音频音质较高时，音频的一个采样占用
-  ……
-        </div>
-        <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/%E5%A4%A7%E5%B0%8F%E7%AB%AF/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/" title="Go 导入自定义包">Go 导入自定义包</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年4月11日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/golang'>Golang</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            1.自定义包
-为了模块化编程，需要把属于同一功能的源文件放在同一目录下，并在文件开头加上package calc，calc即为包名，包名与目录名可以不相同；
-如：
-goStudy/package/calc/operation.go
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  package calc func Add(a, b int) int { return a + b } func Sub(a, b int) int { return a - b } func Multi(a, b int) int { return a * b } func Division(a, b int) int { return a / b }   goStudy/package/snow/use.……
-        </div>
-        <p class="readmore"><a href="https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/linux/linux%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" title="Linux 标准输入输出">Linux 标准输入输出</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年2月12日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/linux'>Linux</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-              标准输出输出设备
-0代表标准输入
-1代表标准输出
-2代表标错误输出
-  空设备文件
-/dev/null代表Linux的空设备文件
-  重定向到”黑洞“
-1&gt;/dev/null 代表标准输出重定向到”黑洞“；
-2&gt;/dev/null代表错误输出重定向到”黑洞“；
-  重定向输入输出
-&amp;1表示标准输出设备；
-2&gt;&amp;1代表错误输出重定向到标准输出；
-2&gt;1则会把错误输出到文件1，&amp;1才表明是标准输出；
-  ……
-        </div>
-        <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/linux%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/linux/linux%E4%BB%BB%E5%8A%A1%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/" title="Linux 任务前后台切换">Linux 任务前后台切换</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年2月12日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/linux'>Linux</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-             查看后台运行的任务  jobs查看当前有多少任务在后台运行
-1  jobs   切换后台任务到前台  fg(foreground)将后台中的任务调至前台继续运行
-1  fg   前台任务切换到后台  ctrl + z可以将一个正在前台执行的任务放到后台，并且暂停运行
-1  ctrl + z   后台暂停的任务继续在后台运行  bg(background)将后台暂停的任务切换为运行状态
-1  bg   在后台运行任务  hugo &amp;将hugo任务在后台运行
-1  hugo &amp;   ……
-        </div>
-        <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/linux%E4%BB%BB%E5%8A%A1%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/" title="Centos7 安装">Centos7 安装</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年2月11日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/linux'>Linux</a></span>
-            
-            <span class="meta-category"><a href='/categories/centos7'>Centos7</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            一、下载
-镜像下载地址
-1 2  http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso   二、安装
-1.分区（新手方案）
-​	启动分区/boot ：512M或1024M
-	swap分区 ：内存的2倍
-​	根分区 / ：剩余的空间
-2.设置静态IP及DNS
-设置静态IP
-1 2 3 4 5 6 7 8  vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： BOOTPROTO=static # 静态IP ONBOOT=yes	# 开机启动 IPADDR=192.168.80.130 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.80.2 # 网关   添加DNS
-1 2 3 4 5 6 7 8 9  vi /etc/resolv.conf 修改为： nameserver 8.8.8.8 nameserver 114.114.114.114 或 vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： DNS1=8.……
-        </div>
-        <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/centos/centos7%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/">阅读全文</a></p>
-    </article>
-    
-    
-    
 
 
 
@@ -417,6 +397,10 @@ goStudy/package/calc/operation.go
     
     <li >
         <a href="https://xiarong715.github.io/posts/page/2/">2</a>
+    </li>
+    
+    <li >
+        <a href="https://xiarong715.github.io/posts/page/3/">3</a>
     </li>
     
 
@@ -477,15 +461,35 @@ goStudy/package/calc/operation.go
 <ul class="widget-list">
     
     <li>
-        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Centos7问题与解决">Centos7问题与解决</a>
+        <a href="https://xiarong715.github.io/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/" title="Git .gitignore文件的规则">Git .gitignore文件的规则</a>
     </li>
     
     <li>
-        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/" title="Centos7断电出错修复">Centos7断电出错修复</a>
+        <a href="https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/" title="Git 常见问题收集">Git 常见问题收集</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/" title="Git 基础">Git 基础</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/" title="Git Branch（git分支）讲解">Git Branch（git分支）讲解</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Centos7 问题与解决">Centos7 问题与解决</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/" title="Centos7 断电出错修复">Centos7 断电出错修复</a>
     </li>
     
     <li>
         <a href="https://xiarong715.github.io/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/" title="VSCode 连接 Centos7">VSCode 连接 Centos7</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/" title="Python3 安装">Python3 安装</a>
     </li>
     
     <li>
@@ -494,26 +498,6 @@ goStudy/package/calc/operation.go
     
     <li>
         <a href="https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/" title="健康秘诀 护肝养肾">健康秘诀 护肝养肾</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/%E5%A4%A7%E5%B0%8F%E7%AB%AF/" title="大小端">大小端</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/" title="Go 导入自定义包">Go 导入自定义包</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/linux%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" title="Linux 标准输入输出">Linux 标准输入输出</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/linux%E4%BB%BB%E5%8A%A1%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/" title="Linux 任务前后台切换">Linux 任务前后台切换</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/" title="Centos7 安装">Centos7 安装</a>
     </li>
     
 </ul>
@@ -531,13 +515,15 @@ goStudy/package/calc/operation.go
     
     <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/git/">Git (1)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/git/">Git (4)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/golang/">Golang (3)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/linux/">Linux (4)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/openssh/">Openssh (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/python3/">Python3 (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/vscode/">VSCode (1)</a></li>
     
@@ -562,6 +548,10 @@ goStudy/package/calc/operation.go
     
     <a href="https://xiarong715.github.io/tags/git/">git</a>
     
+    <a href="https://xiarong715.github.io/tags/git-branch/">git branch</a>
+    
+    <a href="https://xiarong715.github.io/tags/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">git常见问题</a>
+    
     <a href="https://xiarong715.github.io/tags/go-module/">go module</a>
     
     <a href="https://xiarong715.github.io/tags/go-package/">go package</a>
@@ -573,6 +563,8 @@ goStudy/package/calc/operation.go
     <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
     
     <a href="https://xiarong715.github.io/tags/linux/">linux</a>
+    
+    <a href="https://xiarong715.github.io/tags/python3/">python3</a>
     
     <a href="https://xiarong715.github.io/tags/windows/">windows</a>
     

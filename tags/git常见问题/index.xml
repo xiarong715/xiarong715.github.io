@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git常见问题 on 风笑天的博客</title>
+    <link>https://xiarong715.github.io/tags/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+    <description>Recent content in git常见问题 on 风笑天的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 May 2023 14:02:05 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/tags/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git 常见问题收集</title>
+      <link>https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/</link>
+      <pubDate>Thu, 25 May 2023 14:02:05 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/</guid>
+      <description>1.git首次安装，下载项目时出现
+git: &amp;lsquo;remote-https&amp;rsquo; is not a git command. See &amp;lsquo;git &amp;ndash;help&amp;rsquo;.
+1 2  yum install libcurl-devel # recomplie git again   2.在windows上产生的文件，上传到github时
+warning: in the working copy of ‘xxx.html’, LF will be replaced by CRLF the next time Git touches it
+参考
+Dos/Windows平台默认的换行符：回车（CR）+ 换行（LF），即\r\n。
+Mac/Linux平台默认的换行符：换行（LF），即\n。
+企业服务器一般都是Linux系统，所以会有替换换行符的需求。
+方法一：
+适用于Windows系统，且一般为Windows默认设置。在Windows上编写代码，在提交到服务器时，对换行符进行CRLF-LF的转换，检出时又会进行LF-CRLF的转换
+1  $ git config --global core.autocrlf true   方法二：
+适用于Linux系统，所有换行符都会进行CRLF-LF转换，但不会转换回CRLF。
+1  $ git config --global core.autocrlf input   方法三：</description>
+    </item>
+    
+  </channel>
+</rss>

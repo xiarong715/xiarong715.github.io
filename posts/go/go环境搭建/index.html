@@ -139,25 +139,22 @@ wget https://golang.google.cn/dl/go1.15.4.src.tar.gz
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">解压
-	tar -xvzf go1.15.4.src.tar.gz -C /usr/local
+	tar -xvzf go1.15.4.src.tar.gz -C /tools
 编译
-	<span style="color:#0086b3">cd</span> /usr/local/go/src
+	<span style="color:#0086b3">cd</span> /tools/go/src
 	./all.bash
 </code></pre></td></tr></table>
 </div>
 </div><p>4.环境配置</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vi /etc/profile 编辑文件添加下面内容：
@@ -167,9 +164,14 @@ wget https://golang.google.cn/dl/go1.15.4.src.tar.gz
 <span style="color:#0086b3">export</span> <span style="color:#008080">GOROOT</span><span style="color:#000;font-weight:bold">=</span>/usr/local/go			<span style="color:#998;font-style:italic"># go root directory</span>
 <span style="color:#0086b3">export</span> <span style="color:#008080">GOPATH</span><span style="color:#000;font-weight:bold">=</span><span style="color:#008080">$HOME</span>/go				<span style="color:#998;font-style:italic"># go path directory</span>
 <span style="color:#0086b3">export</span> <span style="color:#008080">PATH</span><span style="color:#000;font-weight:bold">=</span><span style="color:#008080">$PATH</span>:<span style="color:#008080">$GOROOT</span>/bin
-
-生效配置文件：
-<span style="color:#0086b3">source</span> /etc/profile
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#0086b3">source</span> /etc/profile	<span style="color:#998;font-style:italic"># 生效配置文件</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>5.测试</p>
@@ -180,8 +182,8 @@ wget https://golang.google.cn/dl/go1.15.4.src.tar.gz
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go version
-go version go1.15.4 linux/amd64
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go version			<span style="color:#998;font-style:italic"># 打印出go的版本号表明安装成功</span>
+<span style="color:#998;font-style:italic"># go version go1.15.4 linux/amd64</span>
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -277,15 +279,35 @@ go version go1.15.4 linux/amd64
 <ul class="widget-list">
     
     <li>
-        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Centos7问题与解决">Centos7问题与解决</a>
+        <a href="https://xiarong715.github.io/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/" title="Git .gitignore文件的规则">Git .gitignore文件的规则</a>
     </li>
     
     <li>
-        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/" title="Centos7断电出错修复">Centos7断电出错修复</a>
+        <a href="https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/" title="Git 常见问题收集">Git 常见问题收集</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/" title="Git 基础">Git 基础</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/" title="Git Branch（git分支）讲解">Git Branch（git分支）讲解</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Centos7 问题与解决">Centos7 问题与解决</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/" title="Centos7 断电出错修复">Centos7 断电出错修复</a>
     </li>
     
     <li>
         <a href="https://xiarong715.github.io/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/" title="VSCode 连接 Centos7">VSCode 连接 Centos7</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/" title="Python3 安装">Python3 安装</a>
     </li>
     
     <li>
@@ -294,26 +316,6 @@ go version go1.15.4 linux/amd64
     
     <li>
         <a href="https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/" title="健康秘诀 护肝养肾">健康秘诀 护肝养肾</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/%E5%A4%A7%E5%B0%8F%E7%AB%AF/" title="大小端">大小端</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/" title="Go 导入自定义包">Go 导入自定义包</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/linux%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" title="Linux 标准输入输出">Linux 标准输入输出</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/linux%E4%BB%BB%E5%8A%A1%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/" title="Linux 任务前后台切换">Linux 任务前后台切换</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/" title="Centos7 安装">Centos7 安装</a>
     </li>
     
 </ul>
@@ -331,13 +333,15 @@ go version go1.15.4 linux/amd64
     
     <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/git/">Git (1)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/git/">Git (4)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/golang/">Golang (3)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/linux/">Linux (4)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/openssh/">Openssh (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/python3/">Python3 (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/vscode/">VSCode (1)</a></li>
     
@@ -362,6 +366,10 @@ go version go1.15.4 linux/amd64
     
     <a href="https://xiarong715.github.io/tags/git/">git</a>
     
+    <a href="https://xiarong715.github.io/tags/git-branch/">git branch</a>
+    
+    <a href="https://xiarong715.github.io/tags/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">git常见问题</a>
+    
     <a href="https://xiarong715.github.io/tags/go-module/">go module</a>
     
     <a href="https://xiarong715.github.io/tags/go-package/">go package</a>
@@ -373,6 +381,8 @@ go version go1.15.4 linux/amd64
     <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
     
     <a href="https://xiarong715.github.io/tags/linux/">linux</a>
+    
+    <a href="https://xiarong715.github.io/tags/python3/">python3</a>
     
     <a href="https://xiarong715.github.io/tags/windows/">windows</a>
     

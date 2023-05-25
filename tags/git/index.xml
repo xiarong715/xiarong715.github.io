@@ -6,7 +6,52 @@
     <description>Recent content in git on 风笑天的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Dec 2020 20:32:32 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 May 2023 14:02:05 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git 常见问题收集</title>
+      <link>https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/</link>
+      <pubDate>Thu, 25 May 2023 14:02:05 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/</guid>
+      <description>1.git首次安装，下载项目时出现
+git: &amp;lsquo;remote-https&amp;rsquo; is not a git command. See &amp;lsquo;git &amp;ndash;help&amp;rsquo;.
+1 2  yum install libcurl-devel # recomplie git again   2.在windows上产生的文件，上传到github时
+warning: in the working copy of ‘xxx.html’, LF will be replaced by CRLF the next time Git touches it
+参考
+Dos/Windows平台默认的换行符：回车（CR）+ 换行（LF），即\r\n。
+Mac/Linux平台默认的换行符：换行（LF），即\n。
+企业服务器一般都是Linux系统，所以会有替换换行符的需求。
+方法一：
+适用于Windows系统，且一般为Windows默认设置。在Windows上编写代码，在提交到服务器时，对换行符进行CRLF-LF的转换，检出时又会进行LF-CRLF的转换
+1  $ git config --global core.autocrlf true   方法二：
+适用于Linux系统，所有换行符都会进行CRLF-LF转换，但不会转换回CRLF。
+1  $ git config --global core.autocrlf input   方法三：</description>
+    </item>
+    
+    <item>
+      <title>Git 基础</title>
+      <link>https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Wed, 24 May 2023 18:38:08 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/</guid>
+      <description>1.基础使用
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  # 在工作目录初始化新仓库 git init git remote add origin https://github.com/xiarong715/hello.git # 添加远程仓库 origin git remote add myorigin https://github.com/xiarong715/goStudy.git	# 添加远程仓库 myorigin git remote set-url myorigin git@github.com:xiarong715/goStudy.git	# 修改远程仓库 myorigin的地址 git pull origin master	# 相当于 git pull origin master:master 上传到远程仓库 # 查看修改记录 git log # 回到指定版本，如：fd789e1 git reset --hard fd789e1 # 从仓库克隆 git clone https://github.</description>
+    </item>
+    
+    <item>
+      <title>Git Branch（git分支）讲解</title>
+      <link>https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/</link>
+      <pubDate>Wed, 24 May 2023 17:37:16 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/</guid>
+      <description>一、前言 在开发中，建议经常创建分支、合并分支和删除分支。当发布一个软件的稳定版本后，发现有一个bug，这时创建一个分支解决bug，等测试完成，解决bug后，合并新分支到master分支，最后删除新分支。
+​	当开发一个新功能时，创建新分支，在新分支中添加新功能，测试没问题后，合并到master分支，最后删除新分支。git分支的好处是，在不影响稳定代码的情况下，修补bug，添加新功能；
+二、git分支的使用
+1.当修补bug或添加新功能时，创建分支testing
+1 2 3 4 5 6 7  git branch testing	# 创建新分支testing git checkout testing	# 切换到新分支testing # 或 # 创建新分支并切到新分支testing （一步操作顶两步操作，当分支存在时会出错；切换到存在的分支时，使用 git checkout testing） git checkout -b testing   2.测试完成后，合并分支
+1 2 3 4 5 6 7 8 9 10 11  # 首先切换到要合并的分支 git checkout master # 合并分支 git merge testing # 解决合并冲突，当两个分支中修改同一文件的同一地方，合并分支时就会冲突：如index.html # 首先，打开文件index.html会看到 &amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; ========== &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 的内容，这些内容就是冲突的位置，手动合并冲突的内容； # 然后 git add index.</description>
+    </item>
+    
     <item>
       <title>Git 环境搭建</title>
       <link>https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
@@ -14,7 +59,9 @@
       
       <guid>https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
       <description>1.download a tarball
+下载网址
 下载最新版本git
+源代码包下载地址
 1  wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz   2.解压
 1  tar -xvf git-2.9.5.tar.xz   3.configure
 1 2  cd git-2.9.5 ./configure   4.make and make install

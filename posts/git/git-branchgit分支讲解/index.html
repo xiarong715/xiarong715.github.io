@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>Git Branch（git分支）讲解 | 风笑天的博客</title>
+    <meta property="og:title" content="Git Branch（git分支）讲解 - 风笑天的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2023-05-24T17:37:16&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2023-05-24T17:37:16&#43;08:00'>
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,风笑天,大数据、软件架构,健康">
+    <meta name="description" content="Git Branch（git分支）讲解">
+        
+    <meta name="author" content="风笑天">
+    <meta property="og:url" content="https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xiarong715.github.io">
+                        风笑天的博客
+                    </a>
+                
+                <p class="description">专注于Go语言(golang)、大数据、软件架构。注重健康。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://xiarong715.github.io">首页</a>
+                    
+                    <a  href="https://xiarong715.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Git Branch（git分支）讲解</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年5月24日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/git'>Git</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <p>一、前言
+在开发中，建议经常创建分支、合并分支和删除分支。当发布一个软件的稳定版本后，发现有一个<code>bug</code>，这时创建一个分支解决<code>bug</code>，等测试完成，解决<code>bug</code>后，合并新分支到<code>master</code>分支，最后删除新分支。</p>
+<p>​		当开发一个新功能时，创建新分支，在新分支中添加新功能，测试没问题后，合并到<code>master</code>分支，最后删除新分支。<code>git</code>分支的好处是，在不影响稳定代码的情况下，修补<code>bug</code>，添加新功能；</p>
+<p>二、<code>git</code>分支的使用</p>
+<p>1.当修补<code>bug</code>或添加新功能时，创建分支<code>testing</code></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git branch testing		<span style="color:#998;font-style:italic"># 创建新分支testing</span>
+git checkout testing	<span style="color:#998;font-style:italic"># 切换到新分支testing</span>
+
+<span style="color:#998;font-style:italic"># 或</span>
+
+<span style="color:#998;font-style:italic"># 创建新分支并切到新分支testing （一步操作顶两步操作，当分支存在时会出错；切换到存在的分支时，使用 git checkout testing）</span>
+git checkout -b testing
+</code></pre></td></tr></table>
+</div>
+</div><p>2.测试完成后，合并分支</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 首先切换到要合并的分支</span>
+git checkout master
+
+<span style="color:#998;font-style:italic"># 合并分支</span>
+git merge testing
+
+<span style="color:#998;font-style:italic"># 解决合并冲突，当两个分支中修改同一文件的同一地方，合并分支时就会冲突：如index.html</span>
+<span style="color:#998;font-style:italic"># 首先，打开文件index.html会看到 &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  ==========  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; 的内容，这些内容就是冲突的位置，手动合并冲突的内容；</span>
+<span style="color:#998;font-style:italic"># 然后</span>
+git add index.html
+git commit -a -m <span style="color:#d14">&#34;merge testing, change for xxx bug&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>3.合并完成后，分支testing的使命完成，删除分支testing</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git branch -d testing
+</code></pre></td></tr></table>
+</div>
+</div><p>三、git 分支管理</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git branch  			<span style="color:#998;font-style:italic"># 查看所有分支，带*号的分支，表示当前所在的分支；</span>
+git branch -v 			<span style="color:#998;font-style:italic"># 查看所有分支最后一次提交的对象信息</span>
+git branch --merged		<span style="color:#998;font-style:italic"># 查看哪些分支已被合并到当前分支，此时可以没有带*号的分支，它们已合并到当前分支了，删除也不会有损失；</span>
+git branch -d testing	<span style="color:#998;font-style:italic"># 删除已被合并的分支</span>
+git branch --no-merged  <span style="color:#998;font-style:italic"># 查看哪些分支没有被合并到当前分支，此时删除这些分支会报错，提示这此分支没有被合并；</span>
+git branch -d lsy		<span style="color:#998;font-style:italic"># 删除没有合并的分支，报错，因为那样做会丢失数据 （强制删除：git branch -D lsy   慎重！！！！）	</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>四、利用分支进行开发的工作流程</p>
+<p>长期分支</p>
+<p>特性分支</p>
+<p>五、远程分支</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 推送本地分支到远程仓库</span>
+git fetch origin 				<span style="color:#998;font-style:italic"># 获取远程仓库origin的最新数据</span>
+git push origin master			<span style="color:#998;font-style:italic"># 推送master分支到远程仓库origin的master分支 （同 git push origin master:master）</span>
+git push origin master:ownfix	<span style="color:#998;font-style:italic"># 推送master分支到远程仓库origin的ownfix分支</span>
+git merge origin/serverfix		<span style="color:#998;font-style:italic"># 合并远程分支到（本地）当前分支</span>
+
+<span style="color:#998;font-style:italic"># 从远程分支分化一个新分支，创建本地分支serverfix，内容和远程分支origin/serverfix一样，并切换到远程分支</span>
+git checkout -b serverfix origin/serverfix
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 跟踪远程分支</span>
+<span style="color:#998;font-style:italic"># 从远程分支分化的本地分支，称为跟踪分支，在跟踪分支里输入git push，git会自动推断向哪个远程仓库的哪个分支推送数据，输入git pull，git会自动推断向哪个远程仓库的哪个分支拉取数据，并且合并到本地当前分支中；</span>
+<span style="color:#998;font-style:italic"># 当克隆一个远程仓库时，git会自动创建一个master本地分支，跟踪origin/master远程分支，（如：git checkout -b master origin/master的作用）；</span>
+<span style="color:#998;font-style:italic"># git push、git pull 推送拉取数据</span>
+	
+git checkout -b ownfix origin/ownfix 	<span style="color:#998;font-style:italic"># 跟踪其他分支，本地分支ownfix跟踪origin/ownfix远程分支</span>
+git checkout -b sf origin/serverfix		<span style="color:#998;font-style:italic"># 设置本地分支与远程分支不同的名字</span>
+git checkout --track origin/serverfix	<span style="color:#998;font-style:italic"># 创建本地分支serverfix跟踪远程分支origin/serverfix; 1.6.2版本的git，可使用--track参数</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 手动设置本地分支跟踪远程分支</span>
+git branch --set-upstream-to<span style="color:#000;font-weight:bold">=</span>origin/master master	<span style="color:#998;font-style:italic"># 本地master分支跟踪远程分支origin/master</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 删除远程分支</span>
+<span style="color:#998;font-style:italic"># git push &lt;远程仓库名&gt; &lt;本地仓库分支名&gt;:&lt;远程仓库分支名&gt;</span>
+<span style="color:#998;font-style:italic"># git push &lt;远程仓库名&gt; &lt;来源地&gt;:&lt;目的地&gt;</span>
+git push origin :serverfix			<span style="color:#998;font-style:italic"># 删除远程分支serverfix</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>六、分支的衍合(rebase)</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout serverfix			<span style="color:#998;font-style:italic"># 切换到serverfix分支</span>
+git rebase master				<span style="color:#998;font-style:italic"># 把server分支在master和serverfix的祖先结点上的操作，在master上重演一遍。	</span>
+
+<span style="color:#998;font-style:italic"># 也可用</span>
+git rebase master serverfix		<span style="color:#998;font-style:italic"># 与上面两条命令得到的结果相同</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 快进主干分支master</span>
+git checkout master				<span style="color:#998;font-style:italic"># 切换到master分支</span>
+git merge serverfix				<span style="color:#998;font-style:italic"># 合并serverfix到master，因为serverfix和master在一条线上，master指针会直接移到serverfix指向的对象。（称为快进）。</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 当从主干分支分出两条分支，且两条分支有不同与主干分支的祖先结点，但又只想衍合其中一条分支(serverfix)</span>
+<span style="color:#998;font-style:italic">#			master</span>
+<span style="color:#998;font-style:italic">#			|</span>
+<span style="color:#998;font-style:italic">#	--------|		 |---------testing</span>
+<span style="color:#998;font-style:italic">#			|--------|</span>
+<span style="color:#998;font-style:italic">#					 |---------serverfix        (意思一下，不够形象)</span>
+
+<span style="color:#998;font-style:italic"># 找出serverfix在serverfix与testing共有的祖先结点上的操作，在master上重演一遍。</span>
+git rebase --onto master serverfix testing	
+
+<span style="color:#998;font-style:italic">#			master</span>
+<span style="color:#998;font-style:italic">#			|------------------serverfix&#39;</span>
+<span style="color:#998;font-style:italic">#	--------|		 |---------testing</span>
+<span style="color:#998;font-style:italic">#			|--------|</span>
+<span style="color:#998;font-style:italic">#					 |x-x-x-x-xserverfix（没了）</span>
+
+
+git checkout master
+git merge serverfix			<span style="color:#998;font-style:italic"># 快进主干分支master</span>
+
+<span style="color:#998;font-style:italic">#					           master</span>
+<span style="color:#998;font-style:italic">#	--------|------------------serverfix&#39;</span>
+<span style="color:#998;font-style:italic">#			|</span>
+<span style="color:#998;font-style:italic">#			|		 |---------testing</span>
+<span style="color:#998;font-style:italic">#			|--------|</span>
+<span style="color:#998;font-style:italic">#					 |x-x-x-x-xserverfix（没了）</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic">#又想合并另一个分支(testing)</span>
+git rebase master testing
+	
+<span style="color:#998;font-style:italic">#					          master</span>
+<span style="color:#998;font-style:italic">#	--------|-----------------serverfix&#39;---------testing&#39;</span>
+<span style="color:#998;font-style:italic">#			|</span>
+<span style="color:#998;font-style:italic">#			|		 </span>
+<span style="color:#998;font-style:italic">#			|--------|x-x-x-x-testing（没了）</span>
+
+git checkout master
+git merge testing		<span style="color:#998;font-style:italic"># 快进主干分支master</span>
+	
+<span style="color:#998;font-style:italic">#										         master</span>
+<span style="color:#998;font-style:italic">#	--------|-----------------serverfix&#39;---------testing&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 最后删除分支</span>
+git branch -d serverfix
+git branch -d testing
+
+<span style="color:#998;font-style:italic">#	--------|------------------------------------master</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>六、设置远程分支
+设置本地分支<code>addlibsoxr-v0</code>追踪到远程分支<code>origin/addlibsoxr-v0</code>上</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push --set-upstream origin/addlibsoxr-v0 addlibsoxr-v0
+</code></pre></td></tr></table>
+</div>
+</div><p>七、重命名分支</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git branch -M main 	<span style="color:#998;font-style:italic"># 重命名分支为main</span>
+git branch -m main	<span style="color:#998;font-style:italic"># -M  -m 作用相同</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可通过<code>git branch --help</code>查看用法。</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Git 环境搭建</a></li>
+        
+        <li><a href="/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/">Centos7 问题与解决</a></li>
+        
+        <li><a href="/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/">Centos7 断电出错修复</a></li>
+        
+        <li><a href="/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/">VSCode 连接 Centos7</a></li>
+        
+        <li><a href="/posts/python/python3-%E5%AE%89%E8%A3%85/">Python3 安装</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/git'>git</a></li>
+                
+                <li><a href='/tags/git-branch'>git branch</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2023 <a href="https://xiarong715.github.io">风笑天的博客 By 风笑天</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xiarong715.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xiarong715.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/" title="Git .gitignore文件的规则">Git .gitignore文件的规则</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/" title="Git 常见问题收集">Git 常见问题收集</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/" title="Git 基础">Git 基础</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/" title="Git Branch（git分支）讲解">Git Branch（git分支）讲解</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Centos7 问题与解决">Centos7 问题与解决</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/" title="Centos7 断电出错修复">Centos7 断电出错修复</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/" title="VSCode 连接 Centos7">VSCode 连接 Centos7</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/" title="Python3 安装">Python3 安装</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Docker 安装与使用">Docker 安装与使用</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/" title="健康秘诀 护肝养肾">健康秘诀 护肝养肾</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xiarong715.github.io/categories/centos7/">Centos7 (2)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/docker/">Docker (3)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/git/">Git (4)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (3)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (4)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/openssh/">Openssh (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/python3/">Python3 (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/vscode/">VSCode (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/windows/">Windows (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/%E5%81%A5%E5%BA%B7/">健康 (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/">博客 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xiarong715.github.io/tags/centos7/">centos7</a>
+    
+    <a href="https://xiarong715.github.io/tags/docker/">docker</a>
+    
+    <a href="https://xiarong715.github.io/tags/docker-compose/">docker-compose</a>
+    
+    <a href="https://xiarong715.github.io/tags/git/">git</a>
+    
+    <a href="https://xiarong715.github.io/tags/git-branch/">git branch</a>
+    
+    <a href="https://xiarong715.github.io/tags/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">git常见问题</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-module/">go module</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-package/">go package</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-plugin/">go plugin</a>
+    
+    <a href="https://xiarong715.github.io/tags/golang/">golang</a>
+    
+    <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
+    
+    <a href="https://xiarong715.github.io/tags/linux/">linux</a>
+    
+    <a href="https://xiarong715.github.io/tags/python3/">python3</a>
+    
+    <a href="https://xiarong715.github.io/tags/windows/">windows</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%81%A5%E5%BA%B7/">健康</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%85%BB%E7%94%9F/">养生</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%85%BB%E8%82%BE/">养肾</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E6%8A%A4%E8%82%9D/">护肝</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E9%95%BF%E5%AF%BF/">长寿</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://xiarong715.github.io" title="风笑天的博客">风笑天的博客</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.gohugo.org" title="hugo">hugo中文文档</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.gohugo.io" title="hugo">hugo官网</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xiarong715.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

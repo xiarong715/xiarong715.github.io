@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>Git 常见问题收集 | 风笑天的博客</title>
+    <meta property="og:title" content="Git 常见问题收集 - 风笑天的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2023-05-25T14:02:05&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2023-05-25T14:02:05&#43;08:00'>
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,风笑天,大数据、软件架构,健康">
+    <meta name="description" content="Git 常见问题收集">
+        
+    <meta name="author" content="风笑天">
+    <meta property="og:url" content="https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xiarong715.github.io">
+                        风笑天的博客
+                    </a>
+                
+                <p class="description">专注于Go语言(golang)、大数据、软件架构。注重健康。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://xiarong715.github.io">首页</a>
+                    
+                    <a  href="https://xiarong715.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Git 常见问题收集</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年5月25日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/git'>Git</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <p>1.<code>git</code>首次安装，下载项目时出现</p>
+<p><strong>git: &lsquo;remote-https&rsquo; is not a git command. See &lsquo;git &ndash;help&rsquo;.</strong></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install libcurl-devel
+<span style="color:#998;font-style:italic"># recomplie git again</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>2.在<code>windows</code>上产生的文件，上传到<code>github</code>时</p>
+<p><strong>warning:  in the working copy of ‘xxx.html’, LF will be replaced by CRLF the next time Git touches it</strong></p>
+<p><a href="https://blog.csdn.net/Babylonxun/article/details/126598477">参考</a></p>
+<p><code>Dos/Windows</code>平台默认的换行符：回车（<code>CR</code>）+ 换行（<code>LF</code>），即<code>\r\n</code>。</p>
+<p><code>Mac/Linux</code>平台默认的换行符：换行（<code>LF</code>），即<code>\n</code>。</p>
+<p>企业服务器一般都是<code>Linux</code>系统，所以会有替换换行符的需求。</p>
+<p>方法一：</p>
+<p>适用于<code>Windows</code>系统，且一般为<code>Windows</code>默认设置。在<code>Windows</code>上编写代码，在提交到服务器时，对换行符进行<code>CRLF</code>-<code>LF</code>的转换，检出时又会进行<code>LF</code>-<code>CRLF</code>的转换</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git config --global core.autocrlf <span style="color:#0086b3">true</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>方法二：</p>
+<p>适用于<code>Linux</code>系统，所有换行符都会进行<code>CRLF</code>-<code>LF</code>转换，但不会转换回<code>CRLF</code>。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git config --global core.autocrlf input
+</code></pre></td></tr></table>
+</div>
+</div><p>方法三：</p>
+<p>适用于<code>Windows</code>系统，且只在<code>Windows</code>上开发的情况。在提交和检出时都不进行<code>CRLF</code>-<code>LF</code>的转换。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git config --global core.autocrlf <span style="color:#0086b3">false</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>文件提交时进行<code>safecrlf</code>检查：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 拒绝提交包含混合换行符的文件</span>
+$ git config --global core.safecrlf <span style="color:#0086b3">true</span>
+
+<span style="color:#998;font-style:italic"># 允许提交包含混合换行符的文件</span>
+git config --global core.safecrlf <span style="color:#0086b3">false</span>
+
+<span style="color:#998;font-style:italic"># 提交包含混合换行符的文件时给出警告</span>
+git config --global core.safecrlf warn
+</code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/git/git%E5%9F%BA%E7%A1%80/">Git 基础</a></li>
+        
+        <li><a href="/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/">Git Branch（git分支）讲解</a></li>
+        
+        <li><a href="/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Git 环境搭建</a></li>
+        
+        <li><a href="/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/">Centos7 问题与解决</a></li>
+        
+        <li><a href="/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/">Centos7 断电出错修复</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/git'>git</a></li>
+                
+                <li><a href='/tags/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98'>git常见问题</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2023 <a href="https://xiarong715.github.io">风笑天的博客 By 风笑天</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xiarong715.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xiarong715.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/" title="Git .gitignore文件的规则">Git .gitignore文件的规则</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/" title="Git 常见问题收集">Git 常见问题收集</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/" title="Git 基础">Git 基础</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/" title="Git Branch（git分支）讲解">Git Branch（git分支）讲解</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Centos7 问题与解决">Centos7 问题与解决</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/" title="Centos7 断电出错修复">Centos7 断电出错修复</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/" title="VSCode 连接 Centos7">VSCode 连接 Centos7</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/" title="Python3 安装">Python3 安装</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Docker 安装与使用">Docker 安装与使用</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/" title="健康秘诀 护肝养肾">健康秘诀 护肝养肾</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xiarong715.github.io/categories/centos7/">Centos7 (2)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/docker/">Docker (3)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/git/">Git (4)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (3)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (4)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/openssh/">Openssh (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/python3/">Python3 (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/vscode/">VSCode (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/windows/">Windows (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/%E5%81%A5%E5%BA%B7/">健康 (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/">博客 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xiarong715.github.io/tags/centos7/">centos7</a>
+    
+    <a href="https://xiarong715.github.io/tags/docker/">docker</a>
+    
+    <a href="https://xiarong715.github.io/tags/docker-compose/">docker-compose</a>
+    
+    <a href="https://xiarong715.github.io/tags/git/">git</a>
+    
+    <a href="https://xiarong715.github.io/tags/git-branch/">git branch</a>
+    
+    <a href="https://xiarong715.github.io/tags/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">git常见问题</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-module/">go module</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-package/">go package</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-plugin/">go plugin</a>
+    
+    <a href="https://xiarong715.github.io/tags/golang/">golang</a>
+    
+    <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
+    
+    <a href="https://xiarong715.github.io/tags/linux/">linux</a>
+    
+    <a href="https://xiarong715.github.io/tags/python3/">python3</a>
+    
+    <a href="https://xiarong715.github.io/tags/windows/">windows</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%81%A5%E5%BA%B7/">健康</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%85%BB%E7%94%9F/">养生</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%85%BB%E8%82%BE/">养肾</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E6%8A%A4%E8%82%9D/">护肝</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E9%95%BF%E5%AF%BF/">长寿</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://xiarong715.github.io" title="风笑天的博客">风笑天的博客</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.gohugo.org" title="hugo">hugo中文文档</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.gohugo.io" title="hugo">hugo官网</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xiarong715.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

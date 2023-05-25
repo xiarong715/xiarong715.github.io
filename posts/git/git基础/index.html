@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>Git 基础 | 风笑天的博客</title>
+    <meta property="og:title" content="Git 基础 - 风笑天的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2023-05-24T18:38:08&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2023-05-24T18:38:08&#43;08:00'>
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,风笑天,大数据、软件架构,健康">
+    <meta name="description" content="Git 基础">
+        
+    <meta name="author" content="风笑天">
+    <meta property="og:url" content="https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xiarong715.github.io">
+                        风笑天的博客
+                    </a>
+                
+                <p class="description">专注于Go语言(golang)、大数据、软件架构。注重健康。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://xiarong715.github.io">首页</a>
+                    
+                    <a  href="https://xiarong715.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Git 基础</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年5月24日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/git'>Git</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <p>1.基础使用</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 在工作目录初始化新仓库</span>
+git init
+git remote add origin https://github.com/xiarong715/hello.git 		<span style="color:#998;font-style:italic"># 添加远程仓库 origin</span>
+git remote add myorigin https://github.com/xiarong715/goStudy.git	<span style="color:#998;font-style:italic"># 添加远程仓库 myorigin</span>
+git remote set-url myorigin git@github.com:xiarong715/goStudy.git	<span style="color:#998;font-style:italic"># 修改远程仓库 myorigin的地址</span>
+git pull origin master	<span style="color:#998;font-style:italic"># 相当于 git pull origin master:master  上传到远程仓库</span>
+
+<span style="color:#998;font-style:italic"># 查看修改记录</span>
+git log
+
+<span style="color:#998;font-style:italic"># 回到指定版本，如：fd789e1</span>
+git reset --hard fd789e1
+
+<span style="color:#998;font-style:italic"># 从仓库克隆</span>
+git clone https://github.com/xiarong715/gittest.git
+</code></pre></td></tr></table>
+</div>
+</div><p>2.本地新仓库上传到<code>github</code></p>
+<p>参考：<a href="https://newbedev.com/bring-a-local-folder-to-remote-git-repo">a-local-floder-to-remote-git-repo</a></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 本地</span>
+<span style="color:#0086b3">cd</span> goStudy
+git init
+git add .
+git commit -m <span style="color:#d14">&#34;first commit&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在github上新创建仓库</p>
+<p>
+        <img class="mx-auto" alt="image-20211104191242518" src="image-20211104191242518.png" />   
+    </p>
+<p>点击<code>create repository</code>，完成创建</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git remote add origin https://github.com/xiarong715/goStudy.git  <span style="color:#998;font-style:italic"># 设置远程仓库路径，origin为远程仓库名，可自定义</span>
+$ git push origin master										   <span style="color:#998;font-style:italic"># 上传本地master分支到远程仓库origin的master分支</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>github</code>仓库创建完成后，官方给出的操作提示。</p>
+<p>
+        <img class="mx-auto" alt="RTX截图未命名" src="image-2021111051032.jpg" />   
+    </p>
+<p>3.提交更新到仓库</p>
+<p>工作目录下的所有文件不外乎两种状态：已跟踪和未跟踪。新创建的文件，还没纳入<code>git</code>管理，该文件就是未跟踪状态。已纳入<code>git</code>管理控制的文件，就是已跟踪状态。工作一段时间后，文件可能会有几种状态：未修改、已修改、已暂存。未修改状态就是在上次提交之后没有被修改；在上次提交之后，有修改过的文件就是已修改状态；修改之后提交到暂存区，下次提交时，会把暂存区的文件提交到仓库，暂存区的文件就是暂存状态。</p>
+<p>几种状态的变化过程</p>
+<pre><code>         untracked file                          tracked file
+			|                   |								
+			|-------------------|--------------------------------|
+			|                   |	                             |    
+			|                   |	                             |    
+			|                unmodified     modified          staged 
+			|                   |---------------|----------------|
+			|   git add         |               |                |
+			|=================&gt;&gt;|               |                |
+			|                   |    edit       |                |
+			|                   |=============&gt;&gt;|                |
+			|    git restore    |               |                |
+			|       --staged    |               |    git add     |
+			|&lt;&lt;=================|               |==============&gt;&gt;|
+			|                   |               |                |
+			|                   |           git commit           |
+			|                   |&lt;&lt;==============================|
+			|                   |               |                |
+			|                   |               |                |
+</code></pre><p>4.对应的基本操作</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git add README					<span style="color:#998;font-style:italic"># 跟踪文件README</span>
+git restore --staged README		<span style="color:#998;font-style:italic"># 取消跟踪文件README</span>
+git add README					<span style="color:#998;font-style:italic"># 跟踪后，再次使用 git add，保存文件快照到暂存区</span>
+git commit README -m <span style="color:#d14">&#39;add README&#39;</span> 	<span style="color:#998;font-style:italic"># 提交暂存区的内容到本地仓库</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push origin master	<span style="color:#998;font-style:italic"># 提交本地仓库的master分支到远程仓库origin的master分支，同 git push origin master:master；</span>
+git push origin master:master-v0 <span style="color:#998;font-style:italic"># 本地仓库的master分支提交到远程仓库origin的master-v0分支</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>5.远程仓库添加、修改与删除</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 在本地源代码目录下执行</span>
+<span style="color:#998;font-style:italic"># 添加远程仓库地址</span>
+<span style="color:#998;font-style:italic"># git remote add reponame repo-url</span>
+git remote add origin https://github.com/xiarong715/goStudy.git  	<span style="color:#998;font-style:italic"># add remote repo origin</span>
+git remote add track https://github.com/xiarong715/goStudy.git 	<span style="color:#998;font-style:italic"># add remote repo track</span>
+
+<span style="color:#998;font-style:italic"># 修改已经存在的远程仓库地址</span>
+git remote set-url origin git@github.com:xiarong715/goStudy.git
+git remote set-url track git@github.com:xiarong715/goStudy.git
+
+<span style="color:#998;font-style:italic"># 删除远程仓库地址</span>
+$ git remote remove origin   <span style="color:#998;font-style:italic"># remove remote repo origin</span>
+$ git remote remove track    <span style="color:#998;font-style:italic"># remove remote repo track</span>
+
+<span style="color:#998;font-style:italic"># 设置好远程仓库后，可使用git push 上传到对应仓库的某个分支</span>
+<span style="color:#998;font-style:italic"># git push &lt;远程仓库名&gt; &lt;本地分支&gt;:&lt;远程仓库分支&gt;</span>
+$ git push origin master	<span style="color:#998;font-style:italic"># 本地master分支上传到远程origin仓库的master分支</span>
+$ git push track master		<span style="color:#998;font-style:italic"># 本地master分支上传到远程track仓库的master分支</span>
+
+<span style="color:#998;font-style:italic"># 为master分支设置上传到origin仓库的master分支</span>
+$ git push --set-upstream origin master
+<span style="color:#998;font-style:italic"># 接下来直接使用git push，把master分支上传到origin仓库的master分支</span>
+$ git push					<span style="color:#998;font-style:italic"># 经过上一步的操作，这一步相当于： git push origin master</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>6.身份验证</p>
+<p><code>git push</code>上传要验证身份，因此在<code>repo-url</code>中带上用户名和密码，<code>github</code>不再支持在<code>url</code>中带上用户名和密码的形式。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git remote remove origin	<span style="color:#998;font-style:italic"># remote 之前添加的，没有带上用户名和密码。先删除再添加，或修改</span>
+git remote add origin https://xiarong715:xxxxxxxxx@github.com/xiarong715/goStudy.git
+<span style="color:#998;font-style:italic"># 或</span>
+<span style="color:#998;font-style:italic"># 直接修改已存在的远程仓库的url</span>
+git remote set-url origin https://xiarong715:xxxxxxxxx@github.com/xiarong715/goStudy.git
+</code></pre></td></tr></table>
+</div>
+</div><p>参考：<a href="https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#switching-remote-urls-from-ssh-to-https">git remote repo address HTTPS改为SSH</a></p>
+<p><code>github</code>不再支持在<code>URL</code>中添加用户名和密码的认证形式，把<code>HTTPS</code>的<code>URL</code>改为<code>SSH</code>的形式</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git remote set-url origin git@github.com:xiarong715/goStudy.git			<span style="color:#998;font-style:italic"># ssh的形式</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>使用<code>SSH</code>的形式，需要在<code>github</code>的个人设置中添加主机的<code>ssh public key</code>。参考：<a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh"><code>add ssh pulic key to github</code></a></p>
+<p>a.拷贝主机的<code>ssh public key</code></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vi ~/.ssh/id_rsa.pub		<span style="color:#998;font-style:italic"># 查看ssh public key</span>
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDItCwXYBAhfTNPhuCdvabcHnRg2vHnzRBeQuEscNby1W4hhPrO/ZinkRWcQvA5VOioS42UL/dT1ro4PZrdJOXEgXK1NprB1KgK+OxZzXMWnNo1fQZnPnQqx6VPFgiLV1NOqWvVtJsee0fEG7qISbmCrVpxVIRjpxsg3j0iMTC5LtZvKWrWvCxTG5CwZ8Ee2TaK/yWJOpSGv6+we7jVt+QPzgxbi0wnfaXqgxVeFWM9zTRJjlUx8QAUHdfh7ZbTPqJlrgi6ebBq6RB/h5PBEkg/D+m11G8mI9rv4LNBB5RVCvPq4TsT5auEKaPYyH2H3GDV9+TYw8t5D1UoQda3OQpB root@localhost.localdomain
+</code></pre><p>b.添加<code>public key</code>到<code>github</code></p>
+<p>
+        <img class="mx-auto" alt="image-20211105161218646" src="image-20211105161218646.png" />   
+    </p>
+<p>
+        <img class="mx-auto" alt="image-20211105161300116" src="image-20211105161300116.png" />   
+    </p>
+<p>c.粘贴第a步复制的<code>ssh public key</code></p>
+<p>
+        <img class="mx-auto" alt="image-20211105161633085" src="image-20211105161633085.png" />   
+    </p>
+<p>
+        <img class="mx-auto" alt="image-20211105161803843" src="image-20211105161803843.png" />   
+    </p>
+<p>d.测试能否登录到github.com</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -T git@github.com   <span style="color:#998;font-style:italic"># Attempts to ssh to GitHub</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>成功登录</p>
+<p>
+        <img class="mx-auto" alt="image-20211105162040215" src="image-20211105162040215.png" />   
+    </p>
+<p><a href="https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories">管理远程仓库</a></p>
+<p>注意：（有时行不时不行）</p>
+<p>当 <code>git@github.com:xiarong715/goStudy.git</code>上传失败时，也可试试<code>https://github.com/xiarong715/goStudy.git</code></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git remote set-url origin https://github.com/xiarong715/goStudy.git
+git push origin master
+</code></pre></td></tr></table>
+</div>
+</div><p>前提是要在github.com填写公钥；</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/">Git Branch（git分支）讲解</a></li>
+        
+        <li><a href="/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Git 环境搭建</a></li>
+        
+        <li><a href="/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/">Centos7 问题与解决</a></li>
+        
+        <li><a href="/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/">Centos7 断电出错修复</a></li>
+        
+        <li><a href="/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/">VSCode 连接 Centos7</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/git'>git</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2023 <a href="https://xiarong715.github.io">风笑天的博客 By 风笑天</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xiarong715.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xiarong715.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/" title="Git .gitignore文件的规则">Git .gitignore文件的规则</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/" title="Git 常见问题收集">Git 常见问题收集</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/" title="Git 基础">Git 基础</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/" title="Git Branch（git分支）讲解">Git Branch（git分支）讲解</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Centos7 问题与解决">Centos7 问题与解决</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/" title="Centos7 断电出错修复">Centos7 断电出错修复</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/" title="VSCode 连接 Centos7">VSCode 连接 Centos7</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/" title="Python3 安装">Python3 安装</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Docker 安装与使用">Docker 安装与使用</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/" title="健康秘诀 护肝养肾">健康秘诀 护肝养肾</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xiarong715.github.io/categories/centos7/">Centos7 (2)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/docker/">Docker (3)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/git/">Git (4)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (3)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (4)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/openssh/">Openssh (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/python3/">Python3 (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/vscode/">VSCode (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/windows/">Windows (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/%E5%81%A5%E5%BA%B7/">健康 (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/">博客 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xiarong715.github.io/tags/centos7/">centos7</a>
+    
+    <a href="https://xiarong715.github.io/tags/docker/">docker</a>
+    
+    <a href="https://xiarong715.github.io/tags/docker-compose/">docker-compose</a>
+    
+    <a href="https://xiarong715.github.io/tags/git/">git</a>
+    
+    <a href="https://xiarong715.github.io/tags/git-branch/">git branch</a>
+    
+    <a href="https://xiarong715.github.io/tags/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">git常见问题</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-module/">go module</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-package/">go package</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-plugin/">go plugin</a>
+    
+    <a href="https://xiarong715.github.io/tags/golang/">golang</a>
+    
+    <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
+    
+    <a href="https://xiarong715.github.io/tags/linux/">linux</a>
+    
+    <a href="https://xiarong715.github.io/tags/python3/">python3</a>
+    
+    <a href="https://xiarong715.github.io/tags/windows/">windows</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%81%A5%E5%BA%B7/">健康</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%85%BB%E7%94%9F/">养生</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%85%BB%E8%82%BE/">养肾</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E6%8A%A4%E8%82%9D/">护肝</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E9%95%BF%E5%AF%BF/">长寿</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://xiarong715.github.io" title="风笑天的博客">风笑天的博客</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.gohugo.org" title="hugo">hugo中文文档</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.gohugo.io" title="hugo">hugo官网</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xiarong715.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

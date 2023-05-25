@@ -6,9 +6,74 @@
     <description>Recent content in Posts on 风笑天的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 May 2023 17:05:03 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 May 2023 14:59:52 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Centos7问题与解决</title>
+      <title>Git .gitignore文件的规则</title>
+      <link>https://xiarong715.github.io/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/</link>
+      <pubDate>Thu, 25 May 2023 14:59:52 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/</guid>
+      <description>一、.gitignore的作用
+提交到github时，会忽略.gitignore中配置的文件或目录，这些文件或目录是临时产生的，对项目没影响。
+二. .gitignore的规则
+  #开头的为注释
+  忽略文件和目录
+# 注释target如文件结构：
+FastAPItargetpytargettool.md会忽略根目录和子目录下的 target 目录和 target文件。
+  仅忽略同名文件，不忽略同名目录
+target!target/只会忽略同名的文件，不会忽略同名的目录
+  仅忽略同名目录
+target/只忽略target目录
+  .gitignore参考</description>
+    </item>
+    
+    <item>
+      <title>Git 常见问题收集</title>
+      <link>https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/</link>
+      <pubDate>Thu, 25 May 2023 14:02:05 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/</guid>
+      <description>1.git首次安装，下载项目时出现
+git: &amp;lsquo;remote-https&amp;rsquo; is not a git command. See &amp;lsquo;git &amp;ndash;help&amp;rsquo;.
+1 2  yum install libcurl-devel # recomplie git again   2.在windows上产生的文件，上传到github时
+warning: in the working copy of ‘xxx.html’, LF will be replaced by CRLF the next time Git touches it
+参考
+Dos/Windows平台默认的换行符：回车（CR）+ 换行（LF），即\r\n。
+Mac/Linux平台默认的换行符：换行（LF），即\n。
+企业服务器一般都是Linux系统，所以会有替换换行符的需求。
+方法一：
+适用于Windows系统，且一般为Windows默认设置。在Windows上编写代码，在提交到服务器时，对换行符进行CRLF-LF的转换，检出时又会进行LF-CRLF的转换
+1  $ git config --global core.autocrlf true   方法二：
+适用于Linux系统，所有换行符都会进行CRLF-LF转换，但不会转换回CRLF。
+1  $ git config --global core.autocrlf input   方法三：</description>
+    </item>
+    
+    <item>
+      <title>Git 基础</title>
+      <link>https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Wed, 24 May 2023 18:38:08 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/</guid>
+      <description>1.基础使用
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  # 在工作目录初始化新仓库 git init git remote add origin https://github.com/xiarong715/hello.git # 添加远程仓库 origin git remote add myorigin https://github.com/xiarong715/goStudy.git	# 添加远程仓库 myorigin git remote set-url myorigin git@github.com:xiarong715/goStudy.git	# 修改远程仓库 myorigin的地址 git pull origin master	# 相当于 git pull origin master:master 上传到远程仓库 # 查看修改记录 git log # 回到指定版本，如：fd789e1 git reset --hard fd789e1 # 从仓库克隆 git clone https://github.</description>
+    </item>
+    
+    <item>
+      <title>Git Branch（git分支）讲解</title>
+      <link>https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/</link>
+      <pubDate>Wed, 24 May 2023 17:37:16 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/</guid>
+      <description>一、前言 在开发中，建议经常创建分支、合并分支和删除分支。当发布一个软件的稳定版本后，发现有一个bug，这时创建一个分支解决bug，等测试完成，解决bug后，合并新分支到master分支，最后删除新分支。
+​	当开发一个新功能时，创建新分支，在新分支中添加新功能，测试没问题后，合并到master分支，最后删除新分支。git分支的好处是，在不影响稳定代码的情况下，修补bug，添加新功能；
+二、git分支的使用
+1.当修补bug或添加新功能时，创建分支testing
+1 2 3 4 5 6 7  git branch testing	# 创建新分支testing git checkout testing	# 切换到新分支testing # 或 # 创建新分支并切到新分支testing （一步操作顶两步操作，当分支存在时会出错；切换到存在的分支时，使用 git checkout testing） git checkout -b testing   2.测试完成后，合并分支
+1 2 3 4 5 6 7 8 9 10 11  # 首先切换到要合并的分支 git checkout master # 合并分支 git merge testing # 解决合并冲突，当两个分支中修改同一文件的同一地方，合并分支时就会冲突：如index.html # 首先，打开文件index.html会看到 &amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; ========== &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 的内容，这些内容就是冲突的位置，手动合并冲突的内容； # 然后 git add index.</description>
+    </item>
+    
+    <item>
+      <title>Centos7 问题与解决</title>
       <link>https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/</link>
       <pubDate>Thu, 18 May 2023 17:05:03 +0800</pubDate>
       
@@ -26,7 +91,7 @@
     </item>
     
     <item>
-      <title>Centos7断电出错修复</title>
+      <title>Centos7 断电出错修复</title>
       <link>https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/</link>
       <pubDate>Thu, 18 May 2023 16:56:07 +0800</pubDate>
       
@@ -58,6 +123,20 @@ github下载地址
 直接点击第一项：D:\config\vscode\ssh_config，打开配置文件，修改配置信息。
   hello
   </description>
+    </item>
+    
+    <item>
+      <title>Python3 安装</title>
+      <link>https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 12 May 2023 16:59:24 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/</guid>
+      <description>一、下载
+查看python 版本：http://npm.taobao.org/mirrors/python/
+1  wget https://registry.npmmirror.com/-/binary/python/3.9.13/Python-3.9.13.tar.xz   二、编译与安装
+1 2 3 4 5  $ tar -xvf Python-3.9.13.tar.xz $ cd Python-3.9.13 $ yum install openssl-devel # install openssl $ ./configure --with-ssl $ make &amp;amp;&amp;amp; make install   三、安装pip
+pip 是 Python 包管理工具。pip3.9 list可查看已安装的包，包括有pip、setuptools、numpy等其他包；
+1 2 3  $ pip3.9 list	# check package installed $ pip3.9 install --upgrade xxx	# upgrade a package $ pip3.9 install --upgrade pip	# upgrade pip   三种安装方法：</description>
     </item>
     
     <item>
@@ -109,9 +188,11 @@ github下载地址
       <pubDate>Sat, 08 Jan 2022 17:22:30 +0800</pubDate>
       
       <guid>https://xiarong715.github.io/posts/linux/%E5%A4%A7%E5%B0%8F%E7%AB%AF/</guid>
-      <description>  字节序
-​	内存的最小单位是字节，有些数据类型占用的空间大小超过了一个字节，那么就存在一个数据在内存中如何存放的问题。数据的存放可以是，数据的低字节存放在内存的低地址区，也可以是，数据的低字节存放在内存的高地址区；
-​	如下图所示，大端存储：数字的低字节存入内存的高地址区，数字的高字节区存入内存的低地址区；小端存储：数字的低字节存入内存的高地址区，数字的高字节存入内存的低地址区；
+      <description>  什么是字节序
+字节：计算机中，数据存储是以字节为单位的，一个字节有8位，位是计算机最小的存储空间。
+强类型的编程语言，每个变量的定义都是确定类型的，不同的类型占用的字节数不一样。比如，在C语言中，char类型占用一个字节，short类型，一般占用两个字节，int类型，一般占用四个字节。那么这些多字节的数据如何在内存中存放呢，内存地址是从0一直递增的，可能的存放顺序是，数据的低字节位存放在内存的低地址，数据的高字节位存放内存在内存的高地址；或者反之，数据的低字节存放在内存的高地址，数据的高字节存放在内存的低地址；多字节的高低字节在内存中存放的顺序，称为字节序；
+内存的最小单位是字节，有些数据类型占用的空间大小超过了一个字节，那么就存在一个数据在内存中如何存放的问题。数据的存放可以是，数据的低字节存放在内存的低地址区，也可以是，数据的低字节存放在内存的高地址区；
+如下图所示，大端存储：数字的低字节存入内存的高地址区，数字的高字节区存入内存的低地址区；小端存储：数字的低字节存入内存的高地址区，数字的高字节存入内存的低地址区；
 ​
 这两种存储方式，没有好坏之分，存储方式与CPU的实现有关；
   什么是大小端
@@ -119,7 +200,7 @@ github下载地址
   存在的意义
 根据不同的硬件实现，大小端模式都广泛使用在不同的CPU中；
   如何判断大小端
-不管CPU是使用大端模式还是小端模式，CPU总能正确的读取内存的值，也就是説如果不需要大小端转换时，不需要知道CPU的大小端。当处理音频数据时，有时需要转换大小端；音频音质较高时，音频的一个采样占用
+不管CPU是使用大端模式还是小端模式，CPU总能正确的读取内存的值，也就是説如果不需要大小端转换时，不需要知道CPU的大小端。当处理音频数据时，有时需要转换大小端；音频音质较高时，音频的一个采样占用。
   </description>
     </item>
     
@@ -239,7 +320,9 @@ docker-compose会依赖一些库
       
       <guid>https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
       <description>1.download a tarball
+下载网址
 下载最新版本git
+源代码包下载地址
 1  wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz   2.解压
 1  tar -xvf git-2.9.5.tar.xz   3.configure
 1 2  cd git-2.9.5 ./configure   4.make and make install
@@ -265,8 +348,8 @@ https://studygolang.com/dl
 1 2 3 4 5 6  // 二进制文件包下载 wget https://golang.google.cn/dl/go1.15.4.linux-amd64.tar.gz wget https://studygolang.com/dl/golang/go1.15.4.linux-amd64.tar.gz // 源码包下载 wget https://golang.google.cn/dl/go1.15.4.src.tar.gz   2.二进制文件安装
 1  tar -xvzf go1.15.4.linux-amd64.tar.gz -C /usr/local   3.源码编译安装
 源码需要有go环境，可以用yum安装一个，因为系统的版本更新滞后，所以有必要下载较新的版本安装
-1  yum install -y go   1 2 3 4 5  解压 tar -xvzf go1.15.4.src.tar.gz -C /usr/local 编译 cd /usr/local/go/src ./all.bash   4.环境配置
-1 2 3 4 5 6 7 8 9 10  vi /etc/profile 编辑文件添加下面内容： export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.</description>
+1  yum install -y go   1 2 3 4 5  解压 tar -xvzf go1.15.4.src.tar.gz -C /tools 编译 cd /tools/go/src ./all.bash   4.环境配置
+1 2 3 4 5 6 7  vi /etc/profile 编辑文件添加下面内容： export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.</description>
     </item>
     
     <item>
