@@ -260,7 +260,38 @@ $ git push --set-upstream origin master
 $ git push					<span style="color:#998;font-style:italic"># 经过上一步的操作，这一步相当于： git push origin master</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>6.身份验证</p>
+</div><p>6.<code>git tag</code></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git tag 				<span style="color:#998;font-style:italic"># 查看本地所有的 tag</span>
+git tag v1.0.8			<span style="color:#998;font-style:italic"># 给当前版本打tag,tag为v1.0.8</span>
+git push origin v1.0.8	<span style="color:#998;font-style:italic"># 上传tag v1.0.8到远程服务器</span>
+
+<span style="color:#998;font-style:italic"># 删除远程tag v1.0.8，分为两步</span>
+git tag -d v1.0.8					<span style="color:#998;font-style:italic"># 删除本地 tag v1.0.8</span>
+git push origin :refs/tags/v1.0.8	<span style="color:#998;font-style:italic"># 删除远程 tag v1.0.8</span>
+
+git ls-remote			<span style="color:#998;font-style:italic"># 查看远程所有的 tag 和分支</span>
+
+git checkout tag_name	<span style="color:#998;font-style:italic"># 会提示HEAD detached at tag_name，tag相当于是一个快照，是不能更改它的代码。</span>
+git checkout -b branch_name tag_name <span style="color:#998;font-style:italic"># 如果要在某个tag代码的基础上做修改，需要建一个分支，分支的内容和tag的内容相同。</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>7.身份验证</p>
 <p><code>git push</code>上传要验证身份，因此在<code>repo-url</code>中带上用户名和密码，<code>github</code>不再支持在<code>url</code>中带上用户名和密码的形式。</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

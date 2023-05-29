@@ -86,7 +86,7 @@
         
         
         <div class="post-content">
-            <p>1.docker的编写</p>
+            <p>1.<code>docker</code>的编写</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -133,7 +133,7 @@
 </span><span style="color:#d14"></span>		ncurses-devel zlib-devel bzip2 git openssl file gettext glibc.i686 libstdc++.i686 dos2unix squashfs-tools<span style="color:#a61717;background-color:#e3d2d2">\
 </span></code></pre></td></tr></table>
 </div>
-</div><p>docker file 命令讲解：</p>
+</div><p><code>docker file</code> 命令讲解：</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -170,37 +170,51 @@
 </span><span style="color:#a61717;background-color:#e3d2d2"></span>	<span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2"></span>	RUN mkdir /fs					<span style="color:#998;font-style:italic"># 在系统运行命令</span><span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2"></span>	RUN chmod <span style="color:#099">777</span> /fs<span style="color:#a61717;background-color:#e3d2d2">
-</span><span style="color:#a61717;background-color:#e3d2d2"></span>	<span style="color:#a61717;background-color:#e3d2d2">
-</span><span style="color:#a61717;background-color:#e3d2d2"></span>	ENV								<span style="color:#998;font-style:italic"># 你可以使用ENV来为容器中安装的程序更新 PATH 环境变量，如ENV PATH /usr/local/nginx/bin:$PATH来确保CMD [&#34;nginx&#34;]能正确运行。</span><span style="color:#a61717;background-color:#e3d2d2">
-</span><span style="color:#a61717;background-color:#e3d2d2"></span>	VOLUME <span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	ENV								<span style="color:#998;font-style:italic"># 你可以使用ENV来为容器中安装的程序更新 PATH 环境变量,</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>									<span style="color:#998;font-style:italic"># 如ENV PATH /usr/local/nginx/bin:$PATH来确保CMD [&#34;nginx&#34;]能正确运行。</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>	VOLUME 							<span style="color:#998;font-style:italic"># 挂载宿主机文件到容器中</span><span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2"></span>	COPY <span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2"></span>	ENTRYPOINT <span style="color:#000;font-weight:bold">[</span><span style="color:#d14">&#34;/usr/sbin/init&#34;</span><span style="color:#000;font-weight:bold">]</span>	<span style="color:#998;font-style:italic">#</span><span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2"></span>	CMD <span style="color:#000;font-weight:bold">[</span><span style="color:#d14">&#34;systemctl restart autofs&#34;</span><span style="color:#000;font-weight:bold">]</span>	<span style="color:#998;font-style:italic"># CMD指令用于执行目标镜像中包含的软件和任何参数，如部署某个服务</span><span style="color:#a61717;background-color:#e3d2d2">
 </span></code></pre></td></tr></table>
 </div>
 </div><p>2.编译镜像</p>
-<p>编译镜像的命令为docker build，命令的使用方法为：docker build [OPTIONS] PATH。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build -t test/first_image:v1.0 .
-</code></pre></td></tr></table>
-</div>
-</div><p>-t , &ndash;tag list : 使用name:tag的方式对镜像命名；</p>
-<p>.   : 使用当前路径中的Dockerfile编镜像。</p>
-<p>3.运行镜像</p>
+<p>编译镜像的命令为<code>docker build</code>，命令的使用方法为：<code>docker build [OPTIONS] PATH</code>。</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker container run -it test/first_image:v1.0 /bin/bash
-or
-docker run -it test/first_image:v1.0 /bin/bash
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build -t test/first_image:v1.0 .
+
+<span style="color:#998;font-style:italic"># -t , --tag list : 使用name:tag的方式对镜像命名；</span>
+<span style="color:#998;font-style:italic"># .   : 使用当前路径中的Dockerfile编镜像。</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>3.运行镜像</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># 运行镜像，并进入shell.</span>
+docker container run -it test/first_image:0.1 /bin/bash
+<span style="color:#998;font-style:italic"># or</span>
+docker run -it test/first_image:0.1 /bin/bash
+
+<span style="color:#998;font-style:italic"># 或</span>
+docker run -itd test/first_image:0.1 /bin/bash
+docker <span style="color:#0086b3">exec</span> -it test/first_image:0.1 /bin/bash
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -210,16 +224,24 @@ docker run -it test/first_image:v1.0 /bin/bash
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -itd --name first_image test/first_image:v1.0 /bin/bash  <span style="color:#000;font-weight:bold">(</span>后台运行<span style="color:#000;font-weight:bold">)</span>
 docker <span style="color:#0086b3">exec</span> -it first_image /bin/bash     <span style="color:#000;font-weight:bold">(</span>容器必须存在<span style="color:#000;font-weight:bold">)</span>（进入其shell）
 
-在first_image容器中执行/eccenc
+<span style="color:#998;font-style:italic"># 在first_image容器中执行/eccenc</span>
 docker <span style="color:#0086b3">exec</span> first_image /eccenc
+
+docker run -itd --name rtlbuildee_ubuntu registry.lan:5000/zapci:3
+docker <span style="color:#0086b3">exec</span> -it rtlbuildee_ubuntu /bin/bash  	<span style="color:#998;font-style:italic"># 进入rtlbuildee_ubuntu容器的终端</span>
+docker <span style="color:#0086b3">exec</span> -it redis-test /bin/bash			<span style="color:#998;font-style:italic"># 进入 redis-test 容器的终端</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>会进入到容器的shell；</p>
+</div><p>会进入到容器的<code>shell</code>；</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -228,7 +250,7 @@ docker <span style="color:#0086b3">exec</span> first_image /eccenc
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -ti --privileged<span style="color:#000;font-weight:bold">=</span><span style="color:#0086b3">true</span> -d -p 2255:22 --name rtlbuildee_ubuntu --restart<span style="color:#000;font-weight:bold">=</span>always 51e7336035ad4b2aba84207b1554af54 /sbin/init
 </code></pre></td></tr></table>
 </div>
-</div><p>通过宿主机ssh root@ip:2255登录容器。</p>
+</div><p>通过宿主机<code>ssh root@ip:2255</code>登录容器。</p>
 
         </div>
 

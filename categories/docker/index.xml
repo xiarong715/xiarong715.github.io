@@ -28,6 +28,7 @@
       
       <guid>https://xiarong715.github.io/posts/docker/docker-compose%E4%BD%BF%E7%94%A8/</guid>
       <description>1.docker-compose的作用
+方便管理docker容器
 2.下载安装
 docker-compose会依赖一些库
 1  yum install -y py-pip python-dev libffi-dev openssl-dev gcc libc-dev make   下载docker-compose
