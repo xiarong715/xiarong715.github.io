@@ -110,6 +110,70 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/">Centos7 问题与解决</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年5月18日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/linux'>Linux</a>
+            
+            <a href='/categories/centos7'>Centos7</a>
+            
+        </div>
+        
+        <div class="post-content">
+            解压tar.bz2
+问题：tar (child): lbzip2: Cannot exec: No such file or directory
+解决：
+1  yum -y install bzip2     windows和linux下回车符不一致
+问题：$'\r': command not found
+原因：windows 与 unix下的文件格式不一致，在windows下换行符是\r\n，在unix下换行符是\n，windows文件在unix中解析失败；
+解决：
+方法1：set ff=unix
+1 2 3  vi hello.sh # Esc 进入命令行模式 # : 底命令行模式， 输入 set ff=unix   方法2：把windows格式文件，转换为unix格式；
+1 2  yum install doc2unix	# download doc2unix translate tool. doc2unix hello.sh	# translate windows format file to unix format file.……
+            <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/">Centos7 断电出错修复</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年5月18日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/linux'>Linux</a>
+            
+            <a href='/categories/centos7'>Centos7</a>
+            
+        </div>
+        
+        <div class="post-content">
+            参考
+1.centos7断电后出现错误：
+现象
+Centos7：“Entering emergency mode. Exit the shell to continue”错误解决方法
+输入以下命令
+1  xfs_repair -v -L /dev/dm-0   经过一段时间修复，reboot 重启就能正常启动……
+            <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://xiarong715.github.io/posts/linux/%E5%A4%A7%E5%B0%8F%E7%AB%AF/">大小端</a>
             </h1>
         </header>
@@ -347,7 +411,7 @@
         <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li><a href="https://xiarong715.github.io/categories/centos7/">Centos7 (3)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/centos7/">Centos7 (5)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/delve/">Delve (1)</a></li>
     
@@ -359,7 +423,7 @@
     
     <li><a href="https://xiarong715.github.io/categories/golang/">Golang (7)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (5)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (7)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/openssh/">Openssh (1)</a></li>
     
