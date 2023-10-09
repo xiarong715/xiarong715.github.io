@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>Go 一种典型的编程方式 | 风笑天的博客</title>
+    <meta property="og:title" content="Go 一种典型的编程方式 - 风笑天的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2023-06-09T11:59:12&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2023-06-09T11:59:12&#43;08:00'>
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,风笑天,大数据、软件架构,健康">
+    <meta name="description" content="Go 一种典型的编程方式">
+        
+    <meta name="author" content="风笑天">
+    <meta property="og:url" content="https://xiarong715.github.io/posts/go/go-%E4%B8%80%E7%A7%8D%E5%85%B8%E5%9E%8B%E7%9A%84%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xiarong715.github.io">
+                        风笑天的博客
+                    </a>
+                
+                <p class="description">专注于Go语言(golang)、大数据、软件架构。注重健康。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://xiarong715.github.io">首页</a>
+                    
+                    <a  href="https://xiarong715.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Go 一种典型的编程方式</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年6月9日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/golang'>Golang</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <h2 id="go-一种典型的编程方式">Go 一种典型的编程方式</h2>
+<p>把各个要用到的参数都放到一个结构体中，初始化结构体，并为结构体添加方法。避免变量散落在各处，也符合面向对象编程思想。很多的语言都采用把变量集中放到一个结构体中，比如C语言。这是编程的基本思想，所以特别提取出来説一下。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#998;font-style:italic">// 演示一下
+</span><span style="color:#998;font-style:italic">// 非常值得借鉴
+</span><span style="color:#998;font-style:italic">// handler.go
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">package</span> footkeeper
+
+<span style="color:#998;font-style:italic">// 操作的结构体
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">type</span> FaasHandler <span style="color:#000;font-weight:bold">struct</span> {
+    datapath <span style="color:#458;font-weight:bold">string</span>
+    settingpath <span style="color:#458;font-weight:bold">string</span>
+    <span style="color:#000;font-weight:bold">...</span>
+}
+
+<span style="color:#998;font-style:italic">// 局部方法，只能在包内使用
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> (faasHandler <span style="color:#000;font-weight:bold">*</span>FaasHandler) <span style="color:#900;font-weight:bold">sendMulticast</span>() {
+    <span style="color:#000;font-weight:bold">...</span>
+}
+
+<span style="color:#998;font-style:italic">// 全局方法，可在包外使用
+</span><span style="color:#998;font-style:italic">// 初始化结构
+</span><span style="color:#998;font-style:italic">// 在包外用于初始化结构体
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">NewFaasHandler</span>(dpath <span style="color:#458;font-weight:bold">string</span>) <span style="color:#000;font-weight:bold">*</span>FaasHandler {
+    faas <span style="color:#000;font-weight:bold">:=</span> <span style="color:#000;font-weight:bold">&amp;</span>FaasHandler{datapath: dpath}
+    faas.settingpath = filepath.<span style="color:#900;font-weight:bold">Join</span>(dpath, <span style="color:#d14">&#34;setting.yml&#34;</span>)
+    <span style="color:#000;font-weight:bold">...</span>
+    <span style="color:#000;font-weight:bold">return</span> faas
+}
+
+<span style="color:#998;font-style:italic">// 结构体的方法
+</span><span style="color:#998;font-style:italic">// 对结构体操作的方法
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> (faasHandler <span style="color:#000;font-weight:bold">*</span>FaasHandler) <span style="color:#900;font-weight:bold">SetFaasEnv</span>(key, value <span style="color:#458;font-weight:bold">string</span>) {
+    faasHandler.env[key] = value
+}
+
+<span style="color:#000;font-weight:bold">func</span> (faasHandler <span style="color:#000;font-weight:bold">*</span>FaasHandler) <span style="color:#900;font-weight:bold">Init</span>() {
+    <span style="color:#000;font-weight:bold">...</span>
+}
+
+<span style="color:#000;font-weight:bold">func</span> (faasHandler <span style="color:#000;font-weight:bold">*</span>FaasHandler) <span style="color:#900;font-weight:bold">HandleRequest</span>(gw <span style="color:#458;font-weight:bold">string</span>, w http.ResponseWriter, r <span style="color:#000;font-weight:bold">*</span>http.Request) {
+    <span style="color:#000;font-weight:bold">...</span>
+}
+
+<span style="color:#998;font-style:italic">// 实现http.Handler接口
+</span><span style="color:#998;font-style:italic">// http请求的入口函数
+</span><span style="color:#998;font-style:italic">// 最后转给处理请求的函数
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> (faasHandler <span style="color:#000;font-weight:bold">*</span>FaasHandler) <span style="color:#900;font-weight:bold">ServeHTTP</span>(w http.ResponseWriter, r <span style="color:#000;font-weight:bold">*</span>http.Request) {
+	<span style="color:#000;font-weight:bold">...</span>
+    faasHandler.<span style="color:#900;font-weight:bold">HandleRequest</span>(gw, w, r)		<span style="color:#998;font-style:italic">// 调用真正处理请求的逻辑
+</span><span style="color:#998;font-style:italic"></span>}
+
+<span style="color:#000;font-weight:bold">...</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#998;font-style:italic">// main.go
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">package</span> main
+
+<span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">main</span>() {
+    dataidr <span style="color:#000;font-weight:bold">:=</span> <span style="color:#d14">&#34;/data/faas&#34;</span>
+	faas <span style="color:#000;font-weight:bold">:=</span> footkeeper.<span style="color:#900;font-weight:bold">NewFaasHandler</span>(datadir)
+	faas.<span style="color:#900;font-weight:bold">Init</span>()
+	faas.<span style="color:#900;font-weight:bold">SetFaasEnv</span>(<span style="color:#d14">&#34;LOCALHOST_URL&#34;</span>, <span style="color:#d14">&#34;http://127.0.0.1:8000&#34;</span>)
+	http.<span style="color:#900;font-weight:bold">Handle</span>(<span style="color:#d14">&#34;/&#34;</span>, faas)
+	http.<span style="color:#900;font-weight:bold">ListenAndServe</span>(api_listen_addr, <span style="color:#000;font-weight:bold">nil</span>)
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>从http代码中也有类似的做法。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#998;font-style:italic">// main.go
+</span><span style="color:#998;font-style:italic"></span>http.<span style="color:#900;font-weight:bold">Handle</span>(<span style="color:#d14">&#34;/&#34;</span>, faas)
+
+<span style="color:#998;font-style:italic">// server.go
+</span><span style="color:#998;font-style:italic">// 需要用到的变量放到一个结构体中
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">type</span> ServeMux <span style="color:#000;font-weight:bold">struct</span> {
+    mu sync.RWMutex
+    m <span style="color:#000;font-weight:bold">map</span>[<span style="color:#458;font-weight:bold">string</span>]muxEntry
+    es []muxEntry
+    hosts <span style="color:#458;font-weight:bold">bool</span>
+}
+
+<span style="color:#000;font-weight:bold">type</span> muxEntry <span style="color:#000;font-weight:bold">struct</span> {
+    h Handler
+    pattern <span style="color:#458;font-weight:bold">string</span>
+}
+
+<span style="color:#998;font-style:italic">// 定义全局变量
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">var</span> defaultServeMux ServeMux
+<span style="color:#000;font-weight:bold">var</span> DefaultServeMux = <span style="color:#000;font-weight:bold">&amp;</span>defaultServeMux
+
+<span style="color:#998;font-style:italic">// 包外直接使用的函数
+</span><span style="color:#998;font-style:italic">// 函数中调用了方法。结构体实例是在包内定义的。
+</span><span style="color:#998;font-style:italic">// 实现了从包外调用到包内逻辑的通路。
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">Handle</span>(pattern <span style="color:#458;font-weight:bold">string</span>, handler Handler) { 
+	DefaultServeMux.<span style="color:#900;font-weight:bold">Handle</span>(pattern, handler) 
+}
+
+<span style="color:#000;font-weight:bold">func</span> (mux <span style="color:#000;font-weight:bold">*</span>ServeMux) <span style="color:#900;font-weight:bold">Handle</span>(pattern <span style="color:#458;font-weight:bold">string</span>, handler Handler) {
+    mux.mu.<span style="color:#900;font-weight:bold">Lock</span>()
+    <span style="color:#000;font-weight:bold">defer</span> mux.mu.<span style="color:#900;font-weight:bold">Unlock</span>()
+    e <span style="color:#000;font-weight:bold">:=</span> muxEntry{h: handler, pattern: pattern}
+    mux.m[pattern] = e
+    <span style="color:#000;font-weight:bold">if</span> pattern[<span style="color:#0086b3">len</span>(pattern)<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>] <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#39;/&#39;</span> {
+        mux.es = <span style="color:#900;font-weight:bold">appendSorted</span>(mux.es, e)
+    }
+    <span style="color:#000;font-weight:bold">...</span>
+}
+
+<span style="color:#998;font-style:italic">// 追加并排序
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">appendSorted</span>(es []muxEntry, e muxEntry) []muxEntry {
+    <span style="color:#000;font-weight:bold">...</span>
+}
+
+<span style="color:#000;font-weight:bold">type</span> Server <span style="color:#000;font-weight:bold">struct</span> {
+    Addr <span style="color:#458;font-weight:bold">string</span>
+    Handler Handler
+    <span style="color:#000;font-weight:bold">...</span>
+}
+
+<span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">ListenAndServe</span>(addr <span style="color:#458;font-weight:bold">string</span>, handler Handler) <span style="color:#458;font-weight:bold">error</span> {
+    server <span style="color:#000;font-weight:bold">:=</span> <span style="color:#000;font-weight:bold">&amp;</span>Server{Addr: addr, Handler: handler}
+    <span style="color:#000;font-weight:bold">return</span> server.<span style="color:#900;font-weight:bold">ListenAndServe</span>()
+}
+
+<span style="color:#000;font-weight:bold">func</span> (srv <span style="color:#000;font-weight:bold">*</span>Server) <span style="color:#900;font-weight:bold">ListenAndServe</span>() <span style="color:#458;font-weight:bold">error</span> {
+    <span style="color:#000;font-weight:bold">...</span>
+    ln, err <span style="color:#000;font-weight:bold">:=</span> net.<span style="color:#900;font-weight:bold">Listen</span>(<span style="color:#d14">&#34;tcp&#34;</span>, addr)
+    <span style="color:#000;font-weight:bold">return</span> srv.<span style="color:#900;font-weight:bold">Serve</span>(ln)
+}
+
+<span style="color:#000;font-weight:bold">func</span> (srv <span style="color:#000;font-weight:bold">*</span>Server) <span style="color:#900;font-weight:bold">Serve</span>(l net.Listener) <span style="color:#458;font-weight:bold">error</span> {
+    <span style="color:#000;font-weight:bold">...</span>
+    ctx <span style="color:#000;font-weight:bold">:=</span> context.<span style="color:#900;font-weight:bold">WithValue</span>(context.<span style="color:#900;font-weight:bold">Background</span>(), ServerContextKey, srv)
+    <span style="color:#000;font-weight:bold">for</span> {
+        rw, err <span style="color:#000;font-weight:bold">:=</span> l.<span style="color:#900;font-weight:bold">Accept</span>()
+        connCtx <span style="color:#000;font-weight:bold">:=</span> ctx
+        c <span style="color:#000;font-weight:bold">:=</span> srv.<span style="color:#900;font-weight:bold">newConn</span>(rw)
+        <span style="color:#000;font-weight:bold">go</span> c.<span style="color:#900;font-weight:bold">serve</span>(connCtx)
+    }
+}
+
+<span style="color:#000;font-weight:bold">func</span> (srv <span style="color:#000;font-weight:bold">*</span>Server) <span style="color:#900;font-weight:bold">newConn</span>(rwc net.Conn) <span style="color:#000;font-weight:bold">*</span>conn {
+    c <span style="color:#000;font-weight:bold">:=</span> <span style="color:#000;font-weight:bold">&amp;</span>conn{
+        server: srv,
+        rwc: 	rwc,
+    }
+    <span style="color:#000;font-weight:bold">...</span>
+    <span style="color:#000;font-weight:bold">return</span> c
+}
+
+<span style="color:#000;font-weight:bold">func</span> (c <span style="color:#000;font-weight:bold">*</span>conn) <span style="color:#900;font-weight:bold">serve</span>(ctx context.Content) {
+    <span style="color:#000;font-weight:bold">...</span>
+    serverHandler{c.server}.<span style="color:#900;font-weight:bold">ServeHTTP</span>(w, w.req)	<span style="color:#998;font-style:italic">// 调用到上面自定义的ServeHTTP方法
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">...</span>
+}
+
+<span style="color:#000;font-weight:bold">type</span> serverHandler <span style="color:#000;font-weight:bold">struct</span> {
+    srv <span style="color:#000;font-weight:bold">*</span>Server
+}
+
+<span style="color:#000;font-weight:bold">func</span> (sh serverHandler) <span style="color:#900;font-weight:bold">ServeHTTP</span>(rw ResponseWriter, req <span style="color:#000;font-weight:bold">*</span>Request) {
+    handler <span style="color:#000;font-weight:bold">:=</span> sh.srv.Handler		<span style="color:#998;font-style:italic">// 
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">if</span> handler <span style="color:#000;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">nil</span> {
+        handler = DefaultServeMux
+    }
+    <span style="color:#000;font-weight:bold">...</span>
+    handler.<span style="color:#900;font-weight:bold">ServeHTTP</span>(rw, req)
+}
+
+<span style="color:#000;font-weight:bold">func</span> (mux <span style="color:#000;font-weight:bold">*</span>ServeMux) <span style="color:#900;font-weight:bold">ServeHTTP</span>(w ResponseWriter, r <span style="color:#000;font-weight:bold">*</span>Request) {
+    <span style="color:#000;font-weight:bold">...</span>
+    h, _ <span style="color:#000;font-weight:bold">:=</span> mux.<span style="color:#900;font-weight:bold">Handler</span>(r)
+    h.<span style="color:#900;font-weight:bold">ServeHTTP</span>(w, r)
+}
+
+<span style="color:#000;font-weight:bold">func</span> (mux <span style="color:#000;font-weight:bold">*</span>ServeMux) <span style="color:#900;font-weight:bold">Handler</span>(r <span style="color:#000;font-weight:bold">*</span>Request) (h Handler, pattern <span style="color:#458;font-weight:bold">string</span>) {
+    <span style="color:#000;font-weight:bold">return</span> mux.<span style="color:#900;font-weight:bold">handler</span>(host, r.URL.Path)
+}
+
+<span style="color:#000;font-weight:bold">func</span> (mux <span style="color:#000;font-weight:bold">*</span>ServeMux) <span style="color:#900;font-weight:bold">handler</span>(host, path <span style="color:#458;font-weight:bold">string</span>) (h Handler, pattern <span style="color:#458;font-weight:bold">string</span>) {
+    mux.mu.<span style="color:#900;font-weight:bold">RLock</span>()
+    <span style="color:#000;font-weight:bold">defer</span> mux.mu.<span style="color:#900;font-weight:bold">RUnlock</span>()
+    
+    <span style="color:#000;font-weight:bold">if</span> mux.hosts {
+        h, pattern = mux.<span style="color:#900;font-weight:bold">match</span>(host <span style="color:#000;font-weight:bold">+</span> path)
+    }
+    <span style="color:#000;font-weight:bold">if</span> h <span style="color:#000;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">nil</span> {
+        h, pattern = mux.<span style="color:#900;font-weight:bold">match</span>(path)
+    }
+    <span style="color:#000;font-weight:bold">if</span> h <span style="color:#000;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">nil</span> {
+        h, pattern = <span style="color:#900;font-weight:bold">NotFoundHandler</span>(), <span style="color:#d14">&#34;&#34;</span>
+    }
+    
+    <span style="color:#000;font-weight:bold">return</span>
+}
+
+<span style="color:#000;font-weight:bold">func</span> (mux <span style="color:#000;font-weight:bold">*</span>ServeMux) <span style="color:#900;font-weight:bold">match</span>(path <span style="color:#458;font-weight:bold">string</span>) (h Handler, pattern <span style="color:#458;font-weight:bold">string</span>) {
+    v, ok <span style="color:#000;font-weight:bold">:=</span> mux.m[path]
+    <span style="color:#000;font-weight:bold">if</span> ok {
+        <span style="color:#000;font-weight:bold">return</span> v.h, v.pattern
+    }
+    <span style="color:#000;font-weight:bold">for</span> _, e <span style="color:#000;font-weight:bold">:=</span> <span style="color:#000;font-weight:bold">range</span> mux.es {
+        <span style="color:#000;font-weight:bold">if</span> strings.<span style="color:#900;font-weight:bold">HasPrefix</span>(path, e.pattern) {
+        	<span style="color:#000;font-weight:bold">return</span> e.h, e.pttern   
+        }
+    }
+    
+    <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">nil</span>, <span style="color:#d14">&#34;&#34;</span>
+}
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#998;font-style:italic">// 下次分析 
+</span><span style="color:#998;font-style:italic"></span>http.<span style="color:#900;font-weight:bold">HandleFunc</span>(<span style="color:#d14">&#34;/&#34;</span>, helloFunc)
+
+<span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">HandleFunc</span>(pattern <span style="color:#458;font-weight:bold">string</span>, handler <span style="color:#000;font-weight:bold">func</span>(ResponseWriter, <span style="color:#000;font-weight:bold">*</span>Request)) {
+	DefaultServeMux.<span style="color:#900;font-weight:bold">HandleFunc</span>(pattern, handler)
+}
+
+<span style="color:#998;font-style:italic">// 待分析
+</span></code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go-const%E4%B8%8Eiota/">Go const与iota</a></li>
+        
+        <li><a href="/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go%E7%BC%96%E8%AF%91%E5%B8%B8%E9%87%8F%E5%8F%98%E9%87%8F%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/">Go 编译、常量、变量、基本数据类型和字符串</a></li>
+        
+        <li><a href="/posts/shell/shell-%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/">Shell 常用用法</a></li>
+        
+        <li><a href="/posts/shell/shell-%E4%B8%80%E4%B8%AA%E5%8A%9F%E8%83%BD%E8%84%9A%E6%9C%AC%E7%9A%84%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E8%AE%B2%E8%A7%A3/">Shell 一个功能脚本的分析与语法讲解</a></li>
+        
+        <li><a href="/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/">Git .gitignore文件的规则</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/go'>go</a></li>
+                
+                <li><a href='/tags/%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F'>编程方式</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2023 <a href="https://xiarong715.github.io">风笑天的博客 By 风笑天</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xiarong715.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xiarong715.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/" title="Centos7自动更新时间">Centos7自动更新时间</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go%E6%8E%A5%E5%8F%A3%E7%B1%BB%E5%9E%8B%E5%8F%98%E9%87%8F%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E7%9A%84%E5%8E%9F%E5%88%99/" title="Go接口类型变量调用方法的原则">Go接口类型变量调用方法的原则</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/sql/sql%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" title="Sql使用记录">Sql使用记录</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go-%E8%B0%83%E5%BC%8F%E5%99%A8dlv/" title="Go 调式器dlv">Go 调式器dlv</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go-%E4%B8%80%E7%A7%8D%E5%85%B8%E5%9E%8B%E7%9A%84%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/" title="Go 一种典型的编程方式">Go 一种典型的编程方式</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go-const%E4%B8%8Eiota/" title="Go const与iota">Go const与iota</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/shell/shell-%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/" title="Shell 常用用法">Shell 常用用法</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/shell/shell-%E4%B8%80%E4%B8%AA%E5%8A%9F%E8%83%BD%E8%84%9A%E6%9C%AC%E7%9A%84%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E8%AE%B2%E8%A7%A3/" title="Shell 一个功能脚本的分析与语法讲解">Shell 一个功能脚本的分析与语法讲解</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go%E7%BC%96%E8%AF%91%E5%B8%B8%E9%87%8F%E5%8F%98%E9%87%8F%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="Go 编译、常量、变量、基本数据类型和字符串">Go 编译、常量、变量、基本数据类型和字符串</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/" title="Git .gitignore文件的规则">Git .gitignore文件的规则</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xiarong715.github.io/categories/centos7/">Centos7 (3)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/delve/">Delve (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/docker/">Docker (3)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/git/">Git (5)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (7)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (5)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/openssh/">Openssh (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/python3/">Python3 (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/shell/">Shell (2)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/vscode/">VSCode (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/windows/">Windows (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/%E5%81%A5%E5%BA%B7/">健康 (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/%E5%8D%9A%E5%AE%A2/">博客 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xiarong715.github.io/tags/centos7/">centos7</a>
+    
+    <a href="https://xiarong715.github.io/tags/const/">const</a>
+    
+    <a href="https://xiarong715.github.io/tags/debug/">debug</a>
+    
+    <a href="https://xiarong715.github.io/tags/dlv/">dlv</a>
+    
+    <a href="https://xiarong715.github.io/tags/docker/">docker</a>
+    
+    <a href="https://xiarong715.github.io/tags/docker-compose/">docker-compose</a>
+    
+    <a href="https://xiarong715.github.io/tags/git/">git</a>
+    
+    <a href="https://xiarong715.github.io/tags/git-branch/">git branch</a>
+    
+    <a href="https://xiarong715.github.io/tags/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">git常见问题</a>
+    
+    <a href="https://xiarong715.github.io/tags/go/">go</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-module/">go module</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-package/">go package</a>
+    
+    <a href="https://xiarong715.github.io/tags/go-plugin/">go plugin</a>
+    
+    <a href="https://xiarong715.github.io/tags/golang/">golang</a>
+    
+    <a href="https://xiarong715.github.io/tags/go%E5%8F%98%E9%87%8F/">go变量</a>
+    
+    <a href="https://xiarong715.github.io/tags/go%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">go基本数据类型</a>
+    
+    <a href="https://xiarong715.github.io/tags/go%E5%AD%97%E7%AC%A6%E4%B8%B2/">go字符串</a>
+    
+    <a href="https://xiarong715.github.io/tags/go%E5%B8%B8%E9%87%8F/">go常量</a>
+    
+    <a href="https://xiarong715.github.io/tags/go%E7%BC%96%E8%AF%91/">go编译</a>
+    
+    <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
+    
+    <a href="https://xiarong715.github.io/tags/iota/">iota</a>
+    
+    <a href="https://xiarong715.github.io/tags/linux/">linux</a>
+    
+    <a href="https://xiarong715.github.io/tags/python3/">python3</a>
+    
+    <a href="https://xiarong715.github.io/tags/shell/">shell</a>
+    
+    <a href="https://xiarong715.github.io/tags/windows/">windows</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%81%A5%E5%BA%B7/">健康</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%85%BB%E7%94%9F/">养生</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E5%85%BB%E8%82%BE/">养肾</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E6%8A%A4%E8%82%9D/">护肝</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E6%8E%A5%E5%8F%A3%E7%B1%BB%E5%9E%8B%E5%8F%98%E9%87%8F/">接口类型变量</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/">系统时间</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/">编程方式</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/">自动更新时间</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E9%95%BF%E5%AF%BF/">长寿</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://xiarong715.github.io" title="风笑天的博客">风笑天的博客</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.gohugo.org" title="hugo">hugo中文文档</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.gohugo.io" title="hugo">hugo官网</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xiarong715.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

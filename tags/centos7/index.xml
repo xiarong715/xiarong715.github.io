@@ -6,7 +6,25 @@
     <description>Recent content in centos7 on 风笑天的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Feb 2021 17:08:50 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/tags/centos7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Oct 2023 09:56:01 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/tags/centos7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Centos7自动更新时间</title>
+      <link>https://xiarong715.github.io/posts/linux/centos/centos7%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Mon, 09 Oct 2023 09:56:01 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/linux/centos/centos7%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/</guid>
+      <description>系统时间不对的原因
+软件原因
+​	虚拟机中的centos7，虚拟关机了软件时间没动。因此可以查看硬件时间是准的，但软件时间不对。用周期同步的方法。
+时区不对
+1 2 3  # 更改时区 rm -rf /etc/localtime cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime     查看系统时间
+1  date     查看硬件时间
+1  hwclock     同步时间；
+1  ntpdate cn.pool.ntp.org     将系统时间写入硬件时间
+1 2  hwclock -w hwclock --systohc     设置定时任务，周期更新时间
+1  crontab -e   1 2  # 每小时更新一次 * */1 * * * /usr/sbin/ntpdate cn.</description>
+    </item>
+    
     <item>
       <title>Centos7 安装</title>
       <link>https://xiarong715.github.io/posts/linux/centos/centos7%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/</link>

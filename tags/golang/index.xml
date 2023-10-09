@@ -6,7 +6,29 @@
     <description>Recent content in golang on 风笑天的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Apr 2021 11:33:28 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jun 2023 16:38:02 +0800</lastBuildDate><atom:link href="https://xiarong715.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go接口类型变量调用方法的原则</title>
+      <link>https://xiarong715.github.io/posts/go/go%E6%8E%A5%E5%8F%A3%E7%B1%BB%E5%9E%8B%E5%8F%98%E9%87%8F%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E7%9A%84%E5%8E%9F%E5%88%99/</link>
+      <pubDate>Sun, 25 Jun 2023 16:38:02 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/go/go%E6%8E%A5%E5%8F%A3%E7%B1%BB%E5%9E%8B%E5%8F%98%E9%87%8F%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E7%9A%84%E5%8E%9F%E5%88%99/</guid>
+      <description>讲解都在注释中
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66  package main import &amp;#34;fmt&amp;#34; type USB interface { start() stop() } type Camera struct { } func (c *Camera) start() { fmt.</description>
+    </item>
+    
+    <item>
+      <title>Go const与iota</title>
+      <link>https://xiarong715.github.io/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go-const%E4%B8%8Eiota/</link>
+      <pubDate>Fri, 02 Jun 2023 09:31:36 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go-const%E4%B8%8Eiota/</guid>
+      <description>const 与 iota的搭配使用。
+const关键字，用于定义常量，常量在定义时初始化，之后不能再被修改。iota第一次出现时值为0，每增加一行，其值加1。const常量没有初始化表达式时，表达式同邻近的上一行。
+以上是基本原则。举几个例子説明。
+1 2 3 4 5 6 7 8 9  func test1() { const ( d1 = iota	// 0  d2	// 1  d3	// 2  d4	// 3  ) fmt.Println(d1,d2,d3,d4)	// 0 1 2 3 }   1 2 3  func test2() { const }   </description>
+    </item>
+    
     <item>
       <title>Go 导入自定义包</title>
       <link>https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/</link>
@@ -52,7 +74,7 @@ https://studygolang.com/dl
 1  tar -xvzf go1.15.4.linux-amd64.tar.gz -C /usr/local   3.源码编译安装
 源码需要有go环境，可以用yum安装一个，因为系统的版本更新滞后，所以有必要下载较新的版本安装
 1  yum install -y go   1 2 3 4 5  解压 tar -xvzf go1.15.4.src.tar.gz -C /tools 编译 cd /tools/go/src ./all.bash   4.环境配置
-1 2 3 4 5 6 7  vi /etc/profile 编辑文件添加下面内容： export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.</description>
+1 2 3 4 5 6 7 8  vi /etc/profile 编辑文件添加下面内容： export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.</description>
     </item>
     
     <item>

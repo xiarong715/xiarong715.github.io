@@ -76,6 +76,104 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/go/go%E6%8E%A5%E5%8F%A3%E7%B1%BB%E5%9E%8B%E5%8F%98%E9%87%8F%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E7%9A%84%E5%8E%9F%E5%88%99/">Go接口类型变量调用方法的原则</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年6月25日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/golang'>Golang</a>
+            
+        </div>
+        
+        <div class="post-content">
+            讲解都在注释中
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66  package main import &#34;fmt&#34; type USB interface { start() stop() } type Camera struct { } func (c *Camera) start() { fmt.……
+            <p class="readmore"><a href="https://xiarong715.github.io/posts/go/go%E6%8E%A5%E5%8F%A3%E7%B1%BB%E5%9E%8B%E5%8F%98%E9%87%8F%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E7%9A%84%E5%8E%9F%E5%88%99/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/go/go-%E4%B8%80%E7%A7%8D%E5%85%B8%E5%9E%8B%E7%9A%84%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/">Go 一种典型的编程方式</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年6月9日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/golang'>Golang</a>
+            
+        </div>
+        
+        <div class="post-content">
+            Go 一种典型的编程方式 把各个要用到的参数都放到一个结构体中，初始化结构体，并为结构体添加方法。避免变量散落在各处，也符合面向对象编程思想。很多的语言都采用把变量集中放到一个结构体中，比如C语言。这是编程的基本思想，所以特别提取出来説一下。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50  // 演示一下 // 非常值得借鉴 // handler.go package footkeeper // 操作的结构体 type FaasHandler struct { datapath string settingpath string .……
+            <p class="readmore"><a href="https://xiarong715.github.io/posts/go/go-%E4%B8%80%E7%A7%8D%E5%85%B8%E5%9E%8B%E7%9A%84%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go-const%E4%B8%8Eiota/">Go const与iota</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年6月2日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/golang'>Golang</a>
+            
+        </div>
+        
+        <div class="post-content">
+            const 与 iota的搭配使用。
+const关键字，用于定义常量，常量在定义时初始化，之后不能再被修改。iota第一次出现时值为0，每增加一行，其值加1。const常量没有初始化表达式时，表达式同邻近的上一行。
+以上是基本原则。举几个例子説明。
+1 2 3 4 5 6 7 8 9  func test1() { const ( d1 = iota	// 0  d2	// 1  d3	// 2  d4	// 3  ) fmt.Println(d1,d2,d3,d4)	// 0 1 2 3 }   1 2 3  func test2() { const }   ……
+            <p class="readmore"><a href="https://xiarong715.github.io/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go-const%E4%B8%8Eiota/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go%E7%BC%96%E8%AF%91%E5%B8%B8%E9%87%8F%E5%8F%98%E9%87%8F%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/">Go 编译、常量、变量、基本数据类型和字符串</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年5月29日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/golang'>Golang</a>
+            
+        </div>
+        
+        <div class="post-content">
+            Go 学习记录。有输入，有输出，知识才能内化成自己的。为月薪30K+奋斗。
+ go 编译 1 2 3 4 5 6 7 8  # GO 1.11后，加入了模块特性 go mod init gopher	# 初始化模块 go build	# 编译模块 # The -mod flag controls whether go.mod may be automatically updated and whether the vendor directory is used # -mod=mod tells the go command to ignore the vendor directory and to automatically update go.mod, for example, when an imported package is not provided by any known module.……
+            <p class="readmore"><a href="https://xiarong715.github.io/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go%E7%BC%96%E8%AF%91%E5%B8%B8%E9%87%8F%E5%8F%98%E9%87%8F%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/">Go 导入自定义包</a>
             </h1>
         </header>
@@ -158,7 +256,7 @@ https://studygolang.com/dl
 1  tar -xvzf go1.15.4.linux-amd64.tar.gz -C /usr/local   3.源码编译安装
 源码需要有go环境，可以用yum安装一个，因为系统的版本更新滞后，所以有必要下载较新的版本安装
 1  yum install -y go   1 2 3 4 5  解压 tar -xvzf go1.15.4.src.tar.gz -C /tools 编译 cd /tools/go/src ./all.bash   4.环境配置
-1 2 3 4 5 6 7  vi /etc/profile 编辑文件添加下面内容： export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.……
+1 2 3 4 5 6 7 8  vi /etc/profile 编辑文件添加下面内容： export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.……
             <p class="readmore"><a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">阅读全文</a></p>
         </div>
     </article>
@@ -218,43 +316,43 @@ https://studygolang.com/dl
 <ul class="widget-list">
     
     <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/" title="Centos7自动更新时间">Centos7自动更新时间</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go%E6%8E%A5%E5%8F%A3%E7%B1%BB%E5%9E%8B%E5%8F%98%E9%87%8F%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E7%9A%84%E5%8E%9F%E5%88%99/" title="Go接口类型变量调用方法的原则">Go接口类型变量调用方法的原则</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/sql/sql%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" title="Sql使用记录">Sql使用记录</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go-%E8%B0%83%E5%BC%8F%E5%99%A8dlv/" title="Go 调式器dlv">Go 调式器dlv</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go-%E4%B8%80%E7%A7%8D%E5%85%B8%E5%9E%8B%E7%9A%84%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/" title="Go 一种典型的编程方式">Go 一种典型的编程方式</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go-const%E4%B8%8Eiota/" title="Go const与iota">Go const与iota</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/shell/shell-%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/" title="Shell 常用用法">Shell 常用用法</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/shell/shell-%E4%B8%80%E4%B8%AA%E5%8A%9F%E8%83%BD%E8%84%9A%E6%9C%AC%E7%9A%84%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E8%AE%B2%E8%A7%A3/" title="Shell 一个功能脚本的分析与语法讲解">Shell 一个功能脚本的分析与语法讲解</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go%E7%BC%96%E8%AF%91%E5%B8%B8%E9%87%8F%E5%8F%98%E9%87%8F%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="Go 编译、常量、变量、基本数据类型和字符串">Go 编译、常量、变量、基本数据类型和字符串</a>
+    </li>
+    
+    <li>
         <a href="https://xiarong715.github.io/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/" title="Git .gitignore文件的规则">Git .gitignore文件的规则</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/" title="Git 常见问题收集">Git 常见问题收集</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/" title="Git 基础">Git 基础</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/" title="Git Branch（git分支）讲解">Git Branch（git分支）讲解</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Centos7 问题与解决">Centos7 问题与解决</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/" title="Centos7 断电出错修复">Centos7 断电出错修复</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/" title="VSCode 连接 Centos7">VSCode 连接 Centos7</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/" title="Python3 安装">Python3 安装</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Docker 安装与使用">Docker 安装与使用</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/" title="健康秘诀 护肝养肾">健康秘诀 护肝养肾</a>
     </li>
     
 </ul>
@@ -266,21 +364,25 @@ https://studygolang.com/dl
         <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li><a href="https://xiarong715.github.io/categories/centos7/">Centos7 (2)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/centos7/">Centos7 (3)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/delve/">Delve (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/docker/">Docker (3)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/git/">Git (4)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/git/">Git (5)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (3)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (7)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (4)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (5)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/openssh/">Openssh (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/python3/">Python3 (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/shell/">Shell (2)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/vscode/">VSCode (1)</a></li>
     
@@ -299,6 +401,12 @@ https://studygolang.com/dl
     
     <a href="https://xiarong715.github.io/tags/centos7/">centos7</a>
     
+    <a href="https://xiarong715.github.io/tags/const/">const</a>
+    
+    <a href="https://xiarong715.github.io/tags/debug/">debug</a>
+    
+    <a href="https://xiarong715.github.io/tags/dlv/">dlv</a>
+    
     <a href="https://xiarong715.github.io/tags/docker/">docker</a>
     
     <a href="https://xiarong715.github.io/tags/docker-compose/">docker-compose</a>
@@ -309,6 +417,8 @@ https://studygolang.com/dl
     
     <a href="https://xiarong715.github.io/tags/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">git常见问题</a>
     
+    <a href="https://xiarong715.github.io/tags/go/">go</a>
+    
     <a href="https://xiarong715.github.io/tags/go-module/">go module</a>
     
     <a href="https://xiarong715.github.io/tags/go-package/">go package</a>
@@ -317,11 +427,25 @@ https://studygolang.com/dl
     
     <a href="https://xiarong715.github.io/tags/golang/">golang</a>
     
+    <a href="https://xiarong715.github.io/tags/go%E5%8F%98%E9%87%8F/">go变量</a>
+    
+    <a href="https://xiarong715.github.io/tags/go%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">go基本数据类型</a>
+    
+    <a href="https://xiarong715.github.io/tags/go%E5%AD%97%E7%AC%A6%E4%B8%B2/">go字符串</a>
+    
+    <a href="https://xiarong715.github.io/tags/go%E5%B8%B8%E9%87%8F/">go常量</a>
+    
+    <a href="https://xiarong715.github.io/tags/go%E7%BC%96%E8%AF%91/">go编译</a>
+    
     <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
+    
+    <a href="https://xiarong715.github.io/tags/iota/">iota</a>
     
     <a href="https://xiarong715.github.io/tags/linux/">linux</a>
     
     <a href="https://xiarong715.github.io/tags/python3/">python3</a>
+    
+    <a href="https://xiarong715.github.io/tags/shell/">shell</a>
     
     <a href="https://xiarong715.github.io/tags/windows/">windows</a>
     
@@ -332,6 +456,14 @@ https://studygolang.com/dl
     <a href="https://xiarong715.github.io/tags/%E5%85%BB%E8%82%BE/">养肾</a>
     
     <a href="https://xiarong715.github.io/tags/%E6%8A%A4%E8%82%9D/">护肝</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E6%8E%A5%E5%8F%A3%E7%B1%BB%E5%9E%8B%E5%8F%98%E9%87%8F/">接口类型变量</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/">系统时间</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/">编程方式</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/">自动更新时间</a>
     
     <a href="https://xiarong715.github.io/tags/%E9%95%BF%E5%AF%BF/">长寿</a>
     

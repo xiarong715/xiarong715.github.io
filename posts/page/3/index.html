@@ -69,6 +69,303 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/" title="Go 导入自定义包">Go 导入自定义包</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年4月11日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/golang'>Golang</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1.自定义包
+为了模块化编程，需要把属于同一功能的源文件放在同一目录下，并在文件开头加上package calc，calc即为包名，包名与目录名可以不相同；
+如：
+goStudy/package/calc/operation.go
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  package calc func Add(a, b int) int { return a + b } func Sub(a, b int) int { return a - b } func Multi(a, b int) int { return a * b } func Division(a, b int) int { return a / b }   goStudy/package/snow/use.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/go/go%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/linux/linux%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" title="Linux 标准输入输出">Linux 标准输入输出</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年2月12日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/linux'>Linux</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+              标准输出输出设备
+0代表标准输入
+1代表标准输出
+2代表标错误输出
+  空设备文件
+/dev/null代表Linux的空设备文件
+  重定向到”黑洞“
+1&gt;/dev/null 代表标准输出重定向到”黑洞“；
+2&gt;/dev/null代表错误输出重定向到”黑洞“；
+  重定向输入输出
+&amp;1表示标准输出设备；
+2&gt;&amp;1代表错误输出重定向到标准输出；
+2&gt;1则会把错误输出到文件1，&amp;1才表明是标准输出；
+  ……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/linux%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/linux/linux%E4%BB%BB%E5%8A%A1%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/" title="Linux 任务前后台切换">Linux 任务前后台切换</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年2月12日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/linux'>Linux</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+             查看后台运行的任务  jobs查看当前有多少任务在后台运行
+1  jobs   切换后台任务到前台  fg(foreground)将后台中的任务调至前台继续运行
+1  fg   前台任务切换到后台  ctrl + z可以将一个正在前台执行的任务放到后台，并且暂停运行
+1  ctrl + z   后台暂停的任务继续在后台运行  bg(background)将后台暂停的任务切换为运行状态
+1  bg   在后台运行任务  hugo &amp;将hugo任务在后台运行
+1  hugo &amp;   ……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/linux%E4%BB%BB%E5%8A%A1%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/" title="Centos7 安装">Centos7 安装</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年2月11日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/linux'>Linux</a></span>
+            
+            <span class="meta-category"><a href='/categories/centos7'>Centos7</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            一、下载
+镜像下载地址
+1 2  http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso   二、安装
+1.分区（新手方案）
+​	启动分区/boot ：512M或1024M
+	swap分区 ：内存的2倍
+​	根分区 / ：剩余的空间
+2.设置静态IP及DNS
+设置静态IP
+1 2 3 4 5 6 7 8  vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： BOOTPROTO=static # 静态IP ONBOOT=yes	# 开机启动 IPADDR=192.168.80.130 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.80.2 # 网关   添加DNS
+1 2 3 4 5 6 7 8 9  vi /etc/resolv.conf 修改为： nameserver 8.8.8.8 nameserver 114.114.114.114 或 vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： DNS1=8.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/centos/centos7%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/docker/docker-compose%E4%BD%BF%E7%94%A8/" title="Docker Compose 使用">Docker Compose 使用</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月29日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/docker'>Docker</a></span>
+            
+            <span class="meta-category"><a href='/categories/docker-compose'>Docker-compose</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1.docker-compose的作用
+方便管理docker容器
+2.下载安装
+docker-compose会依赖一些库
+1  yum install -y py-pip python-dev libffi-dev openssl-dev gcc libc-dev make   下载docker-compose
+1 2 3  curl -L &#34;https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose curl -L &#34;https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-$(uname -s)-$(uname -m)&#34; -o /user/local/bin/docker-compose (待验证)   添加执行权限
+1  chmod +x /usr/local/bin/docker-compose   测试
+1 2 3 4 5 6 7  docker-compose version ## 显示以下信息，表明docker-compose安装完成 docker-compose version 1.26.1, build f216ddbf docker-py version: 4.2.2 CPython version: 3.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/docker/docker-compose%E4%BD%BF%E7%94%A8/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/" title="Docker 学习">Docker 学习</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月23日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/docker'>Docker</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1.docker的编写
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  FROMregistry.lan:5000/ipanel/centos7-devMAINTAINERiPanel Cloud TeamLABEL Vendor=&#34;iPanel&#34; \  License=MIT \  Version=2.0ADD CI /root/CIADD mkyaffs2image /usr/sbin/mkyaffs2imageADD rc.local /etc/rc.d/rc.localRUN chmod -v +x /root/CI -R RUN chmod -v +x /usr/sbin/mkyaffs2image RUN rpm --rebuilddb \ 	&amp;&amp; rpm --import \ 	http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 \ 	&amp;&amp; rpm --import \ 	https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 \ 	&amp;&amp; yum -y install \ 	--setopt=tsflags=nodocs \ 	--disableplugin=fastestmirror \ 	ncurses-devel zlib-devel bzip2 git openssl file gettext glibc.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/docker/docker%E5%AD%A6%E4%B9%A0/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/" title="Go plugin 用法">Go plugin 用法</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/golang'>Golang</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1.编写plugin部分
+创建文件testplugin.go
+1 2 3 4 5 6 7 8 9 10 11 12  package main import &#34;fmt&#34; func init() { fmt.Println(&#34;load plugin&#34;) } // Hello hello func Hello() { fmt.Println(&#34;Hello Plugin&#34;) }   note: plugin的包名必须指定为main
+2.编译plugin部分
+1  go build --buildmode=plugin testplugin.go   编译后会生testplugin.so
+3.编写主程序部分
+创建文件main.go
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  package main import &#34;plugin&#34; func main() { p, err := plugin.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/go/go-plugin%E7%9A%84%E7%94%A8%E6%B3%95/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Git 环境搭建">Git 环境搭建</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/git'>Git</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1.download a tarball
+下载网址
+下载最新版本git
+源代码包下载地址
+1  wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz   2.解压
+1  tar -xvf git-2.9.5.tar.xz   3.configure
+1 2  cd git-2.9.5 ./configure   4.make and make install
+1  make &amp;&amp; make install   5.测试
+打印出版本号代表安装成功；
+1 2  git version git version 2.9.5    problems
+①fatal error: zlib.h: No such file or directory
+1 2  yum search zlib yum install zlib-devel -y   ②Can't locate ExtUtils/MakeMaker.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/git/git%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Go 语言环境搭建">Go 语言环境搭建</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年11月26日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/golang'>Golang</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1.下载
+打开网址，选择稳定版本下载
+https://go.dev/dl/
+https://golang.org/dl/ (有墙打不开)
+https://golang.google.cn/dl
+https://studygolang.com/dl
+1 2 3 4 5 6  // 二进制文件包下载 wget https://golang.google.cn/dl/go1.15.4.linux-amd64.tar.gz wget https://studygolang.com/dl/golang/go1.15.4.linux-amd64.tar.gz // 源码包下载 wget https://golang.google.cn/dl/go1.15.4.src.tar.gz   2.二进制文件安装
+1  tar -xvzf go1.15.4.linux-amd64.tar.gz -C /usr/local   3.源码编译安装
+源码需要有go环境，可以用yum安装一个，因为系统的版本更新滞后，所以有必要下载较新的版本安装
+1  yum install -y go   1 2 3 4 5  解压 tar -xvzf go1.15.4.src.tar.gz -C /tools 编译 cd /tools/go/src ./all.bash   4.环境配置
+1 2 3 4 5 6 7 8  vi /etc/profile 编辑文件添加下面内容： export GO111MODULE=on	# enable go moudle export GOPROXY=https://goproxy.……
+        </div>
+        <p class="readmore"><a href="https://xiarong715.github.io/posts/go/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://xiarong715.github.io/posts/hugo/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="Hugo 搭建个人博客">Hugo 搭建个人博客</a>
             </h1>
         </header>
@@ -177,43 +474,43 @@ go环境搭建
 <ul class="widget-list">
     
     <li>
+        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/" title="Centos7自动更新时间">Centos7自动更新时间</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go%E6%8E%A5%E5%8F%A3%E7%B1%BB%E5%9E%8B%E5%8F%98%E9%87%8F%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E7%9A%84%E5%8E%9F%E5%88%99/" title="Go接口类型变量调用方法的原则">Go接口类型变量调用方法的原则</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/sql/sql%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" title="Sql使用记录">Sql使用记录</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go-%E8%B0%83%E5%BC%8F%E5%99%A8dlv/" title="Go 调式器dlv">Go 调式器dlv</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go-%E4%B8%80%E7%A7%8D%E5%85%B8%E5%9E%8B%E7%9A%84%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/" title="Go 一种典型的编程方式">Go 一种典型的编程方式</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go-const%E4%B8%8Eiota/" title="Go const与iota">Go const与iota</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/shell/shell-%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/" title="Shell 常用用法">Shell 常用用法</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/shell/shell-%E4%B8%80%E4%B8%AA%E5%8A%9F%E8%83%BD%E8%84%9A%E6%9C%AC%E7%9A%84%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%AD%E6%B3%95%E8%AE%B2%E8%A7%A3/" title="Shell 一个功能脚本的分析与语法讲解">Shell 一个功能脚本的分析与语法讲解</a>
+    </li>
+    
+    <li>
+        <a href="https://xiarong715.github.io/posts/go/go%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/go%E5%9F%BA%E7%A1%80%E7%AF%87/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/go%E7%BC%96%E8%AF%91%E5%B8%B8%E9%87%8F%E5%8F%98%E9%87%8F%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="Go 编译、常量、变量、基本数据类型和字符串">Go 编译、常量、变量、基本数据类型和字符串</a>
+    </li>
+    
+    <li>
         <a href="https://xiarong715.github.io/posts/git/git-.gitignore%E6%96%87%E4%BB%B6%E7%9A%84%E8%A7%84%E5%88%99/" title="Git .gitignore文件的规则">Git .gitignore文件的规则</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86/" title="Git 常见问题收集">Git 常见问题收集</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/git/git%E5%9F%BA%E7%A1%80/" title="Git 基础">Git 基础</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/git/git-branchgit%E5%88%86%E6%94%AF%E8%AE%B2%E8%A7%A3/" title="Git Branch（git分支）讲解">Git Branch（git分支）讲解</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3/" title="Centos7 问题与解决">Centos7 问题与解决</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/linux/centos/centos7%E6%96%AD%E7%94%B5%E5%87%BA%E9%94%99%E4%BF%AE%E5%A4%8D/" title="Centos7 断电出错修复">Centos7 断电出错修复</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/vscode/vscode%E8%BF%9E%E6%8E%A5centos7/" title="VSCode 连接 Centos7">VSCode 连接 Centos7</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/python/python3-%E5%AE%89%E8%A3%85/" title="Python3 安装">Python3 安装</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/docker/docker%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Docker 安装与使用">Docker 安装与使用</a>
-    </li>
-    
-    <li>
-        <a href="https://xiarong715.github.io/posts/health/%E5%81%A5%E5%BA%B7%E7%A7%98%E8%AF%80-%E6%8A%A4%E8%82%9D%E5%85%BB%E8%82%BE/" title="健康秘诀 护肝养肾">健康秘诀 护肝养肾</a>
     </li>
     
 </ul>
@@ -225,21 +522,25 @@ go环境搭建
         <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li><a href="https://xiarong715.github.io/categories/centos7/">Centos7 (2)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/centos7/">Centos7 (3)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/delve/">Delve (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/docker/">Docker (3)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/docker-compose/">Docker-compose (1)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/git/">Git (4)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/git/">Git (5)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (3)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/golang/">Golang (7)</a></li>
     
-    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (4)</a></li>
+    <li><a href="https://xiarong715.github.io/categories/linux/">Linux (5)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/openssh/">Openssh (1)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/python3/">Python3 (1)</a></li>
+    
+    <li><a href="https://xiarong715.github.io/categories/shell/">Shell (2)</a></li>
     
     <li><a href="https://xiarong715.github.io/categories/vscode/">VSCode (1)</a></li>
     
@@ -258,6 +559,12 @@ go环境搭建
     
     <a href="https://xiarong715.github.io/tags/centos7/">centos7</a>
     
+    <a href="https://xiarong715.github.io/tags/const/">const</a>
+    
+    <a href="https://xiarong715.github.io/tags/debug/">debug</a>
+    
+    <a href="https://xiarong715.github.io/tags/dlv/">dlv</a>
+    
     <a href="https://xiarong715.github.io/tags/docker/">docker</a>
     
     <a href="https://xiarong715.github.io/tags/docker-compose/">docker-compose</a>
@@ -268,6 +575,8 @@ go环境搭建
     
     <a href="https://xiarong715.github.io/tags/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">git常见问题</a>
     
+    <a href="https://xiarong715.github.io/tags/go/">go</a>
+    
     <a href="https://xiarong715.github.io/tags/go-module/">go module</a>
     
     <a href="https://xiarong715.github.io/tags/go-package/">go package</a>
@@ -276,11 +585,25 @@ go环境搭建
     
     <a href="https://xiarong715.github.io/tags/golang/">golang</a>
     
+    <a href="https://xiarong715.github.io/tags/go%E5%8F%98%E9%87%8F/">go变量</a>
+    
+    <a href="https://xiarong715.github.io/tags/go%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">go基本数据类型</a>
+    
+    <a href="https://xiarong715.github.io/tags/go%E5%AD%97%E7%AC%A6%E4%B8%B2/">go字符串</a>
+    
+    <a href="https://xiarong715.github.io/tags/go%E5%B8%B8%E9%87%8F/">go常量</a>
+    
+    <a href="https://xiarong715.github.io/tags/go%E7%BC%96%E8%AF%91/">go编译</a>
+    
     <a href="https://xiarong715.github.io/tags/hugo/">hugo</a>
+    
+    <a href="https://xiarong715.github.io/tags/iota/">iota</a>
     
     <a href="https://xiarong715.github.io/tags/linux/">linux</a>
     
     <a href="https://xiarong715.github.io/tags/python3/">python3</a>
+    
+    <a href="https://xiarong715.github.io/tags/shell/">shell</a>
     
     <a href="https://xiarong715.github.io/tags/windows/">windows</a>
     
@@ -291,6 +614,14 @@ go环境搭建
     <a href="https://xiarong715.github.io/tags/%E5%85%BB%E8%82%BE/">养肾</a>
     
     <a href="https://xiarong715.github.io/tags/%E6%8A%A4%E8%82%9D/">护肝</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E6%8E%A5%E5%8F%A3%E7%B1%BB%E5%9E%8B%E5%8F%98%E9%87%8F/">接口类型变量</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/">系统时间</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/">编程方式</a>
+    
+    <a href="https://xiarong715.github.io/tags/%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/">自动更新时间</a>
     
     <a href="https://xiarong715.github.io/tags/%E9%95%BF%E5%AF%BF/">长寿</a>
     
