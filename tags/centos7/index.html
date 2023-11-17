@@ -201,7 +201,7 @@ Centos7：“Entering emergency mode. Exit the shell to continue”错误解决�
 2.设置静态IP及DNS
 设置静态IP
 1 2 3 4 5 6 7 8  vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： BOOTPROTO=static # 静态IP ONBOOT=yes	# 开机启动 IPADDR=192.168.80.130 # IP NETMASK=255.255.255.0 # 子网掩码 GATEWAY=192.168.80.2 # 网关   添加DNS
-1 2 3 4 5 6 7 8 9  vi /etc/resolv.conf 修改为： nameserver 8.8.8.8 nameserver 114.114.114.114 或 vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为： DNS1=8.……
+1 2 3 4 5 6 7 8 9  vi /etc/resolv.conf 修改为：（不推荐，/etc/resolv.conf是网络管理器创建的，网络重启会被修改） nameserver 8.8.8.8 nameserver 114.114.114.114 或 vi /etc/sysconfig/network-scripts/ifcfg-ens33 修改为：（推荐，会把变化同步到/etc/resolv.……
             <p class="readmore"><a href="https://xiarong715.github.io/posts/linux/centos/centos7%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/">阅读全文</a></p>
         </div>
     </article>

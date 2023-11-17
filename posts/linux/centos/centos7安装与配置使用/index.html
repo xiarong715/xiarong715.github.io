@@ -144,12 +144,12 @@ http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">vi /etc/resolv.conf
-修改为：
+修改为：（不推荐，/etc/resolv.conf是网络管理器创建的，网络重启会被修改）
 	nameserver 8.8.8.8
 	nameserver 114.114.114.114
 或
 	vi /etc/sysconfig/network-scripts/ifcfg-ens33
-修改为：
+修改为：（推荐，会把变化同步到/etc/resolv.conf中）
 	DNS1=8.8.8.8
 	DNS2=114.114.114.114
 </code></pre></td></tr></table>
