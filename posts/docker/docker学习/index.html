@@ -250,6 +250,14 @@ docker <span style="color:#0086b3">exec</span> -it redis-test /bin/bash			<span 
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -ti --privileged<span style="color:#000;font-weight:bold">=</span><span style="color:#0086b3">true</span> -d -p 2255:22 --name rtlbuildee_ubuntu --restart<span style="color:#000;font-weight:bold">=</span>always 51e7336035ad4b2aba84207b1554af54 /sbin/init
 </code></pre></td></tr></table>
 </div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -ti --privileged<span style="color:#000;font-weight:bold">=</span><span style="color:#0086b3">true</span> -d -p 2255:22 --name rtlbuildee_ubuntu --restart<span style="color:#000;font-weight:bold">=</span>always 51e7336035ad4b2aba84207b1554af54
+</code></pre></td></tr></table>
+</div>
 </div><p>通过宿主机<code>ssh root@ip:2255</code>登录容器。</p>
 
         </div>
@@ -296,7 +304,7 @@ docker <span style="color:#0086b3">exec</span> -it redis-test /bin/bash			<span 
 
                     <footer id="footer">
     <div>
-        &copy; 2023 <a href="https://xiarong715.github.io">风笑天的博客 By 风笑天</a>
+        &copy; 2024 <a href="https://xiarong715.github.io">风笑天的博客 By 风笑天</a>
         
     </div>
     <br />
