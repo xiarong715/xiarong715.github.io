@@ -18,6 +18,19 @@
     </item>
     
     <item>
+      <title>Go 调式器dlv</title>
+      <link>https://xiarong715.github.io/posts/go/go-%E8%B0%83%E5%BC%8F%E5%99%A8dlv/</link>
+      <pubDate>Mon, 12 Jun 2023 15:15:18 +0800</pubDate>
+      
+      <guid>https://xiarong715.github.io/posts/go/go-%E8%B0%83%E5%BC%8F%E5%99%A8dlv/</guid>
+      <description>参考
+Delve 调试器 Delve专门为Go语言打造的调试工具。
+Delve安装 1 2  # 安装最新版delve go install github.com/go-delve/delve/cmd/dlv@latest   经常使用的两种方式 1 2  dlv debug dlv attach   dlv debug 1.创建main.go文件
+1 2 3 4 5 6  package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;hello delve&amp;#34;) }   2.命令行进入包所在的目录，输入dlv debug命令进入调试
+dlv debug	# 进入调式命令行 (dlv) b main.main	# 设置断点：main.main (dlv) bp # 查看所有设置的断点 (dlv) vars main	# 查看全局变量（可通过正则参数过滤） (dlv) c	# 运行到下个断点处 (dlv) n # 单步执行 (dlv) args # 查看传入函数的参数 (dlv) locals	# 查看局部变量 (dlv) b main.</description>
+    </item>
+    
+    <item>
       <title>Go 一种典型的编程方式</title>
       <link>https://xiarong715.github.io/posts/go/go-%E4%B8%80%E7%A7%8D%E5%85%B8%E5%9E%8B%E7%9A%84%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Fri, 09 Jun 2023 11:59:12 +0800</pubDate>
